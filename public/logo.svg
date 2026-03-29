@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" role="img" aria-label="Inform Growth">
+  <title>Inform Growth</title>
+
+  <!-- Icon: navy-filled circle with white pine tree -->
+  <circle cx="35" cy="35" r="31" fill="#0F2336"/>
+
+  <!-- Pine tree — three tiers, white fill -->
+  <!-- Top tier -->
+  <polygon points="35,9 26,26 44,26" fill="#FFFFFF"/>
+  <!-- Middle tier -->
+  <polygon points="35,19 21,38 49,38" fill="#FFFFFF"/>
+  <!-- Bottom tier -->
+  <polygon points="35,29 16,52 54,52" fill="#FFFFFF"/>
+  <!-- Trunk — sky-blue accent -->
+  <rect x="32" y="52" width="6" height="9" rx="1.5" fill="#0EA5E9"/>
+
+  <!-- Small accent dot below circle -->
+  <circle cx="35" cy="68" r="2.5" fill="#0EA5E9"/>
+
+  <!-- Wordmark: INFORM (navy) -->
+  <text
+    x="76" y="27"
+    font-family="DM Sans, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="700"
+    font-size="17"
+    letter-spacing="3.5"
+    fill="#0F2336">INFORM</text>
+
+  <!-- Wordmark: GROWTH (sky-blue) -->
+  <text
+    x="76" y="57"
+    font-family="DM Sans, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="800"
+    font-size="25"
+    letter-spacing="1.5"
+    fill="#0EA5E9">GROWTH</text>
+
+  <!-- Accent underline under GROWTH -->
+  <rect x="76" y="62" width="192" height="2" rx="1" fill="#0EA5E9" opacity="0.35"/>
+</svg>

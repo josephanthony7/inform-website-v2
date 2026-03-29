@@ -1,0 +1,455 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts - DM Sans, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Global Styles loaded via frontmatter import -->
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KHPRBSZ7');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHPRBSZ7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="container">
+        <div class="nav-content">
+          <a href="/" class="logo">
+            <img src="/logo.svg" alt="Inform Growth" class="logo-image" />
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="menu-toggle show-mobile" aria-label="Toggle menu" id="menuToggle">
+            <span class="hamburger"></span>
+          </button>
+
+          <!-- Navigation Menu -->
+          <div class="nav-menu" id="navMenu">
+            <a href="/" class={currentPath === '/' ? 'nav-link active' : 'nav-link'}>Home</a>
+            <a href="/services" class={currentPath === '/services' ? 'nav-link active' : 'nav-link'}>Services</a>
+            <a href="/case-studies" class={currentPath === '/case-studies' ? 'nav-link active' : 'nav-link'}>Case Studies</a>
+            <a href="/team" class={currentPath === '/team' ? 'nav-link active' : 'nav-link'}>Team</a>
+            <a href="/contact" class="btn btn-primary nav-cta">Contact Now</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand Column -->
+          <div class="footer-col">
+            <h4 class="footer-title">Inform Growth</h4>
+            <p class="footer-tagline">Sales. Data. Systems. Fixed Together.</p>
+            <p class="footer-text">Full revenue engine design for mid-market B2B.</p>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer-col">
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="/services#tier-1">Deep-Scan</a></li>
+              <li><a href="/services#tier-2">Pipeline Re-Architecture</a></li>
+              <li><a href="/services#tier-3">Flow Assurance</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Column -->
+          <div class="footer-col">
+            <h4 class="footer-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="/team">Team</a></li>
+              <li><a href="/case-studies">Case Studies</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Connect Column -->
+          <div class="footer-col">
+            <h4 class="footer-title">Connect</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:hello@informgrowth.com">hello@informgrowth.com</a></li>
+              <li><a href="https://www.linkedin.com/in/jaron-sander" target="_blank" rel="noopener noreferrer">Jaron on LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/josephanthony" target="_blank" rel="noopener noreferrer">Joseph on LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} Inform Growth. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Persistent Guarantee Banner -->
+    <div class="floating-guarantee" id="floatingGuarantee">
+      <div class="container floating-guarantee-inner">
+        <span class="floating-guarantee-text">We find $100k+ in leaked pipeline - or you don't pay.</span>
+        <a href="/contact" class="floating-guarantee-cta">Book Deep-Scan</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      menuToggle?.addEventListener('click', () => {
+        navMenu?.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menuToggle?.contains(e.target as Node) && !navMenu?.contains(e.target as Node)) {
+          navMenu?.classList.remove('active');
+          menuToggle?.classList.remove('active');
+        }
+      });
+
+      // Close menu when clicking a link
+      navMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle?.classList.remove('active');
+        });
+      });
+
+      // Floating guarantee banner - show after scrolling past hero
+      const floatingGuarantee = document.getElementById('floatingGuarantee');
+      const showThreshold = 600;
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > showThreshold) {
+          floatingGuarantee?.classList.add('visible');
+        } else {
+          floatingGuarantee?.classList.remove('visible');
+        }
+      });
+    </script>
+
+    <style>
+      /* Navigation Styles */
+      .site-nav {
+        background-color: var(--nav-bg);
+        border-bottom: 2px solid var(--nav-border);
+        padding: var(--space-sm) 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        height: 48px;
+      }
+
+      .logo-image {
+        height: 48px;
+        width: auto;
+        transition: opacity var(--transition-fast);
+      }
+
+      .logo:hover .logo-image {
+        opacity: 0.8;
+      }
+
+      /* Mobile Menu Toggle */
+      .menu-toggle {
+        background: none;
+        border: 2px solid var(--nav-border);
+        padding: var(--space-xs);
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      .hamburger {
+        width: 24px;
+        height: 2px;
+        background-color: var(--nav-border);
+        position: relative;
+        transition: all var(--transition-base);
+      }
+
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: var(--nav-border);
+        transition: all var(--transition-base);
+      }
+
+      .hamburger::before {
+        top: -8px;
+      }
+
+      .hamburger::after {
+        bottom: -8px;
+      }
+
+      .menu-toggle.active .hamburger {
+        background-color: transparent;
+      }
+
+      .menu-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      .menu-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+      }
+
+      /* Navigation Menu */
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--nav-bg);
+        border-bottom: 2px solid var(--nav-border);
+        padding: var(--space-md);
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: var(--space-sm);
+        color: var(--text-color);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: var(--text-sm);
+        transition: color var(--transition-fast);
+        text-align: center;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--roi-green);
+      }
+
+      .nav-cta {
+        margin-top: var(--space-sm);
+      }
+
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+          position: static;
+          flex-direction: row;
+          align-items: center;
+          border: none;
+          padding: 0;
+          gap: var(--space-lg);
+        }
+
+        .nav-link {
+          padding: 0;
+          text-align: left;
+        }
+
+        .nav-cta {
+          margin-top: 0;
+          margin-left: var(--space-sm);
+        }
+      }
+
+      /* Footer Styles */
+      .site-footer {
+        background-color: var(--section-light-bg);
+        padding: var(--space-2xl) 0 var(--space-lg);
+        margin-top: var(--space-3xl);
+        border-top: 2px solid var(--roi-green);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        margin-bottom: var(--space-xl);
+      }
+
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .footer-title {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        font-weight: 900;
+        color: var(--roi-green);
+        margin-bottom: var(--space-sm);
+      }
+
+      .footer-tagline {
+        font-size: var(--text-sm);
+        font-weight: 700;
+        color: var(--text-color);
+        margin-bottom: var(--space-xs);
+      }
+
+      .footer-text {
+        font-size: var(--text-sm);
+        color: var(--muted-text);
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+      }
+
+      .footer-links a {
+        font-size: var(--text-sm);
+        color: var(--muted-text);
+        transition: color var(--transition-fast);
+      }
+
+      .footer-links a:hover {
+        color: var(--roi-green);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: var(--space-lg);
+        border-top: 1px solid var(--border-subtle);
+        font-size: var(--text-sm);
+        color: var(--muted-text);
+      }
+
+      /* Floating Guarantee Banner */
+      .floating-guarantee {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--section-dark-bg);
+        border-top: 2px solid var(--roi-green);
+        padding: var(--space-sm) 0;
+        z-index: 99;
+        transform: translateY(100%);
+        transition: transform var(--transition-base);
+      }
+
+      .floating-guarantee.visible {
+        transform: translateY(0);
+      }
+
+      .floating-guarantee-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+      }
+
+      .floating-guarantee-text {
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        color: var(--roi-green);
+      }
+
+      .floating-guarantee-cta {
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: var(--space-xs) var(--space-md);
+        background-color: var(--roi-green);
+        color: var(--carbon-gray);
+        transition: all var(--transition-fast);
+      }
+
+      .floating-guarantee-cta:hover {
+        background-color: transparent;
+        color: var(--roi-green);
+        outline: 2px solid var(--roi-green);
+      }
+    </style>
+  </body>
+</html>

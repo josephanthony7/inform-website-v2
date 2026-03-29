@@ -1,0 +1,357 @@
+---
+// AITeamSection.astro
+// "The Compound Problem" - why individual AI use doesn't help the team
+// POSITION: Between proof strip and three pillars in index.astro
+// ─────────────────────────────────────────────────────────────
+// EDITORIAL NOTE: Section renamed from "AI Team Problem" to "The Compound Problem"
+// to avoid leading with AI as the hero. The insight here is about data + systems
+// maturity - AI is the payoff, not the premise.
+---
+
+<section class="compound-section section">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="compound-header fade-up">
+      <span class="compound-eyebrow">The Compound Problem</span>
+      <h2>
+        Your team is already using AI.<br class="headline-break" />
+        The problem is they're using it <em>alone</em>.
+      </h2>
+      <p class="compound-intro">
+        Disconnected data and no shared workflows mean every rep runs their own isolated experiment. AI amplifies each person's habits - good and bad. The performance gap widens, not narrows.
+      </p>
+    </div>
+
+    <!-- Before / After Grid -->
+    <div class="compound-grid fade-up">
+
+      <!-- WITHOUT foundation -->
+      <div class="compound-card compound-card--before">
+        <div class="compound-card-header">
+          <span class="compound-card-label compound-card-label--problem">Without the foundation</span>
+          <h3>AI works for individuals. Not the team.</h3>
+        </div>
+
+        <ul class="compound-list">
+          <li class="compound-list-item compound-list-item--problem">
+            <span class="compound-icon compound-icon--problem">✕</span>
+            <p><strong>Dirty data</strong> - AI outputs your reps can't trust. They ignore them.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--problem">
+            <span class="compound-icon compound-icon--problem">✕</span>
+            <p><strong>Disconnected systems</strong> - AI sees a fragment of the deal. Context always missing.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--problem">
+            <span class="compound-icon compound-icon--problem">✕</span>
+            <p><strong>No shared playbooks</strong> - every rep reinvents the same prompts from scratch, every day.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--problem">
+            <span class="compound-icon compound-icon--problem">✕</span>
+            <p><strong>Widening gap</strong> - your best rep gets better. Your weakest rep stays exactly where they are.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- WITH foundation -->
+      <div class="compound-card compound-card--after">
+        <div class="compound-card-header">
+          <span class="compound-card-label compound-card-label--success">With the foundation in place</span>
+          <h3>Every rep performs like your best one.</h3>
+        </div>
+
+        <ul class="compound-list">
+          <li class="compound-list-item compound-list-item--success">
+            <span class="compound-icon compound-icon--success">✓</span>
+            <p><strong>Clean, structured data</strong> - outputs the team trusts and acts on, immediately.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--success">
+            <span class="compound-icon compound-icon--success">✓</span>
+            <p><strong>Connected systems</strong> - full deal context: contacts, history, and signals together.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--success">
+            <span class="compound-icon compound-icon--success">✓</span>
+            <p><strong>Shared workflows</strong> - institutional knowledge codified, not locked in one rep's head.</p>
+          </li>
+          <li class="compound-list-item compound-list-item--success">
+            <span class="compound-icon compound-icon--success">✓</span>
+            <p><strong>Top-rep logic, distributed</strong> - every seller operates with your best performer's approach.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Stat callout - tightened, outcome-first -->
+    <div class="compound-callout fade-up">
+      <div class="compound-callout-inner">
+        <div class="compound-stat-block">
+          <p class="compound-stat-number">76%</p>
+          <p class="compound-stat-label">of CRM data is inaccurate</p>
+          <span class="source-tag">CRM Data Report</span>
+        </div>
+        <div class="compound-text-block">
+          <p>
+            You can't run a shared intelligence layer on a data swamp. The foundation - clean data, connected systems, structured workflows - is what we build first.
+          </p>
+          <a href="/contact" class="btn btn-secondary compound-cta">
+            Start with the foundation →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ─── Section container ──────────────────────────────────── */
+  .compound-section {
+    background-color: var(--page-bg);
+  }
+
+  /* ─── Header ─────────────────────────────────────────────── */
+  .compound-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .compound-eyebrow {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-4);
+  }
+
+  .compound-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+  }
+
+  .compound-header h2 em {
+    font-style: normal;
+    color: var(--sky-blue);
+  }
+
+  .headline-break {
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    .headline-break {
+      display: block;
+    }
+  }
+
+  .compound-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* ─── Before/After grid ──────────────────────────────────── */
+  .compound-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .compound-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ─── Cards ──────────────────────────────────────────────── */
+  .compound-card {
+    border-radius: var(--card-radius);
+    padding: var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .compound-card--before {
+    background-color: rgba(220, 38, 38, 0.04);
+    border: 1px solid rgba(220, 38, 38, 0.16);
+  }
+
+  .compound-card--after {
+    background-color: rgba(5, 150, 105, 0.04);
+    border: 1px solid rgba(5, 150, 105, 0.16);
+  }
+
+  /* Card header */
+  .compound-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .compound-card-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .compound-card-label--problem { color: var(--warning-red); }
+  .compound-card-label--success { color: var(--emerald); }
+
+  .compound-card-header h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* List */
+  .compound-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    flex: 1;
+  }
+
+  .compound-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .compound-icon {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+
+  .compound-icon--problem {
+    background-color: rgba(220, 38, 38, 0.12);
+    color: var(--warning-red);
+  }
+
+  .compound-icon--success {
+    background-color: rgba(5, 150, 105, 0.12);
+    color: var(--emerald);
+  }
+
+  .compound-list-item p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .compound-list-item strong {
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  /* ─── Stat callout ───────────────────────────────────────── */
+  .compound-callout {
+    background-color: var(--navy);
+    border-radius: var(--card-radius);
+    padding: var(--space-7);
+    box-shadow: var(--glow-blue);
+  }
+
+  .compound-callout-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+    align-items: flex-start;
+  }
+
+  @media (min-width: 640px) {
+    .compound-callout-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .compound-stat-block {
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  @media (min-width: 640px) {
+    .compound-stat-block {
+      padding-right: var(--space-7);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  .compound-stat-number {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--sky-blue);
+    line-height: 1;
+    margin: 0 0 var(--space-2);
+  }
+
+  .compound-stat-label {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    color: var(--off-white);
+    line-height: 1.4;
+    margin: 0 0 var(--space-2);
+  }
+
+  .compound-text-block {
+    flex: 1;
+  }
+
+  .compound-text-block p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--off-white);
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+  }
+
+  .compound-cta {
+    font-size: var(--text-sm);
+    padding: 10px 20px;
+    border-color: var(--sky-blue);
+    color: var(--sky-blue);
+  }
+
+  .compound-cta:hover {
+    background-color: var(--sky-blue);
+    color: var(--navy);
+  }
+
+  /* source-tag inherits from global.css */
+</style>

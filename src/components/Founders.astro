@@ -1,0 +1,268 @@
+---
+// Founders Section
+// ─────────────────────────────────────────────────────────────
+// TODO: Replace .founder-photo-placeholder divs with real <img> tags.
+//       Recommended: square headshots, min 400×400px, consistent lighting/bg.
+//       Example: <img src="/team/jaron-sander.jpg" alt="Jaron Sander" class="founder-photo" />
+// ─────────────────────────────────────────────────────────────
+// NON-NEGOTIABLE: Section must remain full-width, not collapsed to footer credit.
+---
+
+<section class="founders section">
+  <div class="container">
+
+    <div class="founders-header">
+      <h2>Why Inform Growth</h2>
+      <p class="founders-intro">
+        We've been on both sides of the problem.
+      </p>
+    </div>
+
+    <div class="founders-grid">
+
+      <!-- ── Jaron Sander ──────────────────────────────────── -->
+      <div class="founder-card">
+        <div class="founder-image">
+          <!--
+            TODO: Replace with real headshot.
+            <img src="/team/jaron-sander.jpg" alt="Jaron Sander" class="founder-photo" />
+          -->
+          <div class="founder-photo-placeholder" aria-label="Jaron Sander - photo coming">
+            <span>JS</span>
+          </div>
+        </div>
+        <div class="founder-info">
+          <h3>Jaron Sander</h3>
+          <p class="founder-role">Co-Founder · Revenue Systems Architect</p>
+          <p class="founder-bio">
+            Has rebuilt revenue infrastructure for 15+ B2B companies - from single-founder startups to PE-backed platforms. Still in the code on every project. Specialises in making CRMs self-cleaning, data trustworthy, and systems that sales teams actually use.
+          </p>
+          <ul class="founder-credentials">
+            <li><span class="credential-number">400K+</span> records migrated without data loss</li>
+            <li><span class="credential-number">75%</span> CRM cost reduction achieved for a single client</li>
+            <li><span class="credential-number">40%</span> churn reduction via automated health scoring</li>
+          </ul>
+          <a
+            href="https://www.linkedin.com/in/jaron-sander"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="founder-linkedin"
+            aria-label="Jaron Sander on LinkedIn (opens in new tab)"
+          >
+            LinkedIn →
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Joseph Anthony ────────────────────────────────── -->
+      <div class="founder-card">
+        <div class="founder-image">
+          <img src="/headshots/Joseph Headshot.jpeg" alt="Joseph Anthony" class="founder-photo" />
+        </div>
+        <div class="founder-info">
+          <h3>Joseph Anthony</h3>
+          <p class="founder-role">Co-Founder · Enterprise Sales</p>
+          <p class="founder-bio">
+            Closed complex, multi-stakeholder deals at Checkout.com and built new pipelines from scratch. Understands firsthand what broken tools cost a rep in a live deal - which is why every system we build gets stress-tested against real selling conditions.
+          </p>
+          <ul class="founder-credentials">
+            <li><span class="credential-number">$900K</span> ARR deal closed at Checkout.com</li>
+            <li><span class="credential-number">$2M</span> in new business built in under 4 months</li>
+            <li>Ivey Business School · B2B Financial Infrastructure</li>
+          </ul>
+          <a
+            href="https://www.linkedin.com/in/joseph-anthony/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="founder-linkedin"
+            aria-label="Joseph Anthony on LinkedIn (opens in new tab)"
+          >
+            LinkedIn →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .founders {
+    background-color: var(--section-light-bg);
+    padding-top: var(--space-md);
+  }
+
+  /* ── Header ──────────────────────────────────────────────── */
+  .founders-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .founders-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+  }
+
+  .founders-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── Grid ────────────────────────────────────────────────── */
+  .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 900px) {
+    .founders-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Card ────────────────────────────────────────────────── */
+  .founder-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .founder-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (min-width: 600px) {
+    .founder-card {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  /* ── Photo ───────────────────────────────────────────────── */
+  .founder-image {
+    flex-shrink: 0;
+  }
+
+  /* Real photo (when TODO is completed) */
+  .founder-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* Placeholder - remove once real photos are added */
+  .founder-photo-placeholder {
+    width: 88px;
+    height: 88px;
+    background-color: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(14, 165, 233, 0.4);
+  }
+
+  .founder-photo-placeholder span {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--sky-blue);
+    opacity: 0.6;
+  }
+
+  /* ── Info ────────────────────────────────────────────────── */
+  .founder-info {
+    flex: 1;
+  }
+
+  .founder-info h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-1);
+  }
+
+  .founder-role {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-4);
+  }
+
+  .founder-bio {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.72;
+    margin-bottom: var(--space-4);
+  }
+
+  /* ── Credentials ─────────────────────────────────────────── */
+  .founder-credentials {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .founder-credentials li {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    padding-left: var(--space-6);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .founder-credentials li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--emerald);
+    font-weight: 700;
+  }
+
+  .credential-number {
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ── LinkedIn link ───────────────────────────────────────── */
+  .founder-linkedin {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--sky-blue);
+    transition: color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .founder-linkedin:hover {
+    color: var(--sky-blue-light);
+  }
+</style>

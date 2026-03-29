@@ -1,0 +1,14 @@
+name = "inform-website"
+main = "dist/_worker.js"
+compatibility_date = "2025-01-01"
+
+# Custom domain
+routes = [
+  { pattern = "informgrowth.com", zone_name = "informgrowth.com" }
+]
+
+# Static assets configuration
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

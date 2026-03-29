@@ -1,0 +1,482 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact - Inform Growth"
+  description="Book a discovery call with Inform Growth. Let's talk about fixing your revenue engine - Sales, Data, and Systems, together."
+>
+  <!-- Page Header -->
+  <section class="page-header section">
+    <div class="container">
+      <h1 class="text-center">Let's Fix Your Revenue Engine</h1>
+      <p class="header-subtitle text-center">
+        Book a 30-minute discovery call or send us a message. We'll talk through where things are breaking down and whether we're the right team to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- Calendar Section -->
+  <section class="section calendar-section">
+    <div class="container">
+      <div class="calendar-grid">
+        <div class="calendar-info">
+          <h2>Book a Discovery Call</h2>
+          <h3>What to Expect:</h3>
+          <ul class="expect-list">
+            <li>We'll ask about your current revenue stack and pain points</li>
+            <li>You'll get an honest assessment of fit (we don't take every engagement)</li>
+            <li>If it's a fit, we'll outline next steps and timeline</li>
+            <li>No pressure, no sales pitch-just straight talk about your infrastructure</li>
+          </ul>
+        </div>
+        <div class="calendar-embed">
+          <!-- Step 1: Prequalification Form -->
+          <div id="prequal-form-wrapper">
+            <h3 class="prequal-heading">Quick Info Before We Book</h3>
+            <p class="prequal-sub">Takes 30 seconds - helps us prepare for the call.</p>
+            <form id="prequalForm" class="prequal-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prequal-name">Name *</label>
+                  <input type="text" id="prequal-name" required placeholder="Jane Smith" />
+                </div>
+                <div class="form-group">
+                  <label for="prequal-email">Work Email *</label>
+                  <input type="email" id="prequal-email" required placeholder="jane@acmecorp.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="prequal-company">Company *</label>
+                <input type="text" id="prequal-company" required placeholder="Acme Corp" />
+              </div>
+              <div class="form-group">
+                <label for="prequal-help">How can we help?</label>
+                <textarea id="prequal-help" rows="3" placeholder="Tell us briefly what's going on with your revenue stack..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Book a Call</button>
+            </form>
+          </div>
+
+          <!-- Step 2: Calendar (hidden until form submitted) -->
+          <div id="calendar-wrapper" class="calendar-hidden">
+            <div class="prequal-summary" id="prequal-summary"></div>
+            <div
+              id="calendly-widget"
+              class="calendly-inline-widget"
+              style="width:100%;min-width:0;height:700px;"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="section contact-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Email</h3>
+          <a href="mailto:hello@informgrowth.com" class="info-link">hello@informgrowth.com</a>
+          <p>We typically respond within 24 hours</p>
+        </div>
+        <div class="info-card">
+          <h3>Connect</h3>
+          <a href="https://www.linkedin.com/in/jaron-sander" target="_blank" rel="noopener noreferrer" class="info-link">Jaron on LinkedIn</a>
+          <a href="https://www.linkedin.com/in/joseph-anthony/" target="_blank" rel="noopener noreferrer" class="info-link">Joseph on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendly widget script -->
+  <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <script is:inline>
+    // --- Supabase config (from env at build time, or empty) ---
+    var SUPABASE_URL = '';
+    var SUPABASE_ANON_KEY = '';
+
+    // --- Supabase helper ---
+    function submitToSupabase(payload) {
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+        console.warn('Supabase not configured - skipping lead capture.');
+        return;
+      }
+      fetch(SUPABASE_URL + '/rest/v1/inbound_leads', {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify(payload),
+      }).catch(function(err) {
+        console.error('Lead capture error:', err);
+      });
+    }
+
+    // --- GTM dataLayer helper ---
+    window.dataLayer = window.dataLayer || [];
+    function pushGTMEvent(eventName, data) {
+      window.dataLayer.push(Object.assign({ event: eventName }, data || {}));
+    }
+
+    // --- Wait for Calendly script to load ---
+    function waitForCalendly(callback, attempts) {
+      attempts = attempts || 0;
+      if (window.Calendly) {
+        callback();
+      } else if (attempts < 50) {
+        setTimeout(function() { waitForCalendly(callback, attempts + 1); }, 200);
+      } else {
+        console.error('Calendly failed to load');
+      }
+    }
+
+    // --- Prequalification form → Supabase + show calendar ---
+    document.getElementById('prequalForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById('prequal-name').value.trim();
+      var email = document.getElementById('prequal-email').value.trim();
+      var company = document.getElementById('prequal-company').value.trim();
+      var helpText = document.getElementById('prequal-help').value.trim();
+
+      // Push to GTM dataLayer
+      pushGTMEvent('prequal_form_submit', {
+        form_name: 'prequal_booking',
+        user_email: email,
+        user_company: company
+      });
+
+      // Save lead to Supabase (fire and forget)
+      submitToSupabase({
+        name: name,
+        email: email,
+        company: company,
+        message: helpText || null,
+        source: 'prequal_booking',
+      });
+
+      // Build Calendly URL with prefilled params
+      var params = new URLSearchParams();
+      if (name) params.set('name', name);
+      if (email) params.set('email', email);
+      if (company) params.set('a1', company);
+
+      var calendlyUrl = 'https://calendly.com/jaron-informgrowth/30min?' + params.toString();
+
+      // Show summary bar
+      var summary = document.getElementById('prequal-summary');
+      summary.innerHTML = '<span>Booking for <strong>' + name + '</strong> at <strong>' + company + '</strong></span>' +
+        '<button type="button" id="back-to-form" class="prequal-edit-link">Edit info</button>';
+
+      document.getElementById('back-to-form').addEventListener('click', function() {
+        document.getElementById('prequal-form-wrapper').style.display = 'block';
+        document.getElementById('calendar-wrapper').classList.add('calendar-hidden');
+      });
+
+      // Swap views immediately
+      document.getElementById('prequal-form-wrapper').style.display = 'none';
+      document.getElementById('calendar-wrapper').classList.remove('calendar-hidden');
+
+      // Initialize Calendly widget once script is ready
+      var widget = document.getElementById('calendly-widget');
+      waitForCalendly(function() {
+        window.Calendly.initInlineWidget({
+          url: calendlyUrl,
+          parentElement: widget,
+        });
+      });
+    });
+
+  </script>
+</Layout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background-color: #f8fafc;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-lg);
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: var(--space-sm);
+  }
+
+  .header-subtitle {
+    font-size: var(--text-lg);
+    color: #475569;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Calendar Section */
+  .calendar-section {
+    background-color: #f8fafc;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .calendar-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .calendar-info h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: var(--space-xs);
+  }
+
+  .calendar-info h3 {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .expect-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .expect-list li {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: #475569;
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-lg);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .expect-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sky-blue);
+    font-weight: 700;
+    font-size: var(--text-lg);
+  }
+
+  /* Prequalification Form */
+  #prequal-form-wrapper {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: var(--space-lg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (min-width: 768px) {
+    #prequal-form-wrapper {
+      padding: var(--space-xl);
+    }
+  }
+
+  .prequal-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: var(--space-xs);
+  }
+
+  .prequal-sub {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: #64748b;
+    margin-bottom: var(--space-md);
+  }
+
+  .prequal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .calendar-embed {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .calendar-hidden {
+    display: none;
+  }
+
+  .prequal-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: #334155;
+    padding: var(--space-sm) var(--space-md);
+    background-color: #f1f5f9;
+    border-left: 3px solid var(--sky-blue);
+    margin-bottom: var(--space-md);
+  }
+
+  .prequal-summary strong {
+    color: var(--sky-blue);
+  }
+
+  .prequal-edit-link {
+    background: none;
+    border: none;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--sky-blue);
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  .prequal-edit-link:hover {
+    color: #0f172a;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-group label {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    padding: var(--space-sm) var(--space-md);
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    transition: all var(--transition-base);
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #9ca3af;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Contact Info Section */
+  .contact-info {
+    background-color: white;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .info-card {
+    background-color: #f8fafc;
+    padding: var(--space-lg);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+  }
+
+  .info-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-link {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: var(--space-xs);
+    transition: color var(--transition-fast);
+    word-break: break-all;
+  }
+
+  .info-link:hover {
+    color: var(--sky-blue);
+  }
+
+  .info-card p {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: #64748b;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Inform Growth">
+  <title>Inform Growth</title>
+
+  <!-- Navy background circle -->
+  <circle cx="32" cy="32" r="30" fill="#0F2336"/>
+
+  <!-- Pine tree — three tiers, white -->
+  <polygon points="32,8 24,24 40,24" fill="#FFFFFF"/>
+  <polygon points="32,18 19,36 45,36" fill="#FFFFFF"/>
+  <polygon points="32,28 14,50 50,50" fill="#FFFFFF"/>
+
+  <!-- Trunk — sky-blue -->
+  <rect x="29" y="50" width="6" height="8" rx="1.5" fill="#0EA5E9"/>
+</svg>

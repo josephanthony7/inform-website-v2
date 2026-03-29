@@ -1,0 +1,714 @@
+/* ===================================
+   INFORM GROWTH - GLOBAL STYLES
+   Design System v2.0 - GTM Rebrand
+   =================================== */
+
+/* ===================================
+   CSS CUSTOM PROPERTIES
+   =================================== */
+:root {
+  /* Primary Colors */
+  --navy: #0F2336;
+  --navy-light: #1A3A54;
+  --sky-blue: #0EA5E9;
+  --sky-blue-light: #38BDF8;
+
+  /* Extended Palette */
+  --pale-blue: #E0F2FE;
+  --off-white: #F8FAFC;
+  --white: #FFFFFF;
+  --emerald: #059669;
+  --warning-red: #DC2626;
+  --slate: #64748B;
+  --body-text: #1E293B;
+
+  /* Legacy aliases for compatibility */
+  --carbon-gray: var(--navy);
+  --carbon-gray-light: var(--navy-light);
+  --roi-green: var(--sky-blue);
+  --vintage-cream: var(--off-white);
+  --rust-orange: var(--warning-red);
+
+  /* Theme tokens (light theme only) */
+  --page-bg: var(--white);
+  --section-light-bg: var(--off-white);
+  --section-dark-bg: var(--navy);
+  --card-bg: var(--white);
+  --card-bg-alt: var(--off-white);
+  --panel-bg: var(--off-white);
+  --text-color: var(--body-text);
+  --heading-color: var(--navy);
+  --muted-text: var(--slate);
+  --nav-bg: var(--white);
+  --nav-border: var(--navy);
+  --border-subtle: rgba(15, 35, 54, 0.1);
+  --placeholder-color: rgba(15, 35, 54, 0.4);
+
+  /* Background Pattern Opacity Control */
+  --pattern-opacity: 0.03;
+
+  /* Typography - DM Sans / Inter / JetBrains Mono */
+  --font-display: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Typography Scale (Design System) */
+  --text-caption: 0.8125rem;  /* 13px */
+  --text-sm: 0.875rem;        /* 14px */
+  --text-base: 1.0625rem;     /* 17px */
+  --text-cta: 1rem;           /* 16px */
+  --text-h3: 1.75rem;         /* 28px */
+  --text-h2: 2.5rem;          /* 40px */
+  --text-h1: 3.5rem;          /* 56px */
+
+  /* Fluid Typography Scale (for responsiveness) */
+  --text-xs: clamp(0.8125rem, 1.5vw, 0.875rem);
+  --text-lg: clamp(1.125rem, 2vw, 1.25rem);
+  --text-xl: clamp(1.5rem, 2.5vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-3xl: clamp(2rem, 4vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 5vw, 3.5rem);
+
+  /* Spacing (Base 8px) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-7: 1.75rem;   /* 28px - card padding */
+  --space-8: 2rem;      /* 32px - component gap */
+  --space-section: 6rem;      /* 96px - section padding */
+  --space-section-mobile: 4rem; /* 64px - mobile section padding */
+
+  /* Legacy spacing aliases */
+  --space-xs: var(--space-2);
+  --space-sm: var(--space-4);
+  --space-md: var(--space-6);
+  --space-lg: var(--space-8);
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: var(--space-section);
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-padding: 1.5rem;
+  --card-radius: 12px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 400ms ease;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --glow-blue: 0 0 20px rgba(14, 165, 233, 0.25);
+  --glow-green: var(--glow-blue);
+}
+
+
+/* ===================================
+   GOOGLE FONTS IMPORT
+   =================================== */
+/* Fonts are loaded in Layout.astro via Google Fonts */
+
+/* ===================================
+   CSS RESET
+   =================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--page-bg);
+  letter-spacing: -0.01em;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===================================
+   BASE TYPOGRAPHY
+   =================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  color: var(--heading-color);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  color: var(--heading-color);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  color: var(--heading-color);
+}
+
+h4 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* ===================================
+   LAYOUT UTILITIES
+   =================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--space-section-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-section) 0;
+  }
+}
+
+/* ===================================
+   GRID SYSTEMS
+   =================================== */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===================================
+   BUTTON UTILITIES
+   =================================== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-cta);
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  min-height: 48px;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn-primary {
+  background-color: var(--sky-blue);
+  color: var(--white);
+  border: 2px solid var(--sky-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--sky-blue-light);
+  border-color: var(--sky-blue-light);
+  box-shadow: var(--glow-blue);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--sky-blue);
+  border: 2px solid var(--sky-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--sky-blue);
+  color: var(--white);
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: var(--text-lg);
+}
+
+.btn-full {
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .btn-full {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+.text-center {
+  text-align: center;
+}
+
+.text-sky {
+  color: var(--sky-blue);
+}
+
+.text-emerald {
+  color: var(--emerald);
+}
+
+.text-warning {
+  color: var(--warning-red);
+}
+
+.text-slate {
+  color: var(--slate);
+}
+
+.bg-light {
+  background-color: var(--section-light-bg);
+}
+
+.bg-dark {
+  background-color: var(--section-dark-bg);
+}
+
+.bg-pale {
+  background-color: var(--pale-blue);
+}
+
+/* ===================================
+   CARD COMPONENT
+   =================================== */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-card);
+}
+
+
+/* ===================================
+   GEOMETRIC GRID BACKGROUND
+   =================================== */
+.geo-grid {
+  position: relative;
+}
+
+.geo-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geo-grid > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   FLOW PATTERN - Brand texture
+   Subtle diagonal connectivity lines
+   =================================== */
+.flow-pattern {
+  position: relative;
+}
+
+.flow-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(14, 165, 233, var(--pattern-opacity)) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      -60deg,
+      rgba(14, 165, 233, var(--pattern-opacity)) 1px,
+      transparent 1px
+    );
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flow-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   LOGO LOCKUP - Consistent client logo treatment
+   All logos render at the same visual height.
+   Object-fit: contain keeps aspect ratio intact.
+   The container enforces the consistent bounding box.
+   =================================== */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;          /* Fixed height - every logo is visually the same height */
+}
+
+.logo-lockup img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 160px;      /* Caps very wide wordmarks so they don't dominate */
+  max-height: 48px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Invert logos to white for dark/navy backgrounds */
+.logo-lockup--invert img {
+  filter: brightness(0) saturate(100%) invert(1);
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.logo-lockup--invert img:hover {
+  opacity: 1;
+}
+
+/* Full color logos - prominent display */
+.logo-lockup--color img {
+  opacity: 1;
+  transition: transform 0.2s ease;
+}
+
+.logo-lockup--color img:hover {
+  transform: scale(1.05);
+}
+
+/* Light section variant: convert all logos to dark/navy for consistency */
+.logo-lockup--dark img {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.logo-lockup--dark img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Natural colour with muting (use only when logos are already consistent) */
+.logo-lockup--natural img {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.logo-lockup--natural img:hover {
+  opacity: 1;
+}
+
+/* Boxed variant for logos without transparent backgrounds */
+.logo-lockup--boxed {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.logo-lockup--boxed img {
+  filter: none;
+  opacity: 1;
+  height: 48px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+/* Proof strip specific: logos in a horizontal row */
+.logo-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-xl) var(--space-2xl);
+  padding: var(--space-8) 0;
+}
+
+.logo-strip .logo-lockup {
+  height: 64px;          /* Large, prominent logos */
+  width: auto;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.logo-strip .logo-lockup img {
+  max-height: 64px;
+  max-width: 200px;
+}
+
+/* ===================================
+   STAT BOX COMPONENT
+   =================================== */
+.stat-box {
+  background-color: var(--pale-blue);
+  padding: var(--space-6);
+  text-align: center;
+  border-radius: var(--card-radius);
+}
+
+.stat-box .stat-number {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--navy);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.stat-box .stat-label {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* ===================================
+   ICP CARD COMPONENT
+   =================================== */
+.icp-card-styled {
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  padding: var(--space-7);
+  border-left: 4px solid var(--sky-blue);
+  box-shadow: var(--shadow-card);
+}
+
+.icp-card-styled .trigger {
+  font-style: italic;
+  color: var(--slate);
+  margin-bottom: var(--space-4);
+}
+
+.icp-card-styled .job {
+  font-weight: 600;
+  color: var(--body-text);
+}
+
+/* ===================================
+   FOUNDER CARD COMPONENT
+   =================================== */
+.founder-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.founder-avatar span {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--sky-blue);
+}
+
+/* ===================================
+   EMERALD SUCCESS STYLES
+   =================================== */
+.success-text {
+  color: var(--emerald);
+}
+
+.guarantee-badge {
+  background-color: var(--emerald);
+  color: var(--white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  display: inline-block;
+}
+
+/* ===================================
+   WARNING/PROBLEM STYLES
+   =================================== */
+.warning-text {
+  color: var(--warning-red);
+}
+
+.problem-stat {
+  color: var(--warning-red);
+  font-weight: 700;
+}
+
+/* ===================================
+   SCROLL ANIMATIONS
+   =================================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================
+   ACCESSIBLE FOCUS STATES
+   =================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--sky-blue);
+  outline-offset: 2px;
+}
+
+/* ===================================
+   SOURCE TAG
+   =================================== */
+.source-tag {
+  display: inline;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--slate);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.source-tag::before {
+  content: '[ ';
+}
+
+.source-tag::after {
+  content: ' ]';
+}
+
+.source-tag:hover {
+  opacity: 1;
+}
+
+/* ===================================
+   RESPONSIVE UTILITIES
+   =================================== */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+}

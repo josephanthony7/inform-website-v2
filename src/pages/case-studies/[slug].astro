@@ -1,0 +1,274 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import caseStudies from '../../data/case-studies';
+
+export async function getStaticPaths() {
+  const paths = await Promise.all(
+    caseStudies.map(async (study) => {
+      const content = await import(`../../content/case-studies/${study.slug}.md`);
+
+      return {
+        params: { slug: study.slug },
+        props: {
+          study,
+          frontmatter: content.frontmatter,
+          Content: content.default,
+        },
+      };
+    })
+  );
+
+  return paths;
+}
+
+const { study, frontmatter, Content } = Astro.props;
+---
+
+<Layout
+  title={`${frontmatter.title} - Case Study`}
+  description={frontmatter.hook ?? study.summary}
+>
+  <section class="case-study-hero section">
+    <div class="container">
+      <a class="breadcrumb" href="/case-studies">← Back to Case Studies</a>
+      {study.logo && (
+        <div class="client-logo">
+          <img src={study.logo} alt={`${study.client} logo`} />
+        </div>
+      )}
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.hook && <p class="case-study-hook">{frontmatter.hook}</p>}
+      <div class="case-study-meta">
+        <div class="meta-item">
+          <div class="meta-label">Metric</div>
+          <div class="meta-value">{frontmatter.metric ?? study.metric}</div>
+        </div>
+        {frontmatter.client && (
+          <div class="meta-item">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">{frontmatter.client}</div>
+          </div>
+        )}
+        {frontmatter.challenge && (
+          <div class="meta-item">
+            <div class="meta-label">Challenge</div>
+            <div class="meta-value">{frontmatter.challenge}</div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section case-study-body">
+    <div class="container case-study-content">
+      <Content />
+    </div>
+  </section>
+
+  <section class="section bottom-cta bg-light">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to add your success story?</h2>
+        <p>
+          Book a Deep-Scan and we'll show you exactly where your data debt is
+          costing you revenue-with a prioritized plan to fix it.
+        </p>
+        <a href="/contact" class="btn btn-primary btn-large">Book Your Deep-Scan</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .case-study-hero {
+    background-color: var(--section-dark-bg);
+  }
+
+  /* Override text colors for dark hero background */
+  .case-study-hero h1 {
+    color: var(--white);
+  }
+
+  .case-study-hero .breadcrumb {
+    color: var(--off-white);
+    opacity: 0.7;
+  }
+
+  .case-study-hero .breadcrumb:hover {
+    color: var(--sky-blue);
+    opacity: 1;
+  }
+
+  .breadcrumb {
+    display: inline-block;
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+  }
+
+  .client-logo {
+    margin-bottom: var(--space-lg);
+  }
+
+  .client-logo img {
+    max-height: 56px;
+    max-width: 200px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Invert logos on dark hero background */
+  .case-study-hero .client-logo img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+
+  .case-study-hook {
+    font-size: var(--text-lg);
+    color: var(--off-white);
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  .case-study-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  @media (min-width: 768px) {
+    .case-study-meta {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .meta-label {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-xs);
+  }
+
+  .meta-value {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--white);
+  }
+
+  .case-study-body {
+    background-color: var(--white);
+  }
+
+  .case-study-content {
+    max-width: 800px;
+  }
+
+  /* Section headings */
+  .case-study-content h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-lg);
+    color: var(--heading-color);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--sky-blue);
+  }
+
+  .case-study-content h2:first-child {
+    margin-top: 0;
+  }
+
+  /* Paragraphs */
+  .case-study-content p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-color);
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+  }
+
+  .case-study-content p strong {
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  /* Lists */
+  .case-study-content ul,
+  .case-study-content ol {
+    margin: var(--space-md) 0 var(--space-lg);
+    padding-left: var(--space-lg);
+  }
+
+  .case-study-content ul {
+    list-style: disc;
+  }
+
+  .case-study-content ol {
+    list-style: decimal;
+  }
+
+  .case-study-content li {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-color);
+    margin-bottom: var(--space-sm);
+    line-height: 1.7;
+  }
+
+  .case-study-content li strong {
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  /* Metric highlights - bold stats with percentages/numbers */
+  .case-study-content li strong:first-child {
+    color: var(--emerald);
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+
+  /* Nested lists */
+  .case-study-content li ul {
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
+  }
+
+  .cta-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-3xl);
+    background-color: var(--card-bg);
+    border: 2px solid var(--sky-blue);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cta-box h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-box p {
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  .btn-large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-lg);
+  }
+</style>

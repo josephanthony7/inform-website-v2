@@ -1,0 +1,73 @@
+---
+interface Props {
+  number: string;
+  description: string;
+  source?: string;
+}
+
+const { number, description, source } = Astro.props;
+---
+
+<div class="stat-card">
+  <div class="stat-number">{number}</div>
+  <div class="stat-description">{description}</div>
+  {source && <span class="source-tag">{source}</span>}
+</div>
+
+<style>
+  .stat-card {
+    background-color: var(--card-bg);
+    padding: var(--space-lg);
+    border-left: 4px solid var(--roi-green);
+    transition: all var(--transition-base);
+  }
+
+  .stat-card:hover {
+    transform: translateX(8px);
+    box-shadow: var(--glow-green);
+  }
+
+  .stat-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--roi-green);
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .stat-number {
+      font-size: var(--text-4xl);
+    }
+  }
+
+  .stat-description {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.5;
+  }
+
+  .source-tag {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--roi-green);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+  }
+
+  .source-tag::before {
+    content: '[ ';
+  }
+
+  .source-tag::after {
+    content: ' ]';
+  }
+
+  .stat-card:hover .source-tag {
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,467 @@
+---
+// TestimonialCarousel.astro
+// Rotating testimonial showcase with client headshots, logos, and metrics
+// Position: After hero, before proof strip
+---
+
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-card">
+      <div class="carousel-track">
+
+    <!-- Slide 1: Sylva -->
+    <div class="carousel-slide active" data-slide="0">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <div class="slide-logo">
+            <img src="/clients/sylva_logo.svg" alt="Sylva" />
+          </div>
+          <h2 class="slide-headline">
+            How Sylva Unified 7 CRMs and Cut Costs by 75%
+          </h2>
+          <a href="/case-studies/sylva" class="slide-cta">
+            Read Case Study <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="slide-person">
+          <div class="person-photo">
+            <img src="/headshots/scott-sylva.jpg" alt="Scott from Sylva" />
+          </div>
+          <div class="person-info">
+            <span class="person-name">Scott</span>
+            <span class="person-title">Head of Operations, Sylva</span>
+          </div>
+        </div>
+
+        <div class="slide-metrics">
+          <div class="metric-row">
+            <span class="metric-value">75%</span>
+            <span class="metric-label">CRM Cost Reduction</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-value">400K+</span>
+            <span class="metric-label">Records Migrated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Revenue Accelerator -->
+    <div class="carousel-slide" data-slide="1">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <div class="slide-logo">
+            <img src="/clients/revenue_accelerator_logo_new-removebg-preview.png" alt="Revenue Accelerator" />
+          </div>
+          <h2 class="slide-headline">
+            How Revenue Accelerator Unified 3M+ Contacts Into One Source of Truth
+          </h2>
+          <a href="/case-studies/revenue-accelerator-data-consolidation" class="slide-cta">
+            Read Case Study <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="slide-person">
+          <div class="person-photo">
+            <img src="/headshots/christi-revenue-accelerator.jpg" alt="Christi from Revenue Accelerator" />
+          </div>
+          <div class="person-info">
+            <span class="person-name">Christi</span>
+            <span class="person-title">Founder, Revenue Accelerator</span>
+          </div>
+        </div>
+
+        <div class="slide-metrics">
+          <div class="metric-row">
+            <span class="metric-value">3M+</span>
+            <span class="metric-label">Contacts Unified</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-value">40%</span>
+            <span class="metric-label">Data Cost Reduction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Women Travel Abroad -->
+    <div class="carousel-slide" data-slide="2">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <div class="slide-logo">
+            <img src="/clients/WTA-Logo-High-Vis-removebg-preview.png" alt="Women Travel Abroad" />
+          </div>
+          <h2 class="slide-headline">
+            How Women Travel Abroad Achieved 27% ROI Increase Through Attribution
+          </h2>
+          <a href="/case-studies/women-travel-abroad" class="slide-cta">
+            Read Case Study <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="slide-person">
+          <div class="person-photo">
+            <img src="/headshots/katherine-wta.jpg" alt="Katherine from Women Travel Abroad" />
+          </div>
+          <div class="person-info">
+            <span class="person-name">Katherine</span>
+            <span class="person-title">Founder, Women Travel Abroad</span>
+          </div>
+        </div>
+
+        <div class="slide-metrics">
+          <div class="metric-row">
+            <span class="metric-value">27%</span>
+            <span class="metric-label">ROI Increase</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-value">First</span>
+            <span class="metric-label">Partner-Level Revenue View</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="carousel-nav">
+        <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Outer section - provides page context */
+  .testimonial-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--page-bg);
+  }
+
+  /* Override container to allow wider card */
+  .testimonial-section .container {
+    max-width: 1400px;
+  }
+
+  /* The floating card container */
+  .testimonial-card {
+    background-color: var(--navy);
+    border-radius: 16px;
+    padding: var(--space-xl) var(--space-xl) var(--space-lg);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      padding: var(--space-2xl) var(--space-3xl) var(--space-xl);
+    }
+  }
+
+  .carousel-track {
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .carousel-track {
+      height: 300px;
+    }
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slide-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    padding: var(--space-lg) 0;
+  }
+
+  @media (min-width: 900px) {
+    .slide-inner {
+      grid-template-columns: 1.4fr 0.8fr 1fr;
+      gap: var(--space-2xl);
+      padding: var(--space-lg) 0;
+    }
+  }
+
+  /* Content column */
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .slide-logo {
+    height: 40px;
+  }
+
+  .slide-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  /* For logos with white backgrounds that can't be inverted */
+  .slide-logo--boxed {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    height: auto;
+    display: inline-block;
+  }
+
+  .slide-logo--boxed img {
+    filter: none;
+    opacity: 1;
+    height: 36px;
+    max-width: 180px;
+  }
+
+
+  .slide-headline {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .slide-headline {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  .slide-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--white);
+    transition: color var(--transition-fast);
+  }
+
+  .slide-cta:hover {
+    color: var(--sky-blue);
+  }
+
+  .slide-cta span {
+    transition: transform var(--transition-fast);
+  }
+
+  .slide-cta:hover span {
+    transform: translateX(4px);
+  }
+
+  /* Person column */
+  .slide-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .person-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    .person-photo {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .person-name {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .person-title {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--off-white);
+    opacity: 0.7;
+  }
+
+  /* Metrics column */
+  .slide-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding-left: var(--space-6);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 899px) {
+    .slide-metrics {
+      flex-direction: row;
+      justify-content: center;
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: var(--space-6);
+    }
+  }
+
+  .metric-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  @media (max-width: 899px) {
+    .metric-row {
+      text-align: center;
+      padding: 0 var(--space-6);
+    }
+  }
+
+  .metric-value {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--sky-blue);
+  }
+
+  .metric-label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--off-white);
+    opacity: 0.7;
+  }
+
+  /* Navigation dots */
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-sm);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .carousel-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+  }
+
+  .carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+  }
+
+  .carousel-dot.active {
+    background-color: var(--sky-blue);
+    transform: scale(1.3);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let autoplayInterval: ReturnType<typeof setInterval>;
+
+    function showSlide(index: number) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slides[index]?.classList.add('active');
+      dots[index]?.classList.add('active');
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    // Click handlers for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoplay();
+      });
+    });
+
+    // Autoplay - 30 seconds per slide
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 30000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
+    }
+
+    startAutoplay();
+
+    // Pause on hover
+    const carousel = document.querySelector('.testimonial-card');
+    carousel?.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    carousel?.addEventListener('mouseleave', startAutoplay);
+  });
+</script>

@@ -1,0 +1,247 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import caseStudies from '../data/case-studies';
+---
+
+<Layout
+  title="Case Studies - Inform Growth"
+  description="Engineering-grade results: 32% revenue increase, 40% churn reduction, 75% cost reduction, and more. See how we've helped B2B SaaS companies pay down data debt."
+>
+  <!-- Page Header -->
+  <section class="page-header section">
+    <div class="container">
+      <h1 class="text-center">Case Studies</h1>
+    </div>
+  </section>
+
+  <!-- Case Studies Grid -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid case-study-grid">
+        {caseStudies.map((study) => (
+          <CaseStudyCard
+            metric={study.metric}
+            summary={study.summary}
+            link={`/case-studies/${study.slug}`}
+            logo={study.logo}
+            client={study.client}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Credentials -->
+  <section class="section credentials">
+    <div class="container">
+      <h2 class="text-center">Why These Results Are Possible</h2>
+      <div class="credentials-grid">
+        <div class="credential-col">
+          <h3>Platform Expertise</h3>
+          <ul class="platform-list">
+            <li>HubSpot (advanced implementation, custom objects)</li>
+            <li>Salesforce (multi-org strategy, CPQ configuration)</li>
+            <li>Attio (modern CRM architecture)</li>
+            <li>Analytics: SQL, Python, Power BI, Looker</li>
+            <li>Automation: Make.com, Zapier, webhooks</li>
+            <li>Data Infrastructure: BigQuery, GA4, dbt</li>
+          </ul>
+        </div>
+        <div class="credential-col">
+          <h3>Our Engineering Philosophy</h3>
+          <p class="philosophy-text">
+            We don't believe in "marketing operations" or "sales operations" as separate
+            disciplines. Revenue infrastructure should be treated like production code:
+            version controlled, tested, monitored, and refactored ruthlessly.
+          </p>
+          <p class="philosophy-text">
+            Every integration we build follows software engineering principles: idempotency,
+            error handling, observability, and graceful degradation. We document everything
+            and train your team to maintain it.
+          </p>
+          <p class="philosophy-text">
+            This matters because 40% of generated leads are invalid, incomplete, or duplicated. The gap between marketing output and sales input is where revenue dies. We engineer systems that close that gap permanently.
+          </p>
+          <p class="philosophy-text">
+            <strong>Your revenue stack is mission-critical infrastructure. We treat it that way.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section bottom-cta bg-light">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to See Results Like These?</h2>
+        <p>
+          Book a Deep-Scan and we'll show you exactly where your data debt is
+          costing you revenue-with a prioritized plan to fix it.
+        </p>
+        <a href="/contact" class="btn btn-primary btn-large">Book Your Deep-Scan</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Header Styles */
+  .page-header {
+    background-color: var(--section-dark-bg);
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .header-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  .header-content h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-md);
+  }
+
+  .header-subtitle {
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .header-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-image img {
+    max-width: clamp(200px, 30vw, 340px);
+    height: auto;
+  }
+
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .case-study-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .case-study-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Credentials Section */
+  .credentials {
+    background-color: var(--section-dark-bg);
+  }
+
+  .credentials h2 {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .credentials-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .credential-col h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-lg);
+  }
+
+  .platform-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .platform-list li {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-md);
+    border-left: 3px solid var(--border-subtle);
+    margin-bottom: var(--space-xs);
+    transition: all var(--transition-fast);
+  }
+
+  .platform-list li:hover {
+    border-left-color: var(--sky-blue);
+    color: var(--sky-blue);
+  }
+
+  .philosophy-text {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .philosophy-text strong {
+    color: var(--emerald);
+    font-weight: 700;
+  }
+
+  /* Bottom CTA */
+  .cta-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-3xl);
+    background-color: var(--card-bg);
+    border: 2px solid var(--sky-blue);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cta-box h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-box p {
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  .btn-large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-lg);
+  }
+</style>

@@ -1,0 +1,281 @@
+---
+interface Props {
+  tier: string;
+  title: string;
+  tagline: string;
+  description: string;
+  promise: string;
+  deliverables: string[];
+  investment: string;
+  timeline: string;
+  ctaText: string;
+  ctaHref: string;
+  image?: string;
+  imagePosition?: 'left' | 'right';
+}
+
+const {
+  tier,
+  title,
+  tagline,
+  description,
+  promise,
+  deliverables,
+  investment,
+  timeline,
+  ctaText,
+  ctaHref,
+  image,
+  imagePosition = 'left'
+} = Astro.props;
+---
+
+<section class="service-tier" id={`tier-${tier}`}>
+  <div class="container">
+    <div class="service-card">
+      <div class={`service-header-grid ${imagePosition === 'right' ? 'reverse' : ''}`}>
+        <div class="service-image">
+          {image ? (
+            <img src={image} alt={title} />
+          ) : (
+            <div class="roy-placeholder">🔧</div>
+          )}
+        </div>
+        <div class="service-header">
+          <div class="tier-badge">Tier {tier}</div>
+          <h2 class="service-title">{title}</h2>
+          <p class="service-tagline">{tagline}</p>
+          <p class="service-description">{description}</p>
+        </div>
+      </div>
+      <div class="service-body">
+        <div class="promise-box">
+          <strong>Promise:</strong> {promise}
+        </div>
+        <div class="deliverables">
+          <h4>What You Get:</h4>
+          <ul>
+            {deliverables.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <span class="detail-label">Investment:</span>
+            <span class="detail-value">{investment}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Timeline:</span>
+            <span class="detail-value">{timeline}</span>
+          </div>
+        </div>
+        <a href={ctaHref} class="btn btn-primary">{ctaText}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-tier {
+    padding: var(--space-3xl) 0;
+    background-color: var(--section-dark-bg);
+  }
+
+  .service-tier:nth-child(even) {
+    background-color: var(--section-light-bg);
+  }
+
+  .service-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .service-tier:nth-child(even) .service-card {
+    background-color: var(--card-bg-alt);
+    border-color: var(--border-subtle);
+  }
+
+  .service-header-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    .service-header-grid {
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--space-2xl);
+    }
+
+    .service-header-grid.reverse {
+      direction: rtl;
+    }
+
+    .service-header-grid.reverse > * {
+      direction: ltr;
+    }
+  }
+
+  .service-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+  }
+
+  @media (min-width: 1024px) {
+    .service-image img {
+      max-width: 420px;
+    }
+  }
+
+  .service-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .service-body {
+    width: 100%;
+  }
+
+  .tier-badge {
+    display: inline-block;
+    background-color: var(--roi-green);
+    color: var(--carbon-gray);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+  }
+
+  .service-title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-tagline {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--roi-green);
+    margin-bottom: var(--space-md);
+  }
+
+  .service-description {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .promise-box {
+    background-color: var(--panel-bg);
+    border-left: 4px solid var(--roi-green);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--text-color);
+  }
+
+  .service-tier:nth-child(even) .promise-box {
+    background-color: var(--panel-bg);
+  }
+
+  .promise-box strong {
+    color: var(--roi-green);
+    font-weight: 700;
+  }
+
+  .deliverables {
+    margin-bottom: var(--space-lg);
+  }
+
+  .deliverables h4 {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-sm);
+  }
+
+  .deliverables ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .deliverables li {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-xs);
+    position: relative;
+  }
+
+  .deliverables li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--roi-green);
+    font-weight: 700;
+  }
+
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .service-details {
+      flex-direction: row;
+      gap: var(--space-xl);
+    }
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .detail-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--roi-green);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--text-color);
+  }
+</style>

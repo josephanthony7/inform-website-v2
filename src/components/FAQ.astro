@@ -1,0 +1,179 @@
+---
+// FAQ Section - addressing the five real objections
+---
+
+<section class="faq-section section bg-light">
+  <div class="container">
+
+    <div class="faq-header">
+      <h2>FAQs</h2>
+    </div>
+
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          How is this different from hiring a HubSpot consultant?
+        </summary>
+        <div class="faq-answer">
+          <p>
+            Most HubSpot consultants focus on one thing: making HubSpot work. We focus on making your entire revenue engine work - which sometimes means fixing HubSpot, sometimes fixing your sales process, and sometimes integrating systems that have nothing to do with HubSpot.
+          </p>
+          <p>
+            We also have someone who's actually closed enterprise deals, so we know firsthand what it costs a rep when the tools don't work. That perspective isn't common in implementation.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          We already have a RevOps person. Why do we need you?
+        </summary>
+        <div class="faq-answer">
+          <p>
+            We're not here to replace your RevOps person - we extend their capacity. Most internal RevOps leaders are underwater in tickets and don't have bandwidth for the strategic work they know needs to happen.
+          </p>
+          <p>
+            We come in as allies. We handle the heavy projects they've been deferring, document everything, and hand it back in a state they can own and maintain.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What does the $100K guarantee actually mean?
+        </summary>
+        <div class="faq-answer">
+          <p>
+            We run our Deep-Scan against your CRM. If we don't find at least $100K in recoverable pipeline - orphaned deals, zombie opportunities, reactivation candidates - you don't pay the $1,500 fee.
+          </p>
+          <p>
+            We're confident because the math is consistent. The average mid-market B2B company has 15–25% of revenue leaking due to data issues. We find it and show you exactly where it is.
+          </p>
+        </div>
+      </details>
+
+      <!-- REVISED: Removed "Can you really..." defensive framing -->
+      <details class="faq-item">
+        <summary class="faq-question">
+          What makes you different from a RevOps firm that also does sales consulting?
+        </summary>
+        <div class="faq-answer">
+          <p>
+            The difference is that our sales expertise is earned, not adjacent. Jaron has rebuilt revenue infrastructure for 15+ companies - 400K+ records migrated, 75% CRM cost reductions. Joseph has closed $900K ARR enterprise deals at Checkout.com and built $2M in new pipeline.
+          </p>
+          <p>
+            When we build a system, it gets stress-tested by someone who's had to sell with broken tools. When we design a sales process, it gets implemented by someone who knows how to make CRMs actually work.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          How fast can you start?
+        </summary>
+        <div class="faq-answer">
+          <p>
+            Deep-Scans typically start within a week of signing. Full Pipeline Re-Architecture projects kick off within 2 weeks.
+          </p>
+          <p>
+            We're a focused team - no 6-month discovery phases. If you need to show the board progress in 90 days, that's the kind of timeline we're designed for.
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background-color: var(--section-light-bg);
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: 0;
+  }
+
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .faq-item:hover,
+  .faq-item[open] {
+    border-color: var(--sky-blue);
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    padding: var(--space-lg);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--sky-blue);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+    border-top: 1px solid var(--border-subtle);
+    margin-top: calc(-1 * var(--space-sm));
+    padding-top: var(--space-lg);
+  }
+
+  .faq-answer p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+</style>

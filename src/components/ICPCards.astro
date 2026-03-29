@@ -1,0 +1,177 @@
+---
+// ICP Segment Cards - showing the 5 buyer archetypes with trigger language
+---
+
+<section class="icp-section section">
+  <div class="container">
+    <div class="icp-header">
+      <h2>We Work With Leaders Who Are Done Patching</h2>
+      <p class="icp-intro">
+        If any of these sound familiar, you're probably a fit.
+      </p>
+    </div>
+
+    <div class="icp-grid">
+      <!-- CRO -->
+      <div class="icp-card">
+        <div class="icp-role">CRO</div>
+        <p class="icp-trigger">
+          "I can't trust my pipeline numbers. Every forecast is a negotiation, not a report."
+        </p>
+        <p class="icp-outcome">
+          You need systems that give you one version of the truth - so you can defend your forecast to the board without caveats.
+        </p>
+      </div>
+
+      <!-- VP Sales -->
+      <div class="icp-card">
+        <div class="icp-role">VP Sales</div>
+        <p class="icp-trigger">
+          "My reps spend more time fighting the CRM than selling. The tools are supposed to help us, not slow us down."
+        </p>
+        <p class="icp-outcome">
+          You need a revenue stack designed by someone who's carried a quota - not just built systems for other people to use.
+        </p>
+      </div>
+
+      <!-- CFO -->
+      <div class="icp-card">
+        <div class="icp-role">CFO</div>
+        <p class="icp-trigger">
+          "We're paying for 7 tools that don't talk to each other. Show me the ROI before I sign another contract."
+        </p>
+        <p class="icp-outcome">
+          You need a partner who guarantees results - $100K+ in recovered pipeline or you don't pay.
+        </p>
+      </div>
+
+      <!-- RevOps Director -->
+      <div class="icp-card">
+        <div class="icp-role">RevOps Director</div>
+        <p class="icp-trigger">
+          "I know what needs to be fixed, but I'm drowning in tickets and don't have the bandwidth to do it right."
+        </p>
+        <p class="icp-outcome">
+          You need reinforcements who speak your language - allies who extend your capacity, not consultants who create more work.
+        </p>
+      </div>
+
+      <!-- PE Operating Partner -->
+      <div class="icp-card">
+        <div class="icp-role">PE Operating Partner</div>
+        <p class="icp-trigger">
+          "We just acquired a company with a mess of a CRM. The board wants a clean pipeline report in 90 days."
+        </p>
+        <p class="icp-outcome">
+          You need a team that can start in 2 weeks and deliver a credible board deck - not a 6-month discovery process.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .icp-section {
+    background-color: var(--section-dark-bg);
+  }
+
+  .icp-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .icp-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-md);
+  }
+
+  .icp-intro {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .icp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .icp-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .icp-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Make last two cards center on larger screens */
+    .icp-card:nth-child(4) {
+      grid-column: 1 / 2;
+    }
+
+    .icp-card:nth-child(5) {
+      grid-column: 2 / 3;
+    }
+  }
+
+  .icp-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: all var(--transition-base);
+  }
+
+  .icp-card:hover {
+    border-color: var(--sky-blue, var(--roi-green));
+  }
+
+  .icp-role {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--sky-blue, var(--roi-green));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--border-subtle);
+  }
+
+  .icp-trigger {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.4;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .icp-trigger::before {
+    content: '"';
+  }
+
+  .icp-trigger::after {
+    content: '"';
+  }
+
+  .icp-outcome {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

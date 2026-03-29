@@ -1,0 +1,303 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  ctaPrimary: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  image?: string;
+}
+
+const { eyebrow, title, subtitle, ctaPrimary, ctaSecondary, image } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-content">
+        {eyebrow && <div class="hero-eyebrow">{eyebrow}</div>}
+        <h1 class="hero-title">{title}</h1>
+        <p class="hero-subtitle">{subtitle}</p>
+
+        <div class="hero-ctas">
+          <a href={ctaPrimary.href} class="btn btn-primary btn-full">{ctaPrimary.text}</a>
+          {ctaSecondary && (
+            <a href={ctaSecondary.href} class="btn btn-secondary btn-full">{ctaSecondary.text}</a>
+          )}
+        </div>
+
+        <!-- Trust row: replaces the old guarantee box - three clean proof signals -->
+        <div class="hero-trust-row">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7L5.5 10.5L12 4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>$100K+ found or it's free</span>
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7L5.5 10.5L12 4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>No pitch before your diagnosis</span>
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7L5.5 10.5L12 4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>$1,500 flat · 1–2 weeks</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: brand revenue-system diagram, or provided image -->
+      <div class="hero-visual">
+        {image ? (
+          <img src={image} alt="" role="presentation" />
+        ) : (
+          <div class="revenue-diagram" aria-hidden="true">
+            <!--
+              Revenue Engine diagram: Sales, Data, and Systems converging
+              Brand values: flow · connectivity · precision · systems · clean
+            -->
+            <svg viewBox="0 0 360 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+              <!-- ─── Outer triangle connections (faint mesh) ─────────────── -->
+              <line x1="158" y1="67" x2="98" y2="222" stroke="#0EA5E9" stroke-width="0.75" stroke-dasharray="5 5" opacity="0.18" class="flow-outer"/>
+              <line x1="202" y1="67" x2="262" y2="222" stroke="#0EA5E9" stroke-width="0.75" stroke-dasharray="5 5" opacity="0.18" class="flow-outer-2"/>
+              <line x1="104" y1="244" x2="256" y2="244" stroke="#0EA5E9" stroke-width="0.75" stroke-dasharray="5 5" opacity="0.18" class="flow-outer-3"/>
+
+              <!-- ─── Primary connections: each node → center hub ──────────── -->
+              <line x1="180" y1="80" x2="180" y2="153" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="7 4" class="flow-a"/>
+              <line x1="97" y1="224" x2="171" y2="168" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="7 4" class="flow-b"/>
+              <line x1="263" y1="224" x2="189" y2="168" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="7 4" class="flow-c"/>
+
+              <!-- ─── Center hub ──────────────────────────────────────────── -->
+              <circle cx="180" cy="162" r="22" fill="none" stroke="#0EA5E9" stroke-width="0.5" opacity="0.2"/>
+              <circle cx="180" cy="162" r="12" fill="rgba(14,165,233,0.07)" stroke="#0EA5E9" stroke-width="1" opacity="0.55"/>
+              <circle cx="180" cy="162" r="4" fill="#0EA5E9" opacity="0.9"/>
+
+              <!-- ─── SALES node (top center) ─────────────────────────────── -->
+              <circle cx="180" cy="46" r="34" fill="#1A3A54" stroke="#0EA5E9" stroke-width="1.5"/>
+              <!-- Upward trend icon -->
+              <polyline points="165,52 171,45 178,49 185,41 192,44" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text
+                x="180" y="63"
+                text-anchor="middle"
+                fill="#38BDF8"
+                font-family="'DM Sans','Inter',system-ui,sans-serif"
+                font-size="8"
+                font-weight="700"
+                letter-spacing="0.12em"
+              >SALES</text>
+
+              <!-- ─── DATA node (bottom left) ────────────────────────────── -->
+              <circle cx="70" cy="244" r="34" fill="#1A3A54" stroke="#0EA5E9" stroke-width="1.5"/>
+              <!-- Stacked rows (database/table icon) -->
+              <rect x="57" y="234" width="26" height="4" rx="2" fill="#38BDF8"/>
+              <rect x="57" y="241" width="26" height="4" rx="2" fill="#38BDF8" opacity="0.6"/>
+              <rect x="57" y="248" width="18" height="4" rx="2" fill="#38BDF8" opacity="0.3"/>
+              <text
+                x="70" y="261"
+                text-anchor="middle"
+                fill="#38BDF8"
+                font-family="'DM Sans','Inter',system-ui,sans-serif"
+                font-size="8"
+                font-weight="700"
+                letter-spacing="0.12em"
+              >DATA</text>
+
+              <!-- ─── SYSTEMS node (bottom right) ────────────────────────── -->
+              <circle cx="290" cy="244" r="34" fill="#1A3A54" stroke="#0EA5E9" stroke-width="1.5"/>
+              <!-- Network topology icon: 3 circles connected -->
+              <circle cx="281" cy="237" r="3.5" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+              <circle cx="290" cy="252" r="3.5" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+              <circle cx="299" cy="237" r="3.5" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+              <line x1="284" y1="238.5" x2="287" y2="249" stroke="#38BDF8" stroke-width="1.25" stroke-linecap="round"/>
+              <line x1="296" y1="238.5" x2="293" y2="249" stroke="#38BDF8" stroke-width="1.25" stroke-linecap="round"/>
+              <line x1="284.5" y1="237" x2="295.5" y2="237" stroke="#38BDF8" stroke-width="1.25" stroke-linecap="round"/>
+              <text
+                x="290" y="261"
+                text-anchor="middle"
+                fill="#38BDF8"
+                font-family="'DM Sans','Inter',system-ui,sans-serif"
+                font-size="8"
+                font-weight="700"
+                letter-spacing="0.12em"
+              >SYSTEMS</text>
+
+            </svg>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0;
+    background-color: var(--section-dark-bg);
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding: var(--space-3xl) 0;
+    }
+  }
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      order: 1;
+    }
+  }
+
+  /* ── Eyebrow ─────────────────────────────────────────────── */
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* ── Heading ─────────────────────────────────────────────── */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    line-height: 1.08;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.025em;
+  }
+
+  /* ── Subtitle ────────────────────────────────────────────── */
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.65;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ── CTAs ────────────────────────────────────────────────── */
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .hero-ctas {
+      flex-direction: row;
+      gap: var(--space-lg);
+    }
+  }
+
+  /* ── Trust row ───────────────────────────────────────────── */
+  .hero-trust-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  @media (min-width: 480px) {
+    .hero-trust-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: var(--space-6);
+      row-gap: var(--space-2);
+    }
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    opacity: 0.82;
+  }
+
+  .trust-item svg {
+    flex-shrink: 0;
+  }
+
+  /* ── Visual side ─────────────────────────────────────────── */
+  .hero-visual {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-visual {
+      order: 2;
+    }
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+  }
+
+  .revenue-diagram {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .revenue-diagram svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* ── Flow line animations ────────────────────────────────── */
+  @keyframes dash-flow {
+    to {
+      stroke-dashoffset: -22;
+    }
+  }
+
+  .flow-a        { animation: dash-flow 2s linear infinite; }
+  .flow-b        { animation: dash-flow 2.5s linear infinite 0.4s; }
+  .flow-c        { animation: dash-flow 2.2s linear infinite 1s; }
+  .flow-outer    { animation: dash-flow 5s linear infinite; }
+  .flow-outer-2  { animation: dash-flow 5s linear infinite 1.5s; }
+  .flow-outer-3  { animation: dash-flow 5s linear infinite 3s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-a, .flow-b, .flow-c,
+    .flow-outer, .flow-outer-2, .flow-outer-3 {
+      animation: none;
+    }
+  }
+</style>

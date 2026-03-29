@@ -1,0 +1,924 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceTier from '../components/ServiceTier.astro';
+---
+
+<Layout
+  title="Services - Inform Growth"
+  description="Three Pillars. One Team. One Engagement. Sales, Data, and Systems fixed together by one team with zero handoffs."
+>
+  <!-- Page Header -->
+  <section class="page-header section geo-grid">
+    <div class="container">
+      <div class="header-content fade-up">
+        <div class="header-eyebrow">How We Work</div>
+        <h1>Three Pillars. One Team. One Engagement.</h1>
+        <p class="header-subtitle">
+          Companies with aligned RevOps grow 19% faster and are 15% more profitable. We offer three tiers to get you there - and three service pillars that address the full revenue engine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Three-Pillar Overview -->
+  <section class="pillars-section section">
+    <div class="container">
+      <h2 class="text-center fade-up">Your revenue engine has three moving parts. Most firms only fix one.</h2>
+
+      <div class="pillars-grid fade-up">
+        <!-- SALES Pillar -->
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="3,15 7,10 11,13 15,7 19,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="16,9 19,9 19,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Sales</h3>
+          </div>
+          <p class="pillar-tagline">Process Design & Enablement</p>
+          <div class="pillar-problem">
+            <span class="pillar-label">The Problem</span>
+            <p>Reps waste time on admin. Stages don't match how deals actually move. Forecasts are fiction.</p>
+          </div>
+          <div class="pillar-solution">
+            <span class="pillar-label">What We Do</span>
+            <ul class="pillar-list">
+              <li>Sales process audit and redesign</li>
+              <li>Deal stage definitions that match reality</li>
+              <li>AI coaching tools and call intelligence</li>
+              <li>Playbook development and enablement</li>
+            </ul>
+          </div>
+          <div class="pillar-result">
+            <span class="pillar-label">The Result</span>
+            <p>Reps sell more. Managers forecast accurately. Revenue becomes predictable.</p>
+          </div>
+        </div>
+
+        <!-- DATA Pillar -->
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="5" width="16" height="3.5" rx="1.75" stroke="currentColor" stroke-width="1.75"/>
+                <rect x="3" y="10.5" width="16" height="3.5" rx="1.75" stroke="currentColor" stroke-width="1.75"/>
+                <rect x="3" y="16" width="10" height="3.5" rx="1.75" stroke="currentColor" stroke-width="1.75"/>
+              </svg>
+            </span>
+            <h3>Data</h3>
+          </div>
+          <p class="pillar-tagline">Quality & Architecture</p>
+          <div class="pillar-problem">
+            <span class="pillar-label">The Problem</span>
+            <p>Duplicates everywhere. Fields nobody uses. Reports that contradict each other.</p>
+          </div>
+          <div class="pillar-solution">
+            <span class="pillar-label">What We Do</span>
+            <ul class="pillar-list">
+              <li>CRM data audit and cleanup</li>
+              <li>Deduplication and enrichment</li>
+              <li>Schema design and property hygiene</li>
+              <li>Migration and consolidation</li>
+            </ul>
+          </div>
+          <div class="pillar-result">
+            <span class="pillar-label">The Result</span>
+            <p>One version of the truth. Reports that match reality. A foundation AI can actually use.</p>
+          </div>
+        </div>
+
+        <!-- SYSTEMS Pillar -->
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="2.5" stroke="currentColor" stroke-width="1.75"/>
+                <circle cx="17" cy="5" r="2.5" stroke="currentColor" stroke-width="1.75"/>
+                <circle cx="11" cy="17" r="2.5" stroke="currentColor" stroke-width="1.75"/>
+                <line x1="7.5" y1="5" x2="14.5" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="6.2" y1="6.8" x2="9.8" y2="15.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="15.8" y1="6.8" x2="12.2" y2="15.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3>Systems</h3>
+          </div>
+          <p class="pillar-tagline">Integration & Automation</p>
+          <div class="pillar-problem">
+            <span class="pillar-label">The Problem</span>
+            <p>Seven tools that don't talk to each other. Manual data entry. Workflows that break silently.</p>
+          </div>
+          <div class="pillar-solution">
+            <span class="pillar-label">What We Do</span>
+            <ul class="pillar-list">
+              <li>RevTech stack implementation</li>
+              <li>Custom integrations and APIs</li>
+              <li>Workflow automation</li>
+              <li>Reporting and dashboards</li>
+            </ul>
+          </div>
+          <div class="pillar-result">
+            <span class="pillar-label">The Result</span>
+            <p>Systems that work together. Zero manual data entry. Real-time visibility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Tiers Header -->
+  <section class="tiers-header section bg-light">
+    <div class="container">
+      <h2 class="text-center fade-up">Three Ways to Engage</h2>
+      <p class="tiers-intro text-center fade-up">
+        Start with a diagnostic. Scale to a full build. Stay protected with ongoing coverage.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tier 1: Deep-Scan -->
+  <section id="tier-1" class="tier-section section">
+    <div class="container">
+      <div class="tier-grid fade-up">
+        <div class="tier-content">
+          <div class="tier-badge">
+            <span class="tier-number">Tier 1</span>
+            <span class="tier-pillar">Data Pillar - Entry Point</span>
+          </div>
+          <h3>Deep-Scan</h3>
+          <p class="tier-tagline">66x Guaranteed ROI - or You Don't Pay</p>
+          <p class="tier-description">
+            We run four statistical analyses against your HubSpot CRM - Z-Score deal velocity, graph theory orphaned records, temporal logic violations, and fill rate debt - to find hidden pipeline buried in your data.
+          </p>
+          <div class="tier-promise">
+            <strong>Our Promise:</strong> We will find at least $100k in orphaned pipeline or you don't pay. That's a 66x return on a $1,500 engagement-guaranteed.
+          </div>
+          <ul class="tier-deliverables">
+            <li>Bucket A: Found Revenue - reactivation list with scores (0–100) and estimated value</li>
+            <li>Bucket B: At-Risk Pipeline - zombie deals with Z-scores, orphan deals with missing associations</li>
+            <li>Bucket C: Technical Debt - unused properties with cost estimates and bloat ratio</li>
+            <li>4 CSV files ready for HubSpot import (reactivation, at-risk, orphan, debt)</li>
+            <li>Schema Health Report (JSON) with ERD and graph analysis</li>
+            <li>30-minute debrief walkthrough of methodology and findings</li>
+          </ul>
+          <div class="tier-meta">
+            <div class="meta-item">
+              <span class="meta-label">Investment</span>
+              <span class="meta-value">$1,500 flat</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">1-2 weeks</span>
+            </div>
+          </div>
+          <div class="tier-proof">
+            <span class="proof-label">Recent Result:</span>
+            <span class="proof-text">Chief of Staff Network - <strong>32% revenue increase</strong> from same lead volume after Deep-Scan findings implemented.</span>
+          </div>
+          <div class="tier-ctas">
+            <a href="/contact" class="btn btn-primary">Book Deep-Scan</a>
+            <a href="/deep-scan" class="btn btn-secondary">See Full Methodology →</a>
+          </div>
+        </div>
+        <div class="tier-image">
+          <img src="/infrastructure/tier1_diagnostic_cutaway_services.png" alt="Deep-Scan diagnostic cutaway" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tier 2: Revenue Engine Rebuild -->
+  <section id="tier-2" class="tier-section section bg-light">
+    <div class="container">
+      <div class="tier-grid tier-reverse fade-up">
+        <div class="tier-content">
+          <div class="tier-badge">
+            <span class="tier-number">Tier 2</span>
+            <span class="tier-pillar">Sales + Data + Systems - Full Stack</span>
+          </div>
+          <h3>Revenue Engine Rebuild</h3>
+          <p class="tier-tagline">Full Infrastructure Refactor</p>
+          <p class="tier-description">
+            20% of IT budgets are consumed maintaining workarounds. We rebuild your revenue infrastructure from the ground up - Sales, Data, and Systems - for companies ready to stop patching and start engineering durable systems.
+          </p>
+          <div class="tier-promise">
+            <strong>Our Promise:</strong> Your team will spend zero hours per week on data cleanup by the end of this engagement.
+          </div>
+
+          <div class="deliverables-section">
+            <h4>Everything in Tier 1, Plus:</h4>
+            <ul class="tier-deliverables">
+              <li>Complete implementation of prioritized repairs</li>
+              <li>Custom integration engineering (APIs, webhooks, middleware)</li>
+              <li>Data migration and deduplication</li>
+              <li>Automated monitoring and alerting systems</li>
+              <li>Team training and documentation</li>
+              <li>30-day post-launch support</li>
+            </ul>
+          </div>
+
+          <div class="deliverables-section">
+            <h4>Sales Pillar Additions:</h4>
+            <ul class="tier-deliverables sales-deliverables">
+              <li>Sales Process Design - audit current state, define stages that match how deals actually move</li>
+              <li>Rep Enablement Workflows - automated sequences, task creation, handoff triggers</li>
+              <li>AI-Assisted Coaching Tools - call intelligence integration, deal scoring, next-best-action</li>
+              <li>Playbook Development - objection handling, qualification criteria, competitive positioning</li>
+            </ul>
+          </div>
+
+          <div class="tier-meta">
+            <div class="meta-item">
+              <span class="meta-label">Investment</span>
+              <span class="meta-value">$12K–$30K</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">4-8 weeks</span>
+            </div>
+          </div>
+          <div class="tier-proof">
+            <span class="proof-label">Recent Result:</span>
+            <span class="proof-text">Sylva - <strong>75% CRM cost reduction</strong> after consolidating 7 systems into one unified architecture.</span>
+          </div>
+          <a href="/contact" class="btn btn-primary">Start Revenue Engine Rebuild</a>
+        </div>
+        <div class="tier-image">
+          <img src="/infrastructure/tier2_before_after_transformation_services.png" alt="Revenue Engine Rebuild transformation" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tier 3: Flow Assurance -->
+  <section id="tier-3" class="tier-section section">
+    <div class="container">
+      <div class="tier-grid fade-up">
+        <div class="tier-content">
+          <div class="tier-badge">
+            <span class="tier-number">Tier 3</span>
+            <span class="tier-pillar">All Three Pillars - Ongoing</span>
+          </div>
+          <h3>Flow Assurance</h3>
+          <p class="tier-tagline">Continuous Monitoring & Maintenance</p>
+          <p class="tier-description">
+            B2B data decays 22-70% annually. Without continuous monitoring, a clean system today is a dirty system in 12 months. We prevent that. Covers all three pillars - Sales process health, Data quality monitoring, and Systems integrity - in one ongoing retainer.
+          </p>
+          <div class="tier-promise">
+            <strong>Our Promise:</strong> We catch and fix data issues before they become problems - guaranteed uptime on your revenue infrastructure.
+          </div>
+          <ul class="tier-deliverables">
+            <li>24/7 monitoring of revenue stack health</li>
+            <li>Monthly data quality reports</li>
+            <li>Proactive issue detection and resolution</li>
+            <li>Ongoing optimization recommendations</li>
+            <li>Priority support for urgent issues</li>
+            <li>Quarterly strategic reviews</li>
+            <li>First access to new RevOps tooling and integrations</li>
+          </ul>
+          <div class="tier-meta">
+            <div class="meta-item">
+              <span class="meta-label">Investment</span>
+              <span class="meta-value">$3K–$5K/month</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">Ongoing</span>
+            </div>
+          </div>
+          <div class="tier-proof">
+            <span class="proof-label">Recent Result:</span>
+            <span class="proof-text">Howdy Sales - <strong>40% churn reduction</strong> through continuous health monitoring and early intervention.</span>
+          </div>
+          <a href="/contact" class="btn btn-primary">Get Flow Assurance</a>
+        </div>
+        <div class="tier-image">
+          <img src="/infrastructure/tier3_control_panel_dashboard_services.png" alt="Flow Assurance control panel" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Not Sure Section -->
+  <section class="not-sure section bg-light">
+    <div class="container">
+      <div class="not-sure-box fade-up">
+        <h2>Not Sure Which Fits?</h2>
+        <p>
+          Every engagement starts with a Deep-Scan. If the findings point to a larger rebuild, we'll scope it together - with a fixed number before you commit to anything.
+        </p>
+        <div class="not-sure-ctas">
+          <a href="/contact" class="btn btn-primary btn-large">Book Deep-Scan</a>
+          <a href="/contact" class="btn btn-secondary">Schedule Discovery Call →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-SCAN FEATURE -->
+  <section class="deepscan-section section">
+    <div class="container">
+      <h2 class="text-center fade-up">Every Revenue Engine Starts with Data.</h2>
+      <p class="deepscan-intro text-center fade-up">
+        Before we touch your systems, we run the Deep-Scan - four statistical analyses against your CRM that surface exactly where revenue is hiding.
+      </p>
+      <div class="deepscan-grid fade-up">
+        <div class="deepscan-card">
+          <h4>Zombie Deals</h4>
+          <p>Deals stuck in your forecast going nowhere - identified by statistical analysis of stage velocity across your full pipeline.</p>
+          <span class="deepscan-badge">Z-Score Analysis</span>
+        </div>
+        <div class="deepscan-card">
+          <h4>Orphaned Records</h4>
+          <p>High-value deals with zero contact associations - no one to call, no path to close.</p>
+          <span class="deepscan-badge">Graph Theory</span>
+        </div>
+        <div class="deepscan-card">
+          <h4>Data Violations</h4>
+          <p>Impossible timestamps and stale open records corrupting every report you pull.</p>
+          <span class="deepscan-badge">Temporal Logic</span>
+        </div>
+        <div class="deepscan-card">
+          <h4>Technical Debt</h4>
+          <p>Properties below 1% usage creating storage waste with zero operational value.</p>
+          <span class="deepscan-badge">Fill Rate</span>
+        </div>
+      </div>
+      <div class="deepscan-guarantee">
+        <a href="/contact" class="btn btn-primary btn-large">Book Your Deep-Scan</a>
+        <p class="guarantee-sub">$1,500 flat · 1-2 weeks · HubSpot today, Salesforce coming soon</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--navy);
+    padding: var(--space-section) 0;
+  }
+
+  .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: var(--space-6);
+  }
+
+  .header-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--off-white);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Three Pillars Section */
+  .pillars-section {
+    background-color: var(--page-bg);
+  }
+
+  .pillars-section h2 {
+    max-width: 700px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 900px) {
+    .pillars-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pillar-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .pillar-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .pillar-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .pillar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(14, 165, 233, 0.1);
+    border-radius: 10px;
+    color: var(--sky-blue);
+    flex-shrink: 0;
+  }
+
+  .pillar-icon svg {
+    display: block;
+  }
+
+  .pillar-header h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .pillar-tagline {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .pillar-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+  }
+
+  .pillar-problem p,
+  .pillar-result p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .pillar-list li {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    padding-left: var(--space-5);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .pillar-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--sky-blue);
+    font-weight: 700;
+  }
+
+  /* Tiers Header */
+  .tiers-header {
+    padding-bottom: var(--space-8);
+  }
+
+  .tiers-header h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .tiers-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+  }
+
+  /* Tier Sections */
+  .tier-section {
+    padding: var(--space-section) 0;
+  }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .tier-grid {
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .tier-reverse {
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    .tier-reverse .tier-content {
+      order: 2;
+    }
+
+    .tier-reverse .tier-image {
+      order: 1;
+    }
+  }
+
+  .tier-badge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .tier-number {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--navy);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-pillar {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--sky-blue);
+    background-color: rgba(14, 165, 233, 0.1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-content h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-2);
+  }
+
+  .tier-tagline {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--emerald);
+    margin-bottom: var(--space-4);
+  }
+
+  .tier-description {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .tier-promise {
+    background-color: var(--pale-blue);
+    padding: var(--space-5);
+    border-radius: var(--card-radius);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--body-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .tier-promise strong {
+    color: var(--navy);
+  }
+
+  .deliverables-section {
+    margin-bottom: var(--space-6);
+  }
+
+  .deliverables-section h4 {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: var(--space-3);
+  }
+
+  .tier-deliverables {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .tier-deliverables li {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    padding-left: var(--space-6);
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .tier-deliverables li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--emerald);
+    font-weight: 700;
+  }
+
+  .sales-deliverables li::before {
+    content: '→';
+    color: var(--sky-blue);
+  }
+
+  .tier-meta {
+    display: flex;
+    gap: var(--space-8);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: var(--space-6);
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .meta-label {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .meta-value {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  .tier-proof {
+    background-color: var(--pale-blue);
+    padding: var(--space-4);
+    border-radius: var(--card-radius);
+    margin-bottom: var(--space-6);
+    border-left: 4px solid var(--emerald);
+  }
+
+  .proof-label {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+
+  .proof-text {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--body-text);
+    line-height: 1.5;
+  }
+
+  .proof-text strong {
+    color: var(--emerald);
+  }
+
+  .tier-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .tier-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tier-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--card-radius);
+  }
+
+  /* Not Sure Section */
+  .not-sure-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-2xl);
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+    border: 2px solid var(--sky-blue);
+  }
+
+  .not-sure-box h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-4);
+  }
+
+  .not-sure-box p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
+  }
+
+  .not-sure-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .btn-large {
+    padding: 16px 32px;
+    font-size: var(--text-lg);
+  }
+
+  /* Deep-Scan Section */
+  .deepscan-section {
+    background-color: var(--page-bg);
+  }
+
+  .deepscan-intro {
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+  }
+
+  .deepscan-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .deepscan-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .deepscan-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .deepscan-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deepscan-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .deepscan-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-3);
+  }
+
+  .deepscan-card p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .deepscan-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 500;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: rgba(14, 165, 233, 0.1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 4px;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    align-self: flex-start;
+  }
+
+  .deepscan-guarantee {
+    text-align: center;
+  }
+
+  .guarantee-sub {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--slate);
+    margin-top: var(--space-6);
+  }
+
+  /* Scroll animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll-triggered fade-up animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>

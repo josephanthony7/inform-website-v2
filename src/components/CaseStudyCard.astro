@@ -1,0 +1,190 @@
+---
+interface Props {
+  metric: string;
+  summary?: string;
+  problem?: string[] | string;
+  plumbing?: string[] | string;
+  flow?: string[] | string;
+  link?: string;
+  logo?: string;
+  client?: string;
+}
+
+const { metric, summary, problem, plumbing, flow, link, logo, client } = Astro.props;
+const CardTag = link ? 'a' : 'div';
+const isCompact = !problem && !plumbing && !flow;
+---
+
+<CardTag href={link} class:list={['case-study-card', isCompact && 'compact']}>
+  {logo && (
+    <div class="card-logo">
+      <img src={logo} alt={client ? `${client} logo` : 'Client logo'} />
+    </div>
+  )}
+  <div class="card-metric">{metric}</div>
+  {summary && <p class="card-summary">{summary}</p>}
+  {problem && (
+    <div class="card-section">
+      <div class="section-label">PROBLEM</div>
+      {Array.isArray(problem) ? (
+        <ul class="section-list">
+          {problem.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <p class="section-content">{problem}</p>
+      )}
+    </div>
+  )}
+  {plumbing && (
+    <div class="card-section">
+      <div class="section-label">PLUMBING</div>
+      {Array.isArray(plumbing) ? (
+        <ul class="section-list">
+          {plumbing.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <p class="section-content">{plumbing}</p>
+      )}
+    </div>
+  )}
+  {flow && (
+    <div class="card-section">
+      <div class="section-label">FLOW</div>
+      {Array.isArray(flow) ? (
+        <ul class="section-list">
+          {flow.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <p class="section-content">{flow}</p>
+      )}
+    </div>
+  )}
+  {link && <span class="card-link">Read Full Case Study →</span>}
+</CardTag>
+
+<style>
+  .case-study-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    height: 100%;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-logo {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-logo img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-height: 48px;
+    max-width: 160px;
+    object-fit: contain;
+    object-position: left center;
+    transition: all 0.2s ease;
+  }
+
+  .case-study-card:hover .card-logo img {
+    transform: scale(1.05);
+  }
+
+  a.case-study-card {
+    cursor: pointer;
+  }
+
+  a.case-study-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--sky-blue);
+  }
+
+  .case-study-card.compact {
+    gap: var(--space-md);
+  }
+
+  .card-metric {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--emerald);
+    line-height: 1.2;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .card-summary {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .card-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .section-content {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .section-list {
+    margin: 0;
+    padding-left: var(--space-lg);
+    list-style: disc;
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+  }
+
+  .section-list li {
+    margin-bottom: var(--space-xs);
+  }
+
+  .card-link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--sky-blue);
+    margin-top: auto;
+    transition: color var(--transition-fast);
+  }
+
+  .case-study-card:hover .card-link {
+    color: var(--sky-blue-light);
+  }
+</style>

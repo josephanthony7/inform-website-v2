@@ -1,0 +1,950 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Deep-Scan: Revenue Recovery Engine - Inform Growth"
+  description="Four statistical analyses against your HubSpot CRM: Z-Score deal velocity, graph theory orphaned records, temporal logic violations, and fill rate debt."
+>
+  <!-- Hero Section -->
+  <section class="section ds-hero geo-grid">
+    <div class="container">
+      <div class="ds-hero-grid">
+        <div class="ds-hero-content">
+          <div class="ds-badge">Revenue Recovery Engine</div>
+          <h1>A Revenue Recovery Engine</h1>
+          <p class="ds-framing">
+            The Deep-Scan is where every Inform Growth engagement begins. Before we redesign your Sales process, refactor your Systems, or rebuild your Data infrastructure, we find the pipeline already buried in your CRM. This is how we prove ROI before the real work starts.
+          </p>
+          <p class="ds-hero-subtitle">
+            We scan your HubSpot and run four types of statistical analysis to find hidden pipeline - zombie deals, orphaned records, data violations, and technical debt.
+          </p>
+          <a href="/contact" class="btn btn-primary btn-large">Book a Deep-Scan</a>
+        </div>
+        <div class="ds-hero-image">
+          <img src="/infrastructure/tier1_diagnostic_cutaway_services.png" alt="Deep-Scan diagnostic cutaway" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 4 Analyses -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">The 4 Analyses</h2>
+      <p class="ds-section-intro text-center">
+        Every Deep-Scan runs the same four statistical engines against your HubSpot data. No guessing. No AI probability scores. Just math.
+      </p>
+      <div class="grid grid-2 analyses-grid">
+
+        <div class="analysis-card">
+          <div class="analysis-badge">Z-Score Analysis</div>
+          <h3>Deal Velocity Outliers</h3>
+          <p>
+            We calculate the mean and standard deviation of days-in-stage for every deal stage in your pipeline. Any deal sitting more than 3 standard deviations above the stage average is flagged as a zombie deal - still counting toward your forecast, still blocking your pipeline view.
+          </p>
+          <div class="analysis-stat">
+            <span class="stat-label">Threshold</span>
+            <span class="stat-value">3+ SDs = zombie deal</span>
+          </div>
+        </div>
+
+        <div class="analysis-card">
+          <div class="analysis-badge">Graph Theory</div>
+          <h3>Orphaned Records</h3>
+          <p>
+            We map every relationship between deals, contacts, and companies using graph degree centrality. Any deal valued above $10K with a graph degree centrality of 0 - no associated contacts, no associated company - is flagged as an orphan. No one to call. No path to close.
+          </p>
+          <div class="analysis-stat">
+            <span class="stat-label">Threshold</span>
+            <span class="stat-value">&gt;$10K deal + degree centrality 0</span>
+          </div>
+        </div>
+
+        <div class="analysis-card">
+          <div class="analysis-badge">Temporal Logic</div>
+          <h3>Data Violations</h3>
+          <p>
+            We run Boolean timestamp checks across your entire deal history. Close date before create date. Open deals stale for 365+ days. Close dates set 5+ years in the future. Each is a logical impossibility that corrupts pipeline reporting and revenue forecasting.
+          </p>
+          <div class="analysis-stat">
+            <span class="stat-label">Checks</span>
+            <span class="stat-value">3 Boolean timestamp rules</span>
+          </div>
+        </div>
+
+        <div class="analysis-card">
+          <div class="analysis-badge">Fill Rate Analysis</div>
+          <h3>Technical Debt</h3>
+          <p>
+            We sample 1,000 records across your HubSpot schema and calculate the population percentage for every property. Any property with a fill rate below 1% is flagged as technical debt - storage cost with zero operational value, degrading your data quality and AI readiness.
+          </p>
+          <div class="analysis-stat">
+            <span class="stat-label">Threshold</span>
+            <span class="stat-value">&lt;1% fill rate = technical debt</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">What You Get</h2>
+      <p class="ds-section-intro text-center">
+        Three deliverable buckets, four CSV exports, a schema health report, and a 30-minute debrief.
+      </p>
+
+      <div class="grid grid-3 buckets-grid">
+
+        <div class="bucket-card bucket-a">
+          <div class="bucket-label">Bucket A</div>
+          <h3>Found Revenue</h3>
+          <ul class="bucket-list">
+            <li>Deal IDs, contact IDs, estimated value</li>
+            <li>Days since last activity</li>
+            <li>Reactivation score (0–100)</li>
+            <li>Closed-lost from 9–15 months ago (not lost to competitors)</li>
+            <li>Dormant contacts with prior engagement history</li>
+          </ul>
+        </div>
+
+        <div class="bucket-card bucket-b">
+          <div class="bucket-label">Bucket B</div>
+          <h3>At-Risk Pipeline</h3>
+          <ul class="bucket-list">
+            <li>Zombie deals: deal IDs, Z-scores, days in stage</li>
+            <li>Stage mean and SD for context</li>
+            <li>Orphan deals: deal IDs, estimated value, missing associations</li>
+            <li>Total at-risk pipeline value</li>
+          </ul>
+        </div>
+
+        <div class="bucket-card bucket-c">
+          <div class="bucket-label">Bucket C</div>
+          <h3>Technical Debt</h3>
+          <ul class="bucket-list">
+            <li>Unused properties: name, fill rate, estimated cost</li>
+            <li>Duplicate/similar properties with similarity %</li>
+            <li>Bloat ratio across your schema</li>
+            <li>Estimated monthly and annual waste ($50/unused property)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="exports-grid">
+        <div class="exports-card">
+          <h4>CSV Exports (HubSpot-Ready)</h4>
+          <ul class="export-list">
+            <li><code>reactivation_contacts.csv</code> - import as static list for immediate outreach</li>
+            <li><code>at_risk_deals.csv</code> - for sales team intervention</li>
+            <li><code>orphan_deals.csv</code> - flag for manual contact association</li>
+            <li><code>technical_debt_properties.csv</code> - for cleanup prioritization</li>
+          </ul>
+        </div>
+        <div class="exports-card">
+          <h4>Schema Health Report (JSON)</h4>
+          <ul class="export-list">
+            <li>Property metadata with fill rates, usage stats, data type validation</li>
+            <li>ERD showing object associations across your CRM</li>
+            <li>Graph analysis showing relationship density and orphaned nodes</li>
+          </ul>
+        </div>
+        <div class="exports-card">
+          <h4>30-Minute Debrief</h4>
+          <ul class="export-list">
+            <li>Walkthrough of the methodology and Z-score calculations</li>
+            <li>Review of specific findings from your scan</li>
+            <li>Tactical next steps prioritized by revenue impact</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Statistics, Not AI -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Statistics, Not AI</h2>
+      <p class="ds-section-intro text-center">
+        AI gives you probability. Statistics give you certainty.
+      </p>
+
+      <div class="grid grid-2 stats-comparison">
+        <div class="comparison-card comparison-ai">
+          <div class="comparison-label">AI Says</div>
+          <p class="comparison-quote">"This deal is 65% likely to close."</p>
+          <p class="comparison-note">Probability. A guess weighted by patterns. Black-box reasoning you cannot audit or reproduce.</p>
+        </div>
+        <div class="comparison-card comparison-stats">
+          <div class="comparison-label">Statistics Says</div>
+          <p class="comparison-quote">"This deal is 4.2 SDs outside normal - 99.997% probability of being an outlier."</p>
+          <p class="comparison-note">Certainty. A mathematical fact derived from your own data. Fully explainable and reproducible.</p>
+        </div>
+      </div>
+
+      <div class="worked-example">
+        <h4>Worked Example: Z-Score Calculation</h4>
+        <p>A deal sitting in the Demo stage for 87 days. Stage average: 21 days. Stage standard deviation: 16 days.</p>
+        <div class="formula">
+          <code>(87 − 21) / 16 = <strong>4.1</strong></code>
+        </div>
+        <p class="formula-note">Z-score of 4.1. That deal is a zombie. It should have moved or been closed-lost months ago. It is distorting your forecast and hiding real pipeline.</p>
+      </div>
+
+      <div class="properties-grid">
+        <div class="property-card">
+          <div class="property-name">Objective</div>
+          <p>Derived from your data, not trained on someone else's.</p>
+        </div>
+        <div class="property-card">
+          <div class="property-name">Reproducible</div>
+          <p>Run the same scan tomorrow and get the same result.</p>
+        </div>
+        <div class="property-card">
+          <div class="property-name">Explainable</div>
+          <p>Every flag comes with the calculation that produced it.</p>
+        </div>
+        <div class="property-card">
+          <div class="property-name">Auditable</div>
+          <p>Show your CFO exactly how we found $100k in orphaned pipeline.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What This Is NOT -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">What This Is NOT</h2>
+
+      <div class="not-box">
+        <ul class="not-list">
+          <li><strong>Not Insycle</strong> - deduplication and data normalization</li>
+          <li><strong>Not HubSpot Operations Hub</strong> - workflow cleanup and property standardization</li>
+          <li><strong>Not Dedupely</strong> - duplicate record merging</li>
+          <li><strong>Not RevOps-as-a-Service</strong> - ongoing CRM management</li>
+        </ul>
+        <p class="not-tagline">
+          Data cleaning tools make your CRM prettier.<br />
+          <strong>We make your CRM more profitable.</strong>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section ds-final-cta">
+    <div class="container">
+      <div class="final-cta-box">
+        <div class="guarantee-badge">Guaranteed</div>
+        <h2>$100k in Orphaned Pipeline Found - or You Don't Pay</h2>
+        <p class="cta-subtext">
+          That's a 66x return on a $1,500 engagement. We find the money or the scan is free.
+        </p>
+        <a href="/contact" class="btn btn-primary btn-large">Book Your Deep-Scan</a>
+        <p class="platform-note">Currently built for HubSpot. Salesforce adapter in development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens After -->
+  <section class="section after-section">
+    <div class="container">
+      <h2 class="text-center">What Happens After the Deep-Scan</h2>
+      <p class="ds-section-intro text-center">
+        The Deep-Scan shows you exactly where your revenue is hiding. What happens next is up to you.
+      </p>
+
+      <div class="paths-grid">
+        <div class="path-card path-a">
+          <div class="path-label">Path A</div>
+          <h3>Take It and Run</h3>
+          <p>
+            You take the findings, the CSV exports, and the schema report - and your team implements the fixes internally. We've given you the map. You execute.
+          </p>
+          <p class="path-outcome">
+            <strong>Best for:</strong> Teams with internal RevOps capacity who need direction, not execution.
+          </p>
+        </div>
+
+        <div class="path-card path-b">
+          <div class="path-label">Path B</div>
+          <h3>Full Revenue Engine Rebuild</h3>
+          <p>
+            Phase 2 of the engagement. We take everything we found in the Deep-Scan and fix it - plus redesign your sales process, rebuild your data architecture, and integrate your systems into a single revenue engine.
+          </p>
+          <p class="path-outcome">
+            <strong>Best for:</strong> Companies ready for a complete overhaul of how revenue flows through their organization.
+          </p>
+          <a href="/services#tier-2" class="path-link">Learn about Revenue Engine Rebuild →</a>
+        </div>
+
+        <div class="path-card path-c">
+          <div class="path-label">Path C</div>
+          <h3>Flow Assurance Retainer</h3>
+          <p>
+            Ongoing monitoring and maintenance. We keep your revenue engine running clean - catching issues before they compound and keeping your data, systems, and sales process healthy.
+          </p>
+          <p class="path-outcome">
+            <strong>Best for:</strong> Companies who've done the rebuild and want to stay ahead of decay.
+          </p>
+          <a href="/services#tier-3" class="path-link">Learn about Flow Assurance →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Hero */
+  .ds-hero {
+    background-color: var(--section-dark-bg);
+  }
+
+  .ds-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .ds-hero-grid {
+      grid-template-columns: 1.4fr 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  .ds-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .ds-badge {
+    display: inline-block;
+    background-color: var(--roi-green);
+    color: var(--carbon-gray);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: fit-content;
+  }
+
+  .ds-hero-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ds-hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ds-hero-image img {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-lg);
+    width: fit-content;
+  }
+
+  /* Section Intro */
+  .ds-section-intro {
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+  }
+
+  /* Analyses Grid */
+  .analyses-grid {
+    margin-top: var(--space-xl);
+  }
+
+  .analysis-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: border-color var(--transition-base);
+  }
+
+  .analysis-card:hover {
+    border-color: var(--roi-green);
+  }
+
+  .analysis-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--roi-green);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--roi-green);
+    padding: 2px var(--space-sm);
+    width: fit-content;
+  }
+
+  .analysis-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .analysis-card p {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .analysis-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--space-sm);
+    margin-top: auto;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--roi-green);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  /* Buckets */
+  .buckets-grid {
+    margin-bottom: var(--space-xl);
+  }
+
+  .bucket-card {
+    background-color: var(--card-bg);
+    padding: var(--space-xl);
+    border-top: 4px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .bucket-a {
+    border-top-color: var(--roi-green);
+  }
+
+  .bucket-b {
+    border-top-color: var(--rust-orange);
+  }
+
+  .bucket-c {
+    border-top-color: var(--muted-text);
+  }
+
+  .bucket-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--roi-green);
+  }
+
+  .bucket-b .bucket-label {
+    color: var(--rust-orange);
+  }
+
+  .bucket-c .bucket-label {
+    color: var(--muted-text);
+  }
+
+  .bucket-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .bucket-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .bucket-list li {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    padding-left: var(--space-md);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .bucket-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--roi-green);
+    font-weight: 700;
+  }
+
+  /* Exports */
+  .exports-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .exports-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .exports-card {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--roi-green);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .exports-card h4 {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .export-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .export-list li {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.5;
+    padding-left: var(--space-md);
+    position: relative;
+  }
+
+  .export-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--roi-green);
+    font-weight: 700;
+  }
+
+  .export-list code {
+    font-family: var(--font-mono);
+    color: var(--roi-green);
+    font-size: var(--text-xs);
+  }
+
+  /* Statistics Comparison */
+  .stats-comparison {
+    margin-bottom: var(--space-xl);
+  }
+
+  .comparison-card {
+    padding: var(--space-xl);
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .comparison-ai {
+    border-color: var(--rust-orange);
+  }
+
+  .comparison-stats {
+    border-color: var(--roi-green);
+  }
+
+  .comparison-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-text);
+  }
+
+  .comparison-ai .comparison-label {
+    color: var(--rust-orange);
+  }
+
+  .comparison-stats .comparison-label {
+    color: var(--roi-green);
+  }
+
+  .comparison-quote {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .comparison-note {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Worked Example */
+  .worked-example {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-subtle);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .worked-example h4 {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--roi-green);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .worked-example p {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .formula {
+    background-color: var(--panel-bg);
+    padding: var(--space-lg);
+    text-align: center;
+    margin: var(--space-md) 0;
+  }
+
+  .formula code {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xl);
+    color: var(--roi-green);
+    font-weight: 700;
+  }
+
+  .formula code strong {
+    color: var(--roi-green);
+  }
+
+  .formula-note {
+    margin-bottom: 0;
+  }
+
+  /* Properties Grid */
+  .properties-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .properties-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .property-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    padding: var(--space-lg);
+    text-align: center;
+  }
+
+  .property-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--roi-green);
+    margin-bottom: var(--space-sm);
+  }
+
+  .property-card p {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* What This Is NOT */
+  .not-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--panel-bg);
+    border: 3px solid var(--rust-orange);
+    padding: var(--space-2xl);
+  }
+
+  .not-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .not-list li {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    padding-left: var(--space-md);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .not-list li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: var(--rust-orange);
+    font-weight: 700;
+  }
+
+  .not-list li strong {
+    color: var(--text-color);
+  }
+
+  .not-tagline {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: var(--rust-orange);
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .not-tagline strong {
+    color: var(--roi-green);
+  }
+
+  /* Final CTA */
+  .ds-final-cta {
+    background-color: var(--section-light-bg);
+  }
+
+  .final-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .guarantee-badge {
+    display: inline-block;
+    background-color: var(--roi-green);
+    color: var(--carbon-gray);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .final-cta-box h2 {
+    margin: 0;
+    font-size: var(--text-3xl);
+  }
+
+  .cta-subtext {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .platform-note {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  /* Framing paragraph */
+  .ds-framing {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--off-white);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    padding: var(--space-6);
+    background-color: rgba(14, 165, 233, 0.1);
+    border-left: 4px solid var(--sky-blue);
+    border-radius: var(--card-radius);
+  }
+
+  /* What Happens After Section */
+  .after-section {
+    background-color: var(--page-bg);
+  }
+
+  .paths-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 900px) {
+    .paths-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .path-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    border-top: 4px solid var(--border-subtle);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .path-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .path-a {
+    border-top-color: var(--slate);
+  }
+
+  .path-b {
+    border-top-color: var(--sky-blue);
+  }
+
+  .path-c {
+    border-top-color: var(--emerald);
+  }
+
+  .path-label {
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .path-a .path-label {
+    color: var(--slate);
+  }
+
+  .path-b .path-label {
+    color: var(--sky-blue);
+  }
+
+  .path-c .path-label {
+    color: var(--emerald);
+  }
+
+  .path-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .path-card p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .path-outcome {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+    margin-top: auto;
+  }
+
+  .path-outcome strong {
+    color: var(--text-color);
+  }
+
+  .path-link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--sky-blue);
+    transition: color var(--transition-fast);
+  }
+
+  .path-link:hover {
+    color: var(--sky-blue-light);
+  }
+</style>
