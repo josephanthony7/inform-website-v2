@@ -4,6 +4,7 @@ import Founders from '../components/Founders.astro';
 import FAQ from '../components/FAQ.astro';
 import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro';
+import RequestRoutingVisual from '../components/RequestRoutingVisual.astro';
 ---
 
 <Layout
@@ -14,7 +15,7 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
   <section class="hero-section geo-grid">
     <div class="container">
       <div class="hero-content">
-        <h1><span class="highlight-word">Revenue</span><br/>Operations, Data, and Systems<br/><span class="rotating-word-wrap"><span class="rotating-word">Explored</span></span></h1>
+        <h1><span class="highlight-word">Revenue</span><br/>Operations, Data, and Systems<br/><span class="rotating-word-wrap"><span class="rotating-word">Built to Compound</span></span></h1>
         <p class="hero-subtitle">
           We build the AI layer that connects your data, systems, and people - so your entire revenue engine runs from one source of truth.
         </p>
@@ -42,15 +43,15 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
         </div>
         <div class="proof-stat">
           <span class="stat-number">75%</span>
-          <span class="stat-label">Cost Reduction</span>
+          <span class="stat-label">CRM Cost Reduction</span>
         </div>
         <div class="proof-stat">
-          <span class="stat-number">$100K+</span>
-          <span class="stat-label">Pipeline Found</span>
+          <span class="stat-number">27%</span>
+          <span class="stat-label">Marketing ROI Lift</span>
         </div>
         <div class="proof-stat">
-          <span class="stat-number">400K+</span>
-          <span class="stat-label">Records Migrated</span>
+          <span class="stat-number">40%</span>
+          <span class="stat-label">Data Cost Savings</span>
         </div>
       </div>
       <div class="logo-strip" role="list" aria-label="Clients">
@@ -102,6 +103,72 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
   <!-- SECTION: REVENUE INTELLIGENCE LOOP -->
   <RevenueIntelligenceLoop />
 
+  <!-- SECTION: REQUEST ROUTING VISUAL -->
+  <section style="max-width:900px;margin:4rem auto;padding:0 1.5rem;">
+    <RequestRoutingVisual />
+  </section>
+
+  <!-- SECTION: PROCESS -->
+  <section class="section process-section">
+    <div class="container">
+      <div class="process-header">
+        <h2>Your Revenue Stack, Compounding</h2>
+        <p class="process-intro">
+          With a single source of truth powering your revenue stack, AI can learn what works, scale best practices across teams, and continuously improve messaging, outbound, and sales performance.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <h3>Explore</h3>
+          <p>Audit your CRM, data, and systems. Find where revenue leaks.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <h3>Codify</h3>
+          <p>Define pipeline stages, ARR rules, and clean data standards. Once.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <h3>Connect</h3>
+          <p>One AI layer links your tools. Every team pulls from one accurate source of truth.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <h3>Compound</h3>
+          <p>New hires inherit everything. New tools plug in. Value accumulates.</p>
+        </div>
+      </div>
+
+      <div class="process-benefits">
+        <div class="benefit-item">
+          <h4>Faster decisions</h4>
+          <p>Revenue answers in minutes, not days</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Cleaner data</h4>
+          <p>One definition per field, always validated</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Aligned teams</h4>
+          <p>Sales, Finance, RevOps - same source of truth</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Empowered teams</h4>
+          <p>Ready-to-use templates. Full pipeline visibility.</p>
+        </div>
+      </div>
+
+      <div class="process-handoff">
+        <p><strong>Full handoff included.</strong> We train your team, document everything, and support you as you scale.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 7: FOUNDERS (Non-negotiable) -->
   <Founders />
 
@@ -131,7 +198,7 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
           <summary class="faq-question">What's the $100K guarantee actually mean?</summary>
           <div class="faq-answer">
             <p>We run our Deep-Scan diagnostic against your CRM, and if we don't find at least $100K in recoverable pipeline - orphaned deals, zombie opportunities, reactivation candidates - you don't pay the $1,500 fee.</p>
-            <p>We're confident because the math is on our side. The average mid-market B2B company has 15–25% of revenue leaking due to data issues.</p>
+            <p>We're confident because the math is on our side. The average mid-market B2B company has 15-25% of revenue leaking due to data issues.</p>
           </div>
         </details>
 
@@ -335,6 +402,145 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
     color: var(--slate);
     opacity: 0.7;
     margin-top: var(--space-6);
+  }
+
+  /* PROCESS SECTION */
+  .process-section {
+    background-color: var(--section-light-bg);
+  }
+
+  .process-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .process-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: var(--space-md);
+  }
+
+  .process-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .process-step {
+    background-color: white;
+    border-radius: 12px;
+    padding: var(--space-xl);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .step-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--sky-blue);
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .process-step h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: var(--space-sm);
+  }
+
+  .process-step p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .process-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .process-benefits {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-benefits {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .benefit-item {
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .benefit-item h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-xs);
+  }
+
+  .benefit-item p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: #475569;
+    margin: 0;
+  }
+
+  .process-handoff {
+    background-color: white;
+    border-left: 4px solid var(--sky-blue);
+    padding: var(--space-lg);
+    border-radius: 0 12px 12px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .process-handoff p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .process-handoff strong {
+    color: #0f172a;
   }
 
   /* SECTION 3: THREE PILLARS */
@@ -1064,20 +1270,5 @@ import RevenueIntelligenceLoop from '../components/RevenueIntelligenceLoop.astro
     });
 
     fadeElements.forEach(el => observer.observe(el));
-
-    // Rotating word animation
-    const words = ['Explored', 'Evaluated', 'Mapped', 'Empowered'];
-    let currentIndex = 0;
-    const rotatingWord = document.querySelector('.rotating-word');
-
-    if (rotatingWord) {
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % words.length;
-        rotatingWord.style.animation = 'none';
-        rotatingWord.offsetHeight; // Trigger reflow
-        rotatingWord.textContent = words[currentIndex];
-        rotatingWord.style.animation = 'fadeInUp 0.5s ease';
-      }, 2500);
-    }
   });
 </script>

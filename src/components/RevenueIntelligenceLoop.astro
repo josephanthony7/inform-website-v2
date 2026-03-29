@@ -1,334 +1,400 @@
 ---
 // RevenueIntelligenceLoop.astro
-// The Revenue Intelligence Loop - animated figure-8 diagram with tool logos
+// The Revenue Intelligence Loop — animated figure-8 diagram
+// Shows how Inform Growth connects the full outbound cycle with
+// an intelligence return loop. Powered by simple-icons (jsdelivr CDN).
+// PLACEMENT: After the proof strip / client logo section, before Deep-Scan.
 ---
 
 <section class="loop-section">
   <div class="container">
 
     <div class="loop-header">
-      <h2 class="loop-title">Your Revenue Stack, Compounding</h2>
-      <p class="loop-sub">We codify your revenue operations into shared infrastructure that every team inherits.</p>
+      <p class="loop-eyebrow">The system behind the results</p>
+      <h2 class="loop-title">The Revenue Intelligence Loop</h2>
+      <p class="loop-sub">Every signal, call, and email feeds back into a shared foundation. Only possible with Inform Growth.</p>
     </div>
 
     <div class="loop-diagram-wrap">
-      <svg class="loop-svg"
+      <svg
         width="100%"
-        viewBox="50 80 900 440"
+        viewBox="0 0 800 510"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="Revenue Intelligence Loop diagram"
+        aria-label="Revenue Intelligence Loop diagram showing how Inform Growth connects signals, identification, enrichment, content generation, engagement, and compounding intelligence"
       >
         <defs>
-          <pattern id="loop-dg" width="30" height="30" patternUnits="userSpaceOnUse">
-            <circle cx=".5" cy=".5" r=".5" fill="rgba(14,165,233,.05)"/>
+          <pattern id="loop-dg" width="26" height="26" patternUnits="userSpaceOnUse">
+            <circle cx=".5" cy=".5" r=".5" fill="rgba(14,165,233,.07)"/>
           </pattern>
-          <path id="loop-f8" d="M500,310 C500,180 200,180 200,310 C200,440 500,440 500,310 C500,180 800,180 800,310 C800,440 500,440 500,310"/>
-          <path id="loop-ret" d="M650,430 Q500,560 350,430"/>
+          <path id="loop-f8" d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244 C400,136 642,136 642,244 C642,352 400,352 400,244"/>
+          <path id="loop-ret" d="M518,330 Q400,436 282,330"/>
+          <radialGradient id="loop-hubglow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+          </radialGradient>
         </defs>
 
-        <!-- Background - white -->
-        <rect x="0" y="0" width="1000" height="600" fill="#ffffff"/>
+        <!-- Background -->
+        <rect width="800" height="510" fill="#0F2336"/>
+        <rect width="800" height="510" fill="url(#loop-dg)"/>
+
+        <!-- Ambient stars -->
+        <circle cx="60" cy="60" r="1" fill="rgba(14,165,233,.2)"/>
+        <circle cx="738" cy="66" r="1.1" fill="rgba(14,165,233,.16)"/>
+        <circle cx="400" cy="44" r=".9" fill="rgba(14,165,233,.2)"/>
+        <circle cx="72" cy="400" r=".8" fill="rgba(14,165,233,.12)"/>
+        <circle cx="724" cy="398" r=".9" fill="rgba(14,165,233,.12)"/>
 
         <!-- Figure-8 glow -->
-        <path d="M500,310 C500,180 200,180 200,310 C200,440 500,440 500,310" stroke="rgba(14,165,233,.08)" stroke-width="24" fill="none"/>
-        <path d="M500,310 C500,180 800,180 800,310 C800,440 500,440 500,310" stroke="rgba(14,165,233,.08)" stroke-width="24" fill="none"/>
+        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(14,165,233,.04)" stroke-width="20" fill="none"/>
+        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(14,165,233,.04)" stroke-width="20" fill="none"/>
 
         <!-- Figure-8 animated paths -->
-        <path d="M500,310 C500,180 200,180 200,310 C200,440 500,440 500,310" stroke="rgba(14,165,233,.25)" stroke-width="2" stroke-dasharray="10 6" fill="none">
-          <animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/>
+        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(14,165,233,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
+          <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="0.8s" repeatCount="indefinite"/>
         </path>
-        <path d="M500,310 C500,180 800,180 800,310 C800,440 500,440 500,310" stroke="rgba(14,165,233,.25)" stroke-width="2" stroke-dasharray="10 6" fill="none">
-          <animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/>
+        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(14,165,233,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
+          <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="0.8s" repeatCount="indefinite"/>
         </path>
 
         <!-- Return arc glow + path -->
-        <path d="M650,430 Q500,560 350,430" stroke="rgba(5,150,105,.1)" stroke-width="16" fill="none"/>
-        <path d="M650,430 Q500,560 350,430" stroke="rgba(5,150,105,.35)" stroke-width="2" stroke-dasharray="8 6" fill="none">
-          <animate attributeName="stroke-dashoffset" from="28" to="0" dur="1s" repeatCount="indefinite"/>
+        <path d="M518,330 Q400,436 282,330" stroke="rgba(5,150,105,.06)" stroke-width="14" fill="none"/>
+        <path d="M518,330 Q400,436 282,330" stroke="rgba(5,150,105,.42)" stroke-width="1.25" stroke-dasharray="6 5" fill="none">
+          <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.8s" repeatCount="indefinite"/>
         </path>
 
+        <!-- Return arc label -->
+        <text x="400" y="456" text-anchor="middle"
+              font-family="'Inter',system-ui,sans-serif" font-size="10.5"
+              fill="rgba(5,150,105,.4)" letter-spacing=".03em">
+          Every call · email · signal returns. Compounding with every deal.
+        </text>
 
-        <!-- N1: SIGNALS (350,195) -->
-        <circle cx="350" cy="195" r="28" stroke="rgba(14,165,233,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="350" cy="195" r="18" stroke="rgba(14,165,233,.3)" stroke-width="1.5" fill="none"/>
-        <circle cx="350" cy="195" r="8" fill="#0EA5E9">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="0s"/>
+        <!-- ── N1: SIGNALS (278,158) ──────────────────── -->
+        <line x1="263" y1="147" x2="208" y2="116" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="278" cy="158" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="158" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="158" r="5.5" fill="#0EA5E9">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="0s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="0s"/>
         </circle>
-        <text x="350" y="115" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Signals</text>
+        <text x="252" y="86" text-anchor="end" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,.88)">Signals</text>
         <!-- Apollo chip -->
-        <g transform="translate(270,128)">
-          <rect width="32" height="32" rx="8" fill="#000"/>
-          <image href="/logos/apollo.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(158,94)">
+          <rect width="28" height="28" rx="6" fill="#000"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/apollo.svg" x="5" y="5" width="18" height="18" style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(20deg)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(255,200,40,.4)" stroke-width=".75"/>
         </g>
         <!-- Clay chip -->
-        <g transform="translate(308,128)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(80,160,220,.4)" stroke-width="1"/>
-          <image href="/logos/clay.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(192,94)">
+          <rect width="28" height="28" rx="6" fill="#fff"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/clay.svg" x="4" y="4" width="20" height="20" style="filter:brightness(0)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(80,160,220,.35)" stroke-width=".75"/>
         </g>
         <!-- LinkedIn chip -->
-        <g transform="translate(346,128)">
-          <rect width="32" height="32" rx="8" fill="#0A66C2"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/linkedin.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(222,94)">
+          <rect width="28" height="28" rx="6" fill="#0A66C2"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/linkedin.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
 
-        <!-- N2: IDENTIFY (200,310) -->
-        <circle cx="200" cy="310" r="28" stroke="rgba(14,165,233,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="200" cy="310" r="18" stroke="rgba(14,165,233,.3)" stroke-width="1.5" fill="none"/>
-        <circle cx="200" cy="310" r="8" fill="#0EA5E9">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <!-- ── N2: IDENTIFY (158,244) ──────────────────── -->
+        <line x1="135" y1="242" x2="130" y2="242" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="158" cy="244" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
+        <circle cx="158" cy="244" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
+        <circle cx="158" cy="244" r="5.5" fill="#0EA5E9">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="1s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="1s"/>
         </circle>
-        <text x="110" y="290" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Identify</text>
+        <text x="130" y="220" text-anchor="end" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,.88)">Identify</text>
         <!-- HubSpot chip -->
-        <g transform="translate(78,298)">
-          <rect width="32" height="32" rx="8" fill="#FF7A59"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/hubspot.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(100,228)">
+          <rect width="28" height="28" rx="6" fill="#E8613D"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/hubspot.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- Attio chip -->
-        <g transform="translate(116,298)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
-          <image href="/logos/attio.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(100,260)">
+          <rect width="28" height="28" rx="6" fill="#111"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/attio.svg" x="5" y="5" width="18" height="18" style="filter:brightness(0) invert(1)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(255,255,255,.18)" stroke-width=".75"/>
         </g>
 
-        <!-- N3: ENRICH (350,425) -->
-        <circle cx="350" cy="425" r="28" stroke="rgba(14,165,233,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="350" cy="425" r="18" stroke="rgba(14,165,233,.3)" stroke-width="1.5" fill="none"/>
-        <circle cx="350" cy="425" r="8" fill="#0EA5E9">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="2s"/>
+        <!-- ── N3: ENRICH (278,330) ──────────────────── -->
+        <line x1="263" y1="318" x2="208" y2="316" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="278" cy="330" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="330" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="330" r="5.5" fill="#0EA5E9">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="2s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="2s"/>
         </circle>
-        <text x="260" y="400" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Enrich</text>
+        <text x="252" y="304" text-anchor="end" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,.88)">Enrich</text>
         <!-- Apollo chip -->
-        <g transform="translate(200,413)">
-          <rect width="32" height="32" rx="8" fill="#000"/>
-          <image href="/logos/apollo.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
-        </g>
-        <!-- BigQuery chip -->
-        <g transform="translate(238,413)">
-          <rect width="32" height="32" rx="8" fill="#4285F4"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlebigquery.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
-        </g>
-        <!-- GA4 chip -->
-        <g transform="translate(200,451)">
-          <rect width="32" height="32" rx="8" fill="#E37400"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googleanalytics.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(190,312)">
+          <rect width="28" height="28" rx="6" fill="#000"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/apollo.svg" x="5" y="5" width="18" height="18" style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(20deg)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(255,200,40,.4)" stroke-width=".75"/>
         </g>
         <!-- Clay chip -->
-        <g transform="translate(238,451)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(80,160,220,.4)" stroke-width="1"/>
-          <image href="/logos/clay.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(222,312)">
+          <rect width="28" height="28" rx="6" fill="#fff"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/clay.svg" x="4" y="4" width="20" height="20" style="filter:brightness(0)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(80,160,220,.35)" stroke-width=".75"/>
+        </g>
+        <!-- BigQuery chip -->
+        <g transform="translate(190,344)">
+          <rect width="28" height="28" rx="6" fill="#4285F4"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlebigquery.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
+        </g>
+        <!-- GA4 chip -->
+        <g transform="translate(222,344)">
+          <rect width="28" height="28" rx="6" fill="#E37400"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googleanalytics.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
 
-        <!-- CENTER HUB - INFORM GROWTH -->
-        <circle cx="500" cy="310" r="90" fill="white" stroke="#0EA5E9" stroke-width="3">
-          <animate attributeName="stroke-opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/>
+        <!-- ══════════════════════════════════════════════
+             INFORM GROWTH HUB — Hero element
+             ══════════════════════════════════════════════ -->
+
+        <!-- Outermost ambient glow (breathing) -->
+        <circle cx="400" cy="244" r="88" fill="url(#loop-hubglow)">
+          <animate attributeName="r" values="84;92;84" dur="5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".7;1;.7" dur="5s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="500" cy="310" r="75" fill="rgba(14,165,233,.03)" stroke="rgba(14,165,233,.15)" stroke-width="1"/>
 
-        <!-- Anthropic icon -->
-        <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" x="475" y="270" width="50" height="50" style="filter:brightness(0) saturate(100%) invert(45%) sepia(98%) saturate(1500%) hue-rotate(175deg) brightness(95%)"/>
+        <!-- Outer rotating emerald ring -->
+        <circle cx="400" cy="244" r="70" stroke="rgba(5,150,105,.38)" stroke-width="1.5" stroke-dasharray="5 3.5" fill="none">
+          <animateTransform attributeName="transform" type="rotate" from="0 400 244" to="360 400 244" dur="20s" repeatCount="indefinite"/>
+        </circle>
 
-        <text x="500" y="342" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="14" font-weight="700" fill="#0f172a" letter-spacing=".08em">INFORM GROWTH</text>
-        <text x="500" y="362" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="12" fill="#059669">Powered by Claude</text>
+        <!-- Counter-rotating sky-blue ring -->
+        <circle cx="400" cy="244" r="61" stroke="rgba(14,165,233,.22)" stroke-width="1" stroke-dasharray="3 7" fill="none">
+          <animateTransform attributeName="transform" type="rotate" from="0 400 244" to="-360 400 244" dur="14s" repeatCount="indefinite"/>
+        </circle>
 
-        <!-- N4: CONTENT (650,195) -->
-        <circle cx="650" cy="195" r="28" stroke="rgba(56,189,248,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="650" cy="195" r="18" stroke="rgba(56,189,248,.35)" stroke-width="1.5" fill="none"/>
-        <circle cx="650" cy="195" r="8" fill="#38BDF8">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <!-- Static inner ring (pulsing) -->
+        <circle cx="400" cy="244" r="53" stroke="rgba(14,165,233,.14)" stroke-width=".75" fill="none">
+          <animate attributeName="stroke-opacity" values=".08;.22;.08" dur="3s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Core dark fill -->
+        <circle cx="400" cy="244" r="46" fill="#0F2336"/>
+
+        <!-- Core border — breathing glow -->
+        <circle cx="400" cy="244" r="46" fill="none" stroke="#0EA5E9" stroke-width="2.5">
+          <animate attributeName="stroke-opacity" values=".55;1;.55" dur="2.8s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-width" values="2;3;2" dur="2.8s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Anthropic / Claude icon — centered upper portion -->
+        <image
+          href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg"
+          x="387" y="210" width="26" height="26"
+          style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(175deg) brightness(1.3)"
+        />
+
+        <!-- INFORM GROWTH wordmark -->
+        <text x="400" y="247" text-anchor="middle"
+              font-family="'Inter',system-ui,sans-serif"
+              font-size="9" font-weight="700"
+              fill="rgba(255,255,255,.95)" letter-spacing=".08em">
+          INFORM GROWTH
+        </text>
+
+        <!-- Enabling Claude tagline -->
+        <text x="400" y="262" text-anchor="middle"
+              font-family="'Inter',system-ui,sans-serif"
+              font-size="7.5"
+              fill="rgba(5,150,105,.9)" letter-spacing=".06em">
+          Enabling Claude
+        </text>
+
+        <!-- ══════════════════════════════════════════════ -->
+
+        <!-- ── N4: CONTENT (522,158) ──────────────────── -->
+        <line x1="537" y1="147" x2="574" y2="116" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="522" cy="158" r="22" stroke="rgba(56,189,248,.06)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="158" r="13" stroke="rgba(56,189,248,.3)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="158" r="5.5" fill="#38BDF8">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="0.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="0.5s"/>
         </circle>
-        <text x="650" y="115" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Content</text>
+        <text x="548" y="86" text-anchor="start" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,.88)">Content</text>
         <!-- Anthropic chip -->
-        <g transform="translate(618,128)">
-          <rect width="32" height="32" rx="8" fill="#CC785C"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(548,94)">
+          <rect width="28" height="28" rx="6" fill="#CC785C"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- Zapier chip -->
-        <g transform="translate(656,128)">
-          <rect width="32" height="32" rx="8" fill="#FF4A00"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/zapier.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(580,94)">
+          <rect width="28" height="28" rx="6" fill="#FF4A00"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/zapier.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
-        <!-- Make chip -->
-        <g transform="translate(694,128)">
-          <rect width="32" height="32" rx="8" fill="#6E1CCA"/>
-          <image href="/logos/make.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <!-- Make.com chip -->
+        <g transform="translate(548,126)">
+          <rect width="28" height="28" rx="6" fill="#6E1CCA"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/make.svg" x="6" y="6" width="16" height="16" style="filter:brightness(0) invert(1)"/>
         </g>
 
-        <!-- N5: ENGAGE (800,310) -->
-        <circle cx="800" cy="310" r="28" stroke="rgba(56,189,248,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="800" cy="310" r="18" stroke="rgba(56,189,248,.35)" stroke-width="1.5" fill="none"/>
-        <circle cx="800" cy="310" r="8" fill="#38BDF8">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+        <!-- ── N5: ENGAGE (642,244) ──────────────────── -->
+        <line x1="666" y1="242" x2="668" y2="242" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="642" cy="244" r="22" stroke="rgba(56,189,248,.06)" stroke-width="1" fill="none"/>
+        <circle cx="642" cy="244" r="13" stroke="rgba(56,189,248,.3)" stroke-width="1" fill="none"/>
+        <circle cx="642" cy="244" r="5.5" fill="#38BDF8">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="1.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="1.5s"/>
         </circle>
-        <text x="890" y="290" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Engage</text>
+        <text x="670" y="220" text-anchor="start" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,.88)">Engage</text>
         <!-- Gong chip -->
-        <g transform="translate(852,298)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
-          <image href="/logos/gong.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(670,228)">
+          <rect width="28" height="28" rx="6" fill="#111"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/gong.svg" x="5" y="5" width="18" height="18" style="filter:brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(260deg)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(140,60,220,.5)" stroke-width=".75"/>
         </g>
         <!-- Salesloft chip -->
-        <g transform="translate(890,298)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
-          <image href="/logos/salesloft.png" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(702,228)">
+          <rect width="28" height="28" rx="6" fill="#164FA5"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/salesloft.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- Granola chip -->
-        <g transform="translate(852,336)">
-          <rect width="32" height="32" rx="8" fill="#fff" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
-          <image href="/logos/granola.jpg" x="4" y="4" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+        <g transform="translate(734,228)">
+          <rect width="28" height="28" rx="6" fill="#7FD47F"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/granola.svg" x="6" y="6" width="16" height="16" style="filter:brightness(0) saturate(1) invert(20%) sepia(50%) saturate(600%) hue-rotate(90deg)"/>
+          <rect width="28" height="28" rx="6" fill="none" stroke="rgba(0,100,0,.35)" stroke-width=".75"/>
         </g>
 
-        <!-- N6: COMPOUNDS (650,425) -->
-        <circle cx="650" cy="425" r="28" stroke="rgba(5,150,105,.15)" stroke-width="1.5" fill="none"/>
-        <circle cx="650" cy="425" r="18" stroke="rgba(5,150,105,.4)" stroke-width="1.5" fill="none"/>
-        <circle cx="650" cy="425" r="8" fill="#10B981">
-          <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite" begin="2.5s"/>
+        <!-- ── N6: COMPOUNDS (522,330) ──────────────────── -->
+        <line x1="537" y1="318" x2="578" y2="316" stroke="rgba(5,150,105,.18)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="522" cy="330" r="22" stroke="rgba(5,150,105,.08)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="330" r="13" stroke="rgba(5,150,105,.4)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="330" r="5.5" fill="#10B981">
+          <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="2.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="2.5s"/>
         </circle>
-        <text x="740" y="400" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-size="20" font-weight="700" fill="#059669">Compounds</text>
+        <text x="548" y="304" text-anchor="start" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(16,185,129,.85)">Compounds</text>
         <!-- HubSpot chip -->
-        <g transform="translate(730,413)">
-          <rect width="32" height="32" rx="8" fill="#FF7A59"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/hubspot.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(548,312)">
+          <rect width="28" height="28" rx="6" fill="#E8613D"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/hubspot.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- Salesforce chip -->
-        <g transform="translate(768,413)">
-          <rect width="32" height="32" rx="8" fill="#00A1E0"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/salesforce.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(580,312)">
+          <rect width="28" height="28" rx="6" fill="#0070D2"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/salesforce.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- Power BI chip -->
-        <g transform="translate(730,451)">
-          <rect width="32" height="32" rx="8" fill="#F2C811"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/powerbi.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0)"/>
+        <g transform="translate(548,344)">
+          <rect width="28" height="28" rx="6" fill="#1E2432" stroke="rgba(242,200,17,.4)" stroke-width=".75"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/microsoftpowerbi.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
         <!-- dbt chip -->
-        <g transform="translate(768,451)">
-          <rect width="32" height="32" rx="8" fill="#FF694B"/>
-          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/dbt.svg" x="8" y="8" width="16" height="16" style="filter:brightness(0) invert(1)"/>
+        <g transform="translate(580,344)">
+          <rect width="28" height="28" rx="6" fill="#FF694B"/>
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/dbt.svg" x="7" y="7" width="14" height="14" style="filter:brightness(0) invert(1)"/>
         </g>
 
-        <!-- Particles on figure-8 - invisible only when inside center hub -->
-        <circle r="6" fill="#0EA5E9">
-          <animate attributeName="opacity" values="0;0;.85;.85;0;0;.85;.85;0;0" keyTimes="0;0.03;0.04;0.46;0.47;0.53;0.54;0.96;0.97;1" dur="10s" repeatCount="indefinite" begin="0s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
+        <!-- ── Particles on figure-8 ──────────────────── -->
+        <circle r="3.5" fill="#38BDF8" opacity=".92">
+          <animateMotion dur="9s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="5" fill="#38BDF8">
-          <animate attributeName="opacity" values="0;0;.7;.7;0;0;.7;.7;0;0" keyTimes="0;0.03;0.04;0.46;0.47;0.53;0.54;0.96;0.97;1" dur="10s" repeatCount="indefinite" begin="2.5s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="2.5s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
+        <circle r="2.5" fill="#0EA5E9" opacity=".7">
+          <animateMotion dur="9s" repeatCount="indefinite" begin="2.25s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="5" fill="#0EA5E9">
-          <animate attributeName="opacity" values="0;0;.75;.75;0;0;.75;.75;0;0" keyTimes="0;0.03;0.04;0.46;0.47;0.53;0.54;0.96;0.97;1" dur="10s" repeatCount="indefinite" begin="5s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="5s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
+        <circle r="3" fill="#38BDF8" opacity=".82">
+          <animateMotion dur="9s" repeatCount="indefinite" begin="4.5s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="4" fill="#38BDF8">
-          <animate attributeName="opacity" values="0;0;.6;.6;0;0;.6;.6;0;0" keyTimes="0;0.03;0.04;0.46;0.47;0.53;0.54;0.96;0.97;1" dur="10s" repeatCount="indefinite" begin="7.5s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="7.5s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
+        <circle r="2" fill="#0EA5E9" opacity=".6">
+          <animateMotion dur="9s" repeatCount="indefinite" begin="6.75s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
 
-        <!-- Particles on return arc - synced to figure-8 particles passing Compounds -->
-        <circle r="5" fill="#10B981">
-          <animate attributeName="opacity" values="0;0;.85;.85;0" keyTimes="0;0.85;0.86;0.99;1" dur="10s" repeatCount="indefinite" begin="0s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="0s" keyPoints="0;0;1;1" keyTimes="0;0.85;0.99;1" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
+        <!-- ── Particles on return arc (emerald) ──────── -->
+        <circle r="3.5" fill="#10B981" opacity=".88">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
         </circle>
-        <circle r="4" fill="#059669">
-          <animate attributeName="opacity" values="0;0;.65;.65;0" keyTimes="0;0.85;0.86;0.99;1" dur="10s" repeatCount="indefinite" begin="2.5s"/>
-          <animateMotion dur="10s" repeatCount="indefinite" begin="2.5s" keyPoints="0;0;1;1" keyTimes="0;0.85;0.99;1" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
+        <circle r="2.5" fill="#059669" opacity=".65">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="2.25s" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
         </circle>
 
+        <!-- Bottom caption -->
+        <text x="400" y="490" text-anchor="middle"
+              font-family="'Inter',system-ui,sans-serif" font-size="9.5"
+              fill="rgba(14,165,233,.22)" letter-spacing=".04em">
+          Built on clean data · Governed AI · Shared context
+        </text>
       </svg>
-    </div>
-
-    <div class="loop-callout">
-      <p class="callout-main">A revenue engine that gets smarter every time it runs.</p>
-      <p class="callout-sub">Faster decisions · Cleaner data · Shared infrastructure</p>
     </div>
 
   </div>
 </section>
 
 <style>
+  /* ── Section ─────────────────────────────────────────── */
   .loop-section {
-    background-color: var(--section-light-bg, #f8fafc);
-    padding: var(--space-8, 32px) 0 var(--space-md, 16px);
+    background-color: var(--off-white);
+    padding: var(--space-section-mobile) 0;
   }
 
   @media (min-width: 768px) {
     .loop-section {
-      padding: var(--space-8, 32px) 0 var(--space-lg, 24px);
+      padding: var(--space-section) 0;
     }
   }
 
+  /* ── Header ──────────────────────────────────────────── */
   .loop-header {
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto var(--space-xl, 40px);
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .loop-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--sky-blue);
+    margin-bottom: var(--space-3);
   }
 
   .loop-title {
-    font-family: var(--font-display, 'Fraunces', Georgia, serif);
-    font-size: var(--text-h2, 2.25rem);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--heading-color, #0f172a);
+    color: var(--navy);
     letter-spacing: -0.02em;
     line-height: 1.2;
-    margin: 0 0 var(--space-4, 16px);
-  }
-
-  @media (min-width: 768px) {
-    .loop-title {
-      font-size: var(--text-h2, 2.5rem);
-    }
+    margin-bottom: var(--space-4);
   }
 
   .loop-sub {
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
-    font-size: var(--text-lg, 1.125rem);
-    color: var(--muted-text, #64748b);
-    line-height: 1.7;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--slate);
+    line-height: 1.65;
     margin: 0;
   }
 
+  /* ── Diagram wrapper ─────────────────────────────────── */
   .loop-diagram-wrap {
     width: 100%;
-    max-width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    border-radius: var(--card-radius, 16px);
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid var(--border-subtle, rgba(14, 165, 233, 0.1));
-    box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.06));
-    background: #ffffff;
+    border: 1px solid rgba(14, 165, 233, 0.12);
+    /* Subtle box-shadow to lift it off the light bg */
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.08),
+                0 2px 8px rgba(15, 35, 54, 0.08);
   }
 
-  .loop-svg {
+  .loop-diagram-wrap svg {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  .loop-callout {
-    text-align: center;
-    padding: var(--space-8, 32px) var(--space-6, 24px);
-  }
-
-  .callout-main {
-    font-family: var(--font-display, 'Fraunces', Georgia, serif);
-    font-size: var(--text-xl, 1.25rem);
-    font-weight: 700;
-    color: var(--emerald, #059669);
-    margin: 0 0 var(--space-2, 8px);
-  }
-
-  .callout-sub {
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
-    font-size: var(--text-sm, 0.875rem);
-    color: var(--slate, #64748b);
-    margin: 0;
-  }
-
+  /* ── Accessibility ───────────────────────────────────── */
   @media (prefers-reduced-motion: reduce) {
     .loop-diagram-wrap svg animate,
     .loop-diagram-wrap svg animateTransform,

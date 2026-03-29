@@ -1,0 +1,458 @@
+---
+// RequestRoutingVisual.astro — Live Request Routing with Data Flow
+---
+
+<div class="rrv">
+  <p class="rrv-label"><span class="rrv-dot"></span>Live Request Routing</p>
+
+  <!-- Input bar -->
+  <div class="rrv-bar">
+    <div class="rrv-you">You</div>
+    <div class="rrv-q" id="rrv-q"><span class="rrv-cur"></span></div>
+    <div class="rrv-badge s-idle" id="rrv-badge">Ready</div>
+  </div>
+
+  <!-- SVG Flow Visualization -->
+  <div class="rrv-canvas">
+    <svg viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg" id="rrv-svg">
+      <defs>
+        <!-- Gradient for flow lines -->
+        <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#0EA5E9" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="outGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#10B981" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+        </linearGradient>
+        <!-- Hub glow -->
+        <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Particle paths will be added dynamically -->
+      </defs>
+
+      <!-- Background subtle grid -->
+      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="10" cy="10" r="0.5" fill="rgba(14,165,233,0.1)"/>
+      </pattern>
+      <rect width="900" height="320" fill="url(#grid)"/>
+
+      <!-- Tool nodes - Left side -->
+      <g id="tools-group">
+        <!-- Row 1 -->
+        <g id="tool-apollo" class="tool-node" transform="translate(40, 30)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/apollo.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-clay" class="tool-node" transform="translate(130, 30)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/clay.webp" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-hubspot" class="tool-node" transform="translate(220, 30)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/hubspot.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+
+        <!-- Row 2 -->
+        <g id="tool-gong" class="tool-node" transform="translate(40, 120)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/gong.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-salesforce" class="tool-node" transform="translate(130, 120)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/salesforce.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-salesloft" class="tool-node" transform="translate(220, 120)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/salesloft.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+
+        <!-- Row 3 -->
+        <g id="tool-attio" class="tool-node" transform="translate(40, 210)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/attio.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-make" class="tool-node" transform="translate(130, 210)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/make.png" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+        <g id="tool-granola" class="tool-node" transform="translate(220, 210)">
+          <rect width="70" height="70" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5" class="tool-bg"/>
+          <image href="/logos/granola.jpg" x="11" y="11" width="48" height="48" preserveAspectRatio="xMidYMid meet"/>
+        </g>
+      </g>
+
+      <!-- Flow lines container -->
+      <g id="flow-lines"></g>
+
+      <!-- Central Hub - INFORM GROWTH -->
+      <g id="hub-group" transform="translate(450, 160)">
+        <!-- Outer glow -->
+        <circle r="85" fill="url(#hubGlow)" class="hub-glow" opacity="0"/>
+        <!-- Rotating ring -->
+        <circle r="72" fill="none" stroke="rgba(14,165,233,0.2)" stroke-width="1" stroke-dasharray="8 6" class="hub-ring">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Main circle -->
+        <circle r="60" fill="#0F2336" stroke="#0EA5E9" stroke-width="2.5" class="hub-core"/>
+        <!-- Icon -->
+        <g transform="translate(-14, -24)">
+          <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" width="28" height="28" style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(175deg) brightness(1.3)"/>
+        </g>
+        <!-- Text -->
+        <text y="12" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" font-weight="700" fill="white" letter-spacing="0.1em">INFORM GROWTH</text>
+        <text y="26" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="7" fill="rgba(14,165,233,0.9)">Powered by AI</text>
+      </g>
+
+      <!-- Output flow line -->
+      <path id="out-path" d="M522,160 L680,160" stroke="rgba(16,185,129,0.15)" stroke-width="2" fill="none"/>
+
+      <!-- Output panel -->
+      <g id="output-group" transform="translate(700, 80)" opacity="0">
+        <rect width="180" height="160" rx="14" fill="white" stroke="#10B981" stroke-width="2"/>
+        <circle cx="20" cy="24" r="5" fill="#10B981"/>
+        <text x="32" y="28" font-family="'Inter',system-ui,sans-serif" font-size="11" font-weight="700" fill="#1A2535" id="out-title">Deal Snapshot</text>
+        <text x="20" y="48" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8A9BB0" id="out-src">3 sources · 2.1s</text>
+        <g id="out-chips" transform="translate(20, 65)"></g>
+      </g>
+
+      <!-- Flowing particles container -->
+      <g id="particles"></g>
+    </svg>
+  </div>
+</div>
+
+<style>
+  .rrv {
+    background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow: hidden;
+  }
+
+  .rrv-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748B;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .rrv-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10B981;
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .rrv-bar {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .rrv-you {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+    border: 1px solid #7DD3FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #0369A1;
+    flex-shrink: 0;
+  }
+
+  .rrv-q {
+    font-size: 14px;
+    color: #1E293B;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .rrv-cur {
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    background: #0EA5E9;
+    margin-left: 1px;
+    vertical-align: middle;
+    animation: blink 0.75s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .rrv-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .s-idle { background: #F1F5F9; color: #94A3B8; }
+  .s-think { background: #DBEAFE; color: #2563EB; }
+  .s-done { background: #D1FAE5; color: #059669; }
+
+  .rrv-canvas {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .rrv-canvas svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Tool node states */
+  .tool-node { opacity: 0.4; transition: opacity 0.4s; }
+  .tool-node.active { opacity: 1; }
+  .tool-node.active .tool-bg { stroke: #0EA5E9; stroke-width: 2.5; }
+
+  /* Hub states */
+  .hub-glow { transition: opacity 0.5s; }
+  .hub-core { transition: all 0.4s; }
+
+  @media (max-width: 700px) {
+    .rrv-canvas svg { viewBox: 0 0 600 400; }
+  }
+</style>
+
+<script>
+(function() {
+  const TOOLS = {
+    apollo:     { x: 75,  y: 65 },
+    clay:       { x: 165, y: 65 },
+    hubspot:    { x: 255, y: 65 },
+    gong:       { x: 75,  y: 155 },
+    salesforce: { x: 165, y: 155 },
+    salesloft:  { x: 255, y: 155 },
+    attio:      { x: 75,  y: 245 },
+    make:       { x: 165, y: 245 },
+    granola:    { x: 255, y: 245 },
+  };
+
+  const HUB = { x: 450, y: 160 };
+
+  const SCENES = [
+    {
+      q: "What's the deal snapshot for Acme Corp?",
+      tools: ['hubspot', 'gong', 'apollo'],
+      title: 'Acme Corp Snapshot',
+      src: '3 sources · 2.1s',
+      chips: ['Stage: Proposal', 'Calls: 4 logged', 'Next: Follow-up'],
+    },
+    {
+      q: "Build a one-pager for tomorrow's call with Stripe",
+      tools: ['clay', 'granola', 'hubspot', 'apollo'],
+      title: 'Stripe One-Pager',
+      src: '4 sources · 2.8s',
+      chips: ['ICP: Strong fit', 'Pain: Forecasting', 'Size: 8,000'],
+    },
+    {
+      q: "Which deals slipped this quarter vs forecast?",
+      tools: ['hubspot', 'salesloft', 'gong', 'salesforce'],
+      title: 'Q1 Slippage Report',
+      src: '4 sources · 2.4s',
+      chips: ['Slipped: $180K', 'At risk: $95K', 'Reason: Dark'],
+    },
+  ];
+
+  const svg = document.getElementById('rrv-svg');
+  const flowLines = document.getElementById('flow-lines');
+  const particles = document.getElementById('particles');
+  const hubGlow = document.querySelector('.hub-glow');
+  const outputGroup = document.getElementById('output-group');
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  async function typeText(el, text) {
+    el.innerHTML = '<span class="rrv-cur"></span>';
+    for (let i = 0; i < text.length; i++) {
+      await sleep(28);
+      el.innerHTML = text.slice(0, i + 1) + '<span class="rrv-cur"></span>';
+    }
+  }
+
+  function createFlowLine(toolId) {
+    const tool = TOOLS[toolId];
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const d = `M${tool.x + 35},${tool.y} Q${(tool.x + HUB.x) / 2},${tool.y} ${HUB.x - 60},${HUB.y}`;
+    path.setAttribute('d', d);
+    path.setAttribute('stroke', 'rgba(14,165,233,0.15)');
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('fill', 'none');
+    path.setAttribute('id', `line-${toolId}`);
+    flowLines.appendChild(path);
+    return d;
+  }
+
+  function createParticle(pathD, delay = 0) {
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('r', '4');
+    circle.setAttribute('fill', '#0EA5E9');
+    circle.style.opacity = '0';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', pathD);
+    path.id = `particle-path-${Math.random()}`;
+
+    const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+    animate.setAttribute('dur', '1s');
+    animate.setAttribute('begin', `${delay}s`);
+    animate.setAttribute('fill', 'freeze');
+    animate.setAttribute('calcMode', 'spline');
+    animate.setAttribute('keySplines', '0.4 0 0.2 1');
+
+    const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+    mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `#${path.id}`);
+    animate.appendChild(mpath);
+
+    circle.appendChild(animate);
+    particles.appendChild(path);
+    particles.appendChild(circle);
+
+    setTimeout(() => { circle.style.opacity = '0.9'; }, delay * 1000);
+    setTimeout(() => { circle.style.opacity = '0'; }, (delay + 1) * 1000);
+
+    return circle;
+  }
+
+  function createOutputParticle() {
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('r', '4');
+    circle.setAttribute('fill', '#10B981');
+
+    const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+    animate.setAttribute('dur', '0.6s');
+    animate.setAttribute('fill', 'freeze');
+
+    const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+    mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#out-path');
+    animate.appendChild(mpath);
+
+    circle.appendChild(animate);
+    particles.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 700);
+  }
+
+  function resetAll() {
+    Object.keys(TOOLS).forEach(id => {
+      document.getElementById(`tool-${id}`)?.classList.remove('active');
+    });
+    flowLines.innerHTML = '';
+    particles.innerHTML = '';
+    hubGlow.style.opacity = '0';
+    outputGroup.style.opacity = '0';
+    const badge = document.getElementById('rrv-badge');
+    badge.className = 'rrv-badge s-idle';
+    badge.textContent = 'Ready';
+  }
+
+  function updateOutput(scene) {
+    document.getElementById('out-title').textContent = scene.title;
+    document.getElementById('out-src').textContent = scene.src;
+    const chipsGroup = document.getElementById('out-chips');
+    chipsGroup.innerHTML = '';
+    scene.chips.forEach((chip, i) => {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('transform', `translate(0, ${i * 28})`);
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('width', '140');
+      rect.setAttribute('height', '22');
+      rect.setAttribute('rx', '6');
+      rect.setAttribute('fill', '#F1F5F9');
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', '10');
+      text.setAttribute('y', '15');
+      text.setAttribute('font-family', "'Inter',system-ui,sans-serif");
+      text.setAttribute('font-size', '10');
+      text.setAttribute('fill', '#475569');
+      text.textContent = chip;
+      g.appendChild(rect);
+      g.appendChild(text);
+      chipsGroup.appendChild(g);
+    });
+  }
+
+  let idx = 0;
+  async function loop() {
+    while (true) {
+      const scene = SCENES[idx++ % SCENES.length];
+      resetAll();
+      await sleep(600);
+
+      // Type question
+      await typeText(document.getElementById('rrv-q'), scene.q);
+      await sleep(300);
+
+      // Processing state
+      const badge = document.getElementById('rrv-badge');
+      badge.className = 'rrv-badge s-think';
+      badge.textContent = 'Processing…';
+      hubGlow.style.opacity = '1';
+      await sleep(300);
+
+      // Activate tools and send particles
+      for (let i = 0; i < scene.tools.length; i++) {
+        const toolId = scene.tools[i];
+        document.getElementById(`tool-${toolId}`)?.classList.add('active');
+        const pathD = createFlowLine(toolId);
+        createParticle(pathD, 0);
+        await sleep(450);
+      }
+
+      await sleep(400);
+
+      // Output
+      badge.className = 'rrv-badge s-done';
+      badge.textContent = 'Complete';
+      hubGlow.style.opacity = '0.5';
+      createOutputParticle();
+      updateOutput(scene);
+      await sleep(300);
+      outputGroup.style.opacity = '1';
+
+      await sleep(5000);
+
+      // Clear for next
+      document.getElementById('rrv-q').innerHTML = '<span class="rrv-cur"></span>';
+      outputGroup.style.opacity = '0';
+      await sleep(600);
+    }
+  }
+
+  loop();
+})();
+</script>
