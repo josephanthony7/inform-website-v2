@@ -376,34 +376,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- What You Get -->
-  <section class="outcomes-section section">
-    <div class="container">
-      <div class="outcomes-header fade-up">
-        <h2>What This Means For Your Team</h2>
-      </div>
-
-      <div class="outcomes-grid fade-up">
-        <div class="outcome-item">
-          <div class="outcome-stat">Minutes</div>
-          <p>Revenue answers that used to take days</p>
-        </div>
-        <div class="outcome-item">
-          <div class="outcome-stat">Zero</div>
-          <p>Hours spent on manual data cleanup</p>
-        </div>
-        <div class="outcome-item">
-          <div class="outcome-stat">One</div>
-          <p>Source of truth for every team</p>
-        </div>
-        <div class="outcome-item">
-          <div class="outcome-stat">Yours</div>
-          <p>Everything we build, you own</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Final CTA -->
   <section class="final-cta section bg-dark">
     <div class="container">
@@ -450,7 +422,7 @@ import Layout from '../layouts/Layout.astro';
   .header-subtitle {
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    color: #94a3b8;
+    color: #8C8880;
     line-height: 1.7;
     margin: 0;
   }
@@ -494,7 +466,7 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: auto 1fr;
     gap: var(--space-lg);
     padding: var(--space-xl);
-    background: white;
+    background: var(--color-bg-raised);
     border-radius: 12px;
     border: 1px solid var(--border-subtle);
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -503,16 +475,16 @@ import Layout from '../layouts/Layout.astro';
 
   .approach-step:hover {
     border-color: var(--sky-blue);
-    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 4px 20px rgba(200, 240, 74, 0.1);
   }
 
   .approach-step.final {
-    border-color: #10b981;
-    background: linear-gradient(135deg, white 0%, rgba(16, 185, 129, 0.03) 100%);
+    border-color: #C8F04A;
+    background: linear-gradient(135deg, white 0%, rgba(200, 240, 74, 0.03) 100%);
   }
 
   .approach-step.final:hover {
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 4px 20px rgba(200, 240, 74, 0.15);
   }
 
   .step-marker {
@@ -525,13 +497,13 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(200, 240, 74, 0.1);
     border-radius: 12px;
   }
 
   .approach-step.final .step-marker {
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.1);
+    color: #C8F04A;
+    background: rgba(200, 240, 74, 0.1);
   }
 
   .step-content h3 {
@@ -551,7 +523,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .approach-step.final .step-for-you {
-    color: #10b981;
+    color: #C8F04A;
   }
 
   .step-content > p:not(.step-for-you) {
@@ -588,7 +560,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .approach-step.final .step-details li::before {
-    color: #10b981;
+    color: #C8F04A;
   }
 
   @media (max-width: 768px) {
@@ -609,7 +581,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* Infrastructure Section */
   .infrastructure-section {
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    background: #0D0D0B;
   }
 
   .bg-dark {
@@ -633,7 +605,7 @@ import Layout from '../layouts/Layout.astro';
   .infra-header p {
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    color: #94a3b8;
+    color: #8C8880;
     line-height: 1.7;
   }
 
@@ -685,7 +657,7 @@ import Layout from '../layouts/Layout.astro';
   .infra-card p {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: #94a3b8;
+    color: #8C8880;
     line-height: 1.6;
     margin: 0;
   }
@@ -728,11 +700,19 @@ import Layout from '../layouts/Layout.astro';
     color: white;
     line-height: 1.2;
     margin-bottom: var(--space-lg);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .collab-header h2 {
+      white-space: normal;
+    }
   }
 
   .collab-accent {
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
+    white-space: nowrap;
   }
 
   .collab-header p {
@@ -810,7 +790,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .progress-left .gt {
-    color: #10b981;
+    color: #C8F04A;
   }
 
   .progress-left p {
@@ -851,7 +831,7 @@ import Layout from '../layouts/Layout.astro';
   .step-num {
     font-family: var(--font-mono);
     font-size: var(--text-sm);
-    color: #10b981;
+    color: #C8F04A;
     font-weight: 600;
   }
 
@@ -905,7 +885,7 @@ import Layout from '../layouts/Layout.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
-    align-items: start;
+    align-items: stretch;
   }
 
   @media (max-width: 1024px) {
@@ -917,11 +897,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .tier-card {
-    background: white;
+    background: var(--color-bg-raised);
     border-radius: 12px;
     padding: var(--space-xl);
     border: 2px solid var(--border-subtle);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .tier-card:hover {
@@ -930,7 +913,7 @@ import Layout from '../layouts/Layout.astro';
 
   .tier-card.featured {
     border-color: var(--sky-blue);
-    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.15);
+    box-shadow: 0 8px 30px rgba(200, 240, 74, 0.15);
     position: relative;
   }
 
@@ -964,8 +947,8 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.1);
+    color: #C8F04A;
+    background: rgba(200, 240, 74, 0.1);
     padding: var(--space-sm) var(--space-md);
     border-radius: 6px;
     margin-bottom: var(--space-lg);
@@ -979,6 +962,7 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    flex: 1;
   }
 
   .tier-includes li {
@@ -993,7 +977,7 @@ import Layout from '../layouts/Layout.astro';
     content: '✓';
     position: absolute;
     left: 0;
-    color: #10b981;
+    color: #C8F04A;
     font-weight: 700;
   }
 
@@ -1098,7 +1082,7 @@ import Layout from '../layouts/Layout.astro';
   .final-cta p {
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    color: #94a3b8;
+    color: #8C8880;
     margin-bottom: var(--space-xl);
   }
 

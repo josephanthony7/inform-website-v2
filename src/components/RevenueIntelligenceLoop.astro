@@ -26,57 +26,57 @@
       >
         <defs>
           <pattern id="loop-dg" width="26" height="26" patternUnits="userSpaceOnUse">
-            <circle cx=".5" cy=".5" r=".5" fill="rgba(14,165,233,.07)"/>
+            <circle cx=".5" cy=".5" r=".5" fill="rgba(200,240,74,.07)"/>
           </pattern>
           <path id="loop-f8" d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244 C400,136 642,136 642,244 C642,352 400,352 400,244"/>
           <path id="loop-ret" d="M518,330 Q400,436 282,330"/>
           <radialGradient id="loop-hubglow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#C8F04A" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#C8F04A" stop-opacity="0"/>
           </radialGradient>
         </defs>
 
         <!-- Background -->
-        <rect width="800" height="510" fill="#0F2336"/>
+        <rect width="800" height="510" fill="#0D0D0B"/>
         <rect width="800" height="510" fill="url(#loop-dg)"/>
 
         <!-- Ambient stars -->
-        <circle cx="60" cy="60" r="1" fill="rgba(14,165,233,.2)"/>
-        <circle cx="738" cy="66" r="1.1" fill="rgba(14,165,233,.16)"/>
-        <circle cx="400" cy="44" r=".9" fill="rgba(14,165,233,.2)"/>
-        <circle cx="72" cy="400" r=".8" fill="rgba(14,165,233,.12)"/>
-        <circle cx="724" cy="398" r=".9" fill="rgba(14,165,233,.12)"/>
+        <circle cx="60" cy="60" r="1" fill="rgba(200,240,74,.2)"/>
+        <circle cx="738" cy="66" r="1.1" fill="rgba(200,240,74,.16)"/>
+        <circle cx="400" cy="44" r=".9" fill="rgba(200,240,74,.2)"/>
+        <circle cx="72" cy="400" r=".8" fill="rgba(200,240,74,.12)"/>
+        <circle cx="724" cy="398" r=".9" fill="rgba(200,240,74,.12)"/>
 
         <!-- Figure-8 glow -->
-        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(14,165,233,.04)" stroke-width="20" fill="none"/>
-        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(14,165,233,.04)" stroke-width="20" fill="none"/>
+        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(200,240,74,.04)" stroke-width="20" fill="none"/>
+        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(200,240,74,.04)" stroke-width="20" fill="none"/>
 
         <!-- Figure-8 animated paths -->
-        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(14,165,233,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
+        <path d="M400,244 C400,136 158,136 158,244 C158,352 400,352 400,244" stroke="rgba(200,240,74,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
           <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="0.8s" repeatCount="indefinite"/>
         </path>
-        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(14,165,233,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
+        <path d="M400,244 C400,136 642,136 642,244 C642,352 400,352 400,244" stroke="rgba(200,240,74,.28)" stroke-width="1.25" stroke-dasharray="7 5" fill="none">
           <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="0.8s" repeatCount="indefinite"/>
         </path>
 
         <!-- Return arc glow + path -->
-        <path d="M518,330 Q400,436 282,330" stroke="rgba(5,150,105,.06)" stroke-width="14" fill="none"/>
-        <path d="M518,330 Q400,436 282,330" stroke="rgba(5,150,105,.42)" stroke-width="1.25" stroke-dasharray="6 5" fill="none">
+        <path d="M518,330 Q400,436 282,330" stroke="rgba(200,240,74,.06)" stroke-width="14" fill="none"/>
+        <path d="M518,330 Q400,436 282,330" stroke="rgba(200,240,74,.42)" stroke-width="1.25" stroke-dasharray="6 5" fill="none">
           <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.8s" repeatCount="indefinite"/>
         </path>
 
         <!-- Return arc label -->
         <text x="400" y="456" text-anchor="middle"
               font-family="'Inter',system-ui,sans-serif" font-size="10.5"
-              fill="rgba(5,150,105,.4)" letter-spacing=".03em">
+              fill="rgba(200,240,74,.4)" letter-spacing=".03em">
           Every call · email · signal returns. Compounding with every deal.
         </text>
 
         <!-- ── N1: SIGNALS (278,158) ──────────────────── -->
-        <line x1="263" y1="147" x2="208" y2="116" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="278" cy="158" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
-        <circle cx="278" cy="158" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
-        <circle cx="278" cy="158" r="5.5" fill="#0EA5E9">
+        <line x1="263" y1="147" x2="208" y2="116" stroke="rgba(200,240,74,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="278" cy="158" r="22" stroke="rgba(200,240,74,.06)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="158" r="13" stroke="rgba(200,240,74,.26)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="158" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="0s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="0s"/>
         </circle>
@@ -89,7 +89,7 @@
         </g>
         <!-- Clay chip -->
         <g transform="translate(192,94)">
-          <rect width="28" height="28" rx="6" fill="#fff"/>
+          <rect width="28" height="28" rx="6" fill="#1C1C19"/>
           <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/clay.svg" x="4" y="4" width="20" height="20" style="filter:brightness(0)"/>
           <rect width="28" height="28" rx="6" fill="none" stroke="rgba(80,160,220,.35)" stroke-width=".75"/>
         </g>
@@ -100,10 +100,10 @@
         </g>
 
         <!-- ── N2: IDENTIFY (158,244) ──────────────────── -->
-        <line x1="135" y1="242" x2="130" y2="242" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="158" cy="244" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
-        <circle cx="158" cy="244" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
-        <circle cx="158" cy="244" r="5.5" fill="#0EA5E9">
+        <line x1="135" y1="242" x2="130" y2="242" stroke="rgba(200,240,74,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="158" cy="244" r="22" stroke="rgba(200,240,74,.06)" stroke-width="1" fill="none"/>
+        <circle cx="158" cy="244" r="13" stroke="rgba(200,240,74,.26)" stroke-width="1" fill="none"/>
+        <circle cx="158" cy="244" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="1s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="1s"/>
         </circle>
@@ -121,10 +121,10 @@
         </g>
 
         <!-- ── N3: ENRICH (278,330) ──────────────────── -->
-        <line x1="263" y1="318" x2="208" y2="316" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="278" cy="330" r="22" stroke="rgba(14,165,233,.06)" stroke-width="1" fill="none"/>
-        <circle cx="278" cy="330" r="13" stroke="rgba(14,165,233,.26)" stroke-width="1" fill="none"/>
-        <circle cx="278" cy="330" r="5.5" fill="#0EA5E9">
+        <line x1="263" y1="318" x2="208" y2="316" stroke="rgba(200,240,74,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="278" cy="330" r="22" stroke="rgba(200,240,74,.06)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="330" r="13" stroke="rgba(200,240,74,.26)" stroke-width="1" fill="none"/>
+        <circle cx="278" cy="330" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="2s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="2s"/>
         </circle>
@@ -137,7 +137,7 @@
         </g>
         <!-- Clay chip -->
         <g transform="translate(222,312)">
-          <rect width="28" height="28" rx="6" fill="#fff"/>
+          <rect width="28" height="28" rx="6" fill="#1C1C19"/>
           <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/clay.svg" x="4" y="4" width="20" height="20" style="filter:brightness(0)"/>
           <rect width="28" height="28" rx="6" fill="none" stroke="rgba(80,160,220,.35)" stroke-width=".75"/>
         </g>
@@ -163,25 +163,25 @@
         </circle>
 
         <!-- Outer rotating emerald ring -->
-        <circle cx="400" cy="244" r="70" stroke="rgba(5,150,105,.38)" stroke-width="1.5" stroke-dasharray="5 3.5" fill="none">
+        <circle cx="400" cy="244" r="70" stroke="rgba(200,240,74,.38)" stroke-width="1.5" stroke-dasharray="5 3.5" fill="none">
           <animateTransform attributeName="transform" type="rotate" from="0 400 244" to="360 400 244" dur="20s" repeatCount="indefinite"/>
         </circle>
 
         <!-- Counter-rotating sky-blue ring -->
-        <circle cx="400" cy="244" r="61" stroke="rgba(14,165,233,.22)" stroke-width="1" stroke-dasharray="3 7" fill="none">
+        <circle cx="400" cy="244" r="61" stroke="rgba(200,240,74,.22)" stroke-width="1" stroke-dasharray="3 7" fill="none">
           <animateTransform attributeName="transform" type="rotate" from="0 400 244" to="-360 400 244" dur="14s" repeatCount="indefinite"/>
         </circle>
 
         <!-- Static inner ring (pulsing) -->
-        <circle cx="400" cy="244" r="53" stroke="rgba(14,165,233,.14)" stroke-width=".75" fill="none">
+        <circle cx="400" cy="244" r="53" stroke="rgba(200,240,74,.14)" stroke-width=".75" fill="none">
           <animate attributeName="stroke-opacity" values=".08;.22;.08" dur="3s" repeatCount="indefinite"/>
         </circle>
 
         <!-- Core dark fill -->
-        <circle cx="400" cy="244" r="46" fill="#0F2336"/>
+        <circle cx="400" cy="244" r="46" fill="#0D0D0B"/>
 
         <!-- Core border - breathing glow -->
-        <circle cx="400" cy="244" r="46" fill="none" stroke="#0EA5E9" stroke-width="2.5">
+        <circle cx="400" cy="244" r="46" fill="none" stroke="#C8F04A" stroke-width="2.5">
           <animate attributeName="stroke-opacity" values=".55;1;.55" dur="2.8s" repeatCount="indefinite"/>
           <animate attributeName="stroke-width" values="2;3;2" dur="2.8s" repeatCount="indefinite"/>
         </circle>
@@ -205,17 +205,17 @@
         <text x="400" y="262" text-anchor="middle"
               font-family="'Inter',system-ui,sans-serif"
               font-size="7.5"
-              fill="rgba(5,150,105,.9)" letter-spacing=".06em">
+              fill="rgba(200,240,74,.9)" letter-spacing=".06em">
           Enabling Claude
         </text>
 
         <!-- ══════════════════════════════════════════════ -->
 
         <!-- ── N4: CONTENT (522,158) ──────────────────── -->
-        <line x1="537" y1="147" x2="574" y2="116" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="522" cy="158" r="22" stroke="rgba(56,189,248,.06)" stroke-width="1" fill="none"/>
-        <circle cx="522" cy="158" r="13" stroke="rgba(56,189,248,.3)" stroke-width="1" fill="none"/>
-        <circle cx="522" cy="158" r="5.5" fill="#38BDF8">
+        <line x1="537" y1="147" x2="574" y2="116" stroke="rgba(200,240,74,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="522" cy="158" r="22" stroke="rgba(200,240,74,.06)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="158" r="13" stroke="rgba(200,240,74,.3)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="158" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="0.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="0.5s"/>
         </circle>
@@ -237,10 +237,10 @@
         </g>
 
         <!-- ── N5: ENGAGE (642,244) ──────────────────── -->
-        <line x1="666" y1="242" x2="668" y2="242" stroke="rgba(14,165,233,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="642" cy="244" r="22" stroke="rgba(56,189,248,.06)" stroke-width="1" fill="none"/>
-        <circle cx="642" cy="244" r="13" stroke="rgba(56,189,248,.3)" stroke-width="1" fill="none"/>
-        <circle cx="642" cy="244" r="5.5" fill="#38BDF8">
+        <line x1="666" y1="242" x2="668" y2="242" stroke="rgba(200,240,74,.14)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="642" cy="244" r="22" stroke="rgba(200,240,74,.06)" stroke-width="1" fill="none"/>
+        <circle cx="642" cy="244" r="13" stroke="rgba(200,240,74,.3)" stroke-width="1" fill="none"/>
+        <circle cx="642" cy="244" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="1.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="1.5s"/>
         </circle>
@@ -264,14 +264,14 @@
         </g>
 
         <!-- ── N6: COMPOUNDS (522,330) ──────────────────── -->
-        <line x1="537" y1="318" x2="578" y2="316" stroke="rgba(5,150,105,.18)" stroke-width=".75" stroke-dasharray="3 3"/>
-        <circle cx="522" cy="330" r="22" stroke="rgba(5,150,105,.08)" stroke-width="1" fill="none"/>
-        <circle cx="522" cy="330" r="13" stroke="rgba(5,150,105,.4)" stroke-width="1" fill="none"/>
-        <circle cx="522" cy="330" r="5.5" fill="#10B981">
+        <line x1="537" y1="318" x2="578" y2="316" stroke="rgba(200,240,74,.18)" stroke-width=".75" stroke-dasharray="3 3"/>
+        <circle cx="522" cy="330" r="22" stroke="rgba(200,240,74,.08)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="330" r="13" stroke="rgba(200,240,74,.4)" stroke-width="1" fill="none"/>
+        <circle cx="522" cy="330" r="5.5" fill="#C8F04A">
           <animate attributeName="r" values="5;6.5;5" dur="3s" repeatCount="indefinite" begin="2.5s"/>
           <animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite" begin="2.5s"/>
         </circle>
-        <text x="548" y="304" text-anchor="start" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(16,185,129,.85)">Compounds</text>
+        <text x="548" y="304" text-anchor="start" font-family="'Inter',system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(200,240,74,.85)">Compounds</text>
         <!-- HubSpot chip -->
         <g transform="translate(548,312)">
           <rect width="28" height="28" rx="6" fill="#E8613D"/>
@@ -294,31 +294,31 @@
         </g>
 
         <!-- ── Particles on figure-8 ──────────────────── -->
-        <circle r="3.5" fill="#38BDF8" opacity=".92">
+        <circle r="3.5" fill="#C8F04A" opacity=".92">
           <animateMotion dur="9s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="2.5" fill="#0EA5E9" opacity=".7">
+        <circle r="2.5" fill="#C8F04A" opacity=".7">
           <animateMotion dur="9s" repeatCount="indefinite" begin="2.25s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="3" fill="#38BDF8" opacity=".82">
+        <circle r="3" fill="#C8F04A" opacity=".82">
           <animateMotion dur="9s" repeatCount="indefinite" begin="4.5s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
-        <circle r="2" fill="#0EA5E9" opacity=".6">
+        <circle r="2" fill="#C8F04A" opacity=".6">
           <animateMotion dur="9s" repeatCount="indefinite" begin="6.75s" calcMode="linear"><mpath href="#loop-f8"/></animateMotion>
         </circle>
 
         <!-- ── Particles on return arc (emerald) ──────── -->
-        <circle r="3.5" fill="#10B981" opacity=".88">
+        <circle r="3.5" fill="#C8F04A" opacity=".88">
           <animateMotion dur="4.5s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
         </circle>
-        <circle r="2.5" fill="#059669" opacity=".65">
+        <circle r="2.5" fill="#C8F04A" opacity=".65">
           <animateMotion dur="4.5s" repeatCount="indefinite" begin="2.25s" calcMode="linear"><mpath href="#loop-ret"/></animateMotion>
         </circle>
 
         <!-- Bottom caption -->
         <text x="400" y="490" text-anchor="middle"
               font-family="'Inter',system-ui,sans-serif" font-size="9.5"
-              fill="rgba(14,165,233,.22)" letter-spacing=".04em">
+              fill="rgba(200,240,74,.22)" letter-spacing=".04em">
           Built on clean data · Governed AI · Shared context
         </text>
       </svg>
@@ -382,10 +382,10 @@
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(14, 165, 233, 0.12);
+    border: 1px solid rgba(200, 240, 74, 0.12);
     /* Subtle box-shadow to lift it off the light bg */
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.08),
-                0 2px 8px rgba(15, 35, 54, 0.08);
+    box-shadow: 0 8px 32px rgba(200, 240, 74, 0.08),
+                0 2px 8px rgba(13, 13, 11, 0.08);
   }
 
   .loop-diagram-wrap svg {

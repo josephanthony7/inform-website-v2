@@ -5,47 +5,66 @@
 
 /* ===================================
    CSS CUSTOM PROPERTIES
+   Unified Token System - Dark Theme with Lime Accent
    =================================== */
 :root {
-  /* Primary Colors */
-  --navy: #0F2336;
-  --navy-light: #1A3A54;
-  --sky-blue: #0EA5E9;
-  --sky-blue-light: #38BDF8;
+  /* ===== CORE PALETTE ===== */
+  /* Backgrounds - warm near-blacks */
+  --color-bg-base: #0D0D0B;        /* Primary page background */
+  --color-bg-surface: #141412;     /* Slightly lifted surface for cards/sections */
+  --color-bg-raised: #1C1C19;      /* Raised cards, FAQ panels, modals */
 
-  /* Extended Palette */
-  --pale-blue: #E0F2FE;
-  --off-white: #F8FAFC;
-  --white: #FFFFFF;
-  --emerald: #059669;
-  --warning-red: #DC2626;
-  --slate: #64748B;
-  --body-text: #1E293B;
+  /* Text - warm off-whites */
+  --color-text-primary: #F0EBE0;   /* All primary text, headings */
+  --color-text-secondary: #8C8880; /* Subtitles, captions, body text */
+  --color-text-tertiary: #5C5A56;  /* Hints, labels, dividers */
 
-  /* Legacy aliases for compatibility */
-  --carbon-gray: var(--navy);
-  --carbon-gray-light: var(--navy-light);
-  --roi-green: var(--sky-blue);
-  --vintage-cream: var(--off-white);
-  --rust-orange: var(--warning-red);
+  /* Accent - lime green (single accent color) */
+  --color-accent: #C8F04A;         /* CTAs, stat highlights, active states */
+  --color-accent-muted: #2A3B0A;   /* Lime at low opacity for hover fills */
+  --color-accent-hover: #D4F76A;   /* Lighter lime for hover states */
 
-  /* Theme tokens (light theme only) */
-  --page-bg: var(--white);
-  --section-light-bg: var(--off-white);
-  --section-dark-bg: var(--navy);
-  --card-bg: var(--white);
-  --card-bg-alt: var(--off-white);
-  --panel-bg: var(--off-white);
-  --text-color: var(--body-text);
-  --heading-color: var(--navy);
-  --muted-text: var(--slate);
-  --nav-bg: var(--white);
-  --nav-border: var(--navy);
-  --border-subtle: rgba(15, 35, 54, 0.1);
-  --placeholder-color: rgba(15, 35, 54, 0.4);
+  /* Borders */
+  --color-border: #2A2A26;         /* All borders */
+  --color-border-light: #1E1E1B;   /* Very subtle section dividers */
+
+  /* ===== SEMANTIC TOKENS ===== */
+  /* Page structure */
+  --page-bg: var(--color-bg-base);
+  --section-light-bg: var(--color-bg-surface);
+  --section-dark-bg: var(--color-bg-base);
+  --card-bg: var(--color-bg-raised);
+  --card-bg-alt: var(--color-bg-surface);
+  --panel-bg: var(--color-bg-raised);
+
+  /* Typography */
+  --text-color: var(--color-text-secondary);
+  --heading-color: var(--color-text-primary);
+  --muted-text: var(--color-text-tertiary);
+
+  /* Navigation */
+  --nav-bg: var(--color-bg-base);
+  --nav-border: var(--color-border);
+
+  /* Interactive */
+  --border-subtle: var(--color-border);
+  --placeholder-color: var(--color-text-tertiary);
+
+  /* ===== LEGACY ALIASES (for gradual migration) ===== */
+  --navy: var(--color-bg-base);
+  --navy-light: var(--color-bg-surface);
+  --sky-blue: var(--color-accent);
+  --sky-blue-light: var(--color-accent-hover);
+  --pale-blue: var(--color-accent-muted);
+  --off-white: var(--color-text-primary);
+  --white: var(--color-text-primary);
+  --emerald: var(--color-accent);
+  --warning-red: #EF4444;
+  --slate: var(--color-text-secondary);
+  --body-text: var(--color-text-secondary);
 
   /* Background Pattern Opacity Control */
-  --pattern-opacity: 0.03;
+  --pattern-opacity: 0.04;
 
   /* Typography - DM Sans / Inter / JetBrains Mono */
   --font-display: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -100,13 +119,14 @@
   --transition-base: 250ms ease-in-out;
   --transition-slow: 400ms ease;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --glow-blue: 0 0 20px rgba(14, 165, 233, 0.25);
-  --glow-green: var(--glow-blue);
+  /* Shadows - darker for dark theme */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --glow-accent: 0 0 20px rgba(200, 240, 74, 0.25);
+  --glow-blue: var(--glow-accent);
+  --glow-green: var(--glow-accent);
 }
 
 
@@ -296,26 +316,27 @@ strong {
 }
 
 .btn-primary {
-  background-color: var(--sky-blue);
-  color: var(--white);
-  border: 2px solid var(--sky-blue);
+  background-color: var(--color-accent);
+  color: #0D0D0B;
+  border: 2px solid var(--color-accent);
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  background-color: var(--sky-blue-light);
-  border-color: var(--sky-blue-light);
-  box-shadow: var(--glow-blue);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--glow-accent);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--sky-blue);
-  border: 2px solid var(--sky-blue);
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
 
 .btn-secondary:hover {
-  background-color: var(--sky-blue);
-  color: var(--white);
+  background-color: var(--color-accent);
+  color: #0D0D0B;
 }
 
 .btn-large {
@@ -342,12 +363,16 @@ strong {
   text-align: center;
 }
 
+.text-accent {
+  color: var(--color-accent);
+}
+
 .text-sky {
-  color: var(--sky-blue);
+  color: var(--color-accent);
 }
 
 .text-emerald {
-  color: var(--emerald);
+  color: var(--color-accent);
 }
 
 .text-warning {
@@ -355,19 +380,19 @@ strong {
 }
 
 .text-slate {
-  color: var(--slate);
+  color: var(--color-text-secondary);
 }
 
 .bg-light {
-  background-color: var(--section-light-bg);
+  background-color: var(--color-bg-surface);
 }
 
 .bg-dark {
-  background-color: var(--section-dark-bg);
+  background-color: var(--color-bg-base);
 }
 
 .bg-pale {
-  background-color: var(--pale-blue);
+  background-color: var(--color-accent-muted);
 }
 
 /* ===================================
@@ -396,8 +421,8 @@ strong {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(200, 240, 74, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 240, 74, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -426,12 +451,12 @@ strong {
   background-image:
     linear-gradient(
       120deg,
-      rgba(14, 165, 233, var(--pattern-opacity)) 1px,
+      rgba(200, 240, 74, var(--pattern-opacity)) 1px,
       transparent 1px
     ),
     linear-gradient(
       -60deg,
-      rgba(14, 165, 233, var(--pattern-opacity)) 1px,
+      rgba(200, 240, 74, var(--pattern-opacity)) 1px,
       transparent 1px
     );
   background-size: 80px 80px;
@@ -468,59 +493,60 @@ strong {
   object-position: center;
 }
 
-/* Invert logos to white for dark/navy backgrounds */
+/* Invert logos to white for dark backgrounds - muted opacity */
 .logo-lockup--invert img {
   filter: brightness(0) saturate(100%) invert(1);
-  opacity: 0.9;
+  opacity: 0.55;
   transition: opacity 0.2s ease;
 }
 
 .logo-lockup--invert img:hover {
-  opacity: 1;
+  opacity: 0.75;
 }
 
-/* Full color logos - prominent display */
+/* Full color logos - muted for dark bg */
 .logo-lockup--color img {
-  opacity: 1;
-  transition: transform 0.2s ease;
+  opacity: 0.6;
+  transition: all 0.2s ease;
 }
 
 .logo-lockup--color img:hover {
-  transform: scale(1.05);
+  opacity: 0.8;
+  transform: scale(1.02);
 }
 
-/* Light section variant: convert all logos to dark/navy for consistency */
+/* Light section variant: convert all logos to light for dark bg */
 .logo-lockup--dark img {
-  filter: brightness(0) saturate(100%);
-  opacity: 0.85;
+  filter: brightness(0) saturate(100%) invert(1);
+  opacity: 0.5;
   transition: all 0.2s ease;
 }
 
 .logo-lockup--dark img:hover {
-  opacity: 1;
-  transform: scale(1.05);
+  opacity: 0.7;
 }
 
 /* Natural colour with muting (use only when logos are already consistent) */
 .logo-lockup--natural img {
-  opacity: 0.8;
+  opacity: 0.55;
   transition: opacity 0.2s ease;
 }
 
 .logo-lockup--natural img:hover {
-  opacity: 1;
+  opacity: 0.75;
 }
 
-/* Boxed variant for logos without transparent backgrounds */
+/* Boxed variant for logos on dark backgrounds */
 .logo-lockup--boxed {
-  background: white;
+  background: var(--color-bg-raised);
   padding: 8px 14px;
   border-radius: 6px;
+  border: 1px solid var(--color-border);
 }
 
 .logo-lockup--boxed img {
   filter: none;
-  opacity: 1;
+  opacity: 0.65;
   height: 48px;
   max-width: 160px;
   object-fit: contain;
@@ -552,17 +578,18 @@ strong {
    STAT BOX COMPONENT
    =================================== */
 .stat-box {
-  background-color: var(--pale-blue);
+  background-color: var(--color-bg-raised);
   padding: var(--space-6);
   text-align: center;
   border-radius: var(--card-radius);
+  border: 1px solid var(--color-border);
 }
 
 .stat-box .stat-number {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--navy);
+  color: var(--color-accent);
   display: block;
   margin-bottom: var(--space-2);
 }
@@ -570,7 +597,7 @@ strong {
 .stat-box .stat-label {
   font-family: var(--font-body);
   font-size: var(--text-caption);
-  color: var(--slate);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -580,22 +607,22 @@ strong {
    ICP CARD COMPONENT
    =================================== */
 .icp-card-styled {
-  background-color: var(--white);
+  background-color: var(--color-bg-raised);
   border-radius: var(--card-radius);
   padding: var(--space-7);
-  border-left: 4px solid var(--sky-blue);
+  border-left: 4px solid var(--color-accent);
   box-shadow: var(--shadow-card);
 }
 
 .icp-card-styled .trigger {
   font-style: italic;
-  color: var(--slate);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-4);
 }
 
 .icp-card-styled .job {
   font-weight: 600;
-  color: var(--body-text);
+  color: var(--color-text-primary);
 }
 
 /* ===================================
@@ -604,31 +631,32 @@ strong {
 .founder-avatar {
   width: 80px;
   height: 80px;
-  background-color: var(--navy);
+  background-color: var(--color-bg-surface);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-4);
+  border: 2px solid var(--color-border);
 }
 
 .founder-avatar span {
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--sky-blue);
+  color: var(--color-accent);
 }
 
 /* ===================================
-   EMERALD SUCCESS STYLES
+   ACCENT SUCCESS STYLES
    =================================== */
 .success-text {
-  color: var(--emerald);
+  color: var(--color-accent);
 }
 
 .guarantee-badge {
-  background-color: var(--emerald);
-  color: var(--white);
+  background-color: var(--color-accent);
+  color: #0D0D0B;
   padding: var(--space-2) var(--space-4);
   border-radius: 4px;
   font-weight: 600;
@@ -670,7 +698,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid var(--sky-blue);
+  outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -681,7 +709,7 @@ select:focus-visible {
   display: inline;
   font-family: var(--font-mono);
   font-size: var(--text-caption);
-  color: var(--slate);
+  color: var(--color-text-tertiary);
   opacity: 0.7;
   transition: opacity var(--transition-fast);
 }
@@ -696,6 +724,7 @@ select:focus-visible {
 
 .source-tag:hover {
   opacity: 1;
+  color: var(--color-accent);
 }
 
 /* ===================================
