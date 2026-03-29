@@ -197,7 +197,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* Section 1: Origin */
   .origin-section {
-    background-color: var(--navy);
+    background-color: var(--color-bg-base);
     padding: var(--space-section) 0;
   }
 
@@ -323,8 +323,9 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
     padding: var(--space-6);
-    background-color: var(--pale-blue);
+    background-color: var(--color-bg-surface);
     border-radius: var(--card-radius);
+    border: 1px solid var(--color-border);
   }
 
   .metric {
@@ -336,14 +337,14 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-display);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--navy);
+    color: var(--color-accent);
     margin-bottom: var(--space-1);
   }
 
   .metric-label {
     font-family: var(--font-body);
     font-size: var(--text-caption);
-    color: var(--slate);
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -407,7 +408,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* Section 3: Why We Work This Way */
   .why-section {
-    background-color: var(--page-bg);
+    background-color: var(--color-bg-base);
   }
 
   .why-section h2 {
@@ -484,7 +485,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* Section 4: CTA */
   .team-cta {
-    background-color: var(--navy);
+    background-color: var(--color-bg-surface);
   }
 
   .cta-content {

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="560" height="280" viewBox="0 0 560 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="280" fill="#0D0D0B"/>
+
+  <!-- Row 1 -->
+  <!-- 1: Deep-Scan (x=20) -->
+  <g transform="translate(20,20)">
+    <circle cx="10.5" cy="10.5" r="7" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="7" y1="8.5" x2="14.5" y2="8.5" stroke="#8C8880" stroke-width="1.2" stroke-opacity="0.45" stroke-linecap="round"/>
+    <line x1="6" y1="10.5" x2="15" y2="10.5" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="7" y1="12.5" x2="14.5" y2="12.5" stroke="#8C8880" stroke-width="1.2" stroke-opacity="0.45" stroke-linecap="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Deep-Scan</text>
+  </g>
+
+  <!-- 2: Data Stack (x=160) -->
+  <g transform="translate(160,20)">
+    <rect x="3" y="3" width="17" height="5" rx="1.5" stroke="#8C8880" stroke-width="1.5"/>
+    <rect x="3" y="10" width="17" height="5" rx="1.5" stroke="#C8F04A" stroke-width="1.5"/>
+    <rect x="3" y="17" width="17" height="5" rx="1.5" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="21" cy="5.5" r="1" fill="#8C8880"/>
+    <circle cx="21" cy="12.5" r="1" fill="#C8F04A"/>
+    <circle cx="21" cy="19.5" r="1" fill="#8C8880"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Data stack</text>
+  </g>
+
+  <!-- 3: Integration (x=300) -->
+  <g transform="translate(300,20)">
+    <circle cx="12" cy="12" r="2.5" stroke="#C8F04A" stroke-width="1.5"/>
+    <circle cx="3.5" cy="12" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="18.5" cy="5" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="18.5" cy="19" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <line x1="5.5" y1="12" x2="9.5" y2="12" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="17" y1="6.4" x2="14.1" y2="10" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="17" y1="17.6" x2="14.1" y2="14" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Integration</text>
+  </g>
+
+  <!-- 4: Pipeline (x=440) -->
+  <g transform="translate(440,20)">
+    <path d="M4,3 L20,3 L14,12 L14,19 L10,19 L10,12 Z" stroke="#8C8880" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="8" cy="6.5" r="1" fill="#8C8880"/>
+    <circle cx="12" cy="6.5" r="1" fill="#8C8880"/>
+    <circle cx="16" cy="6.5" r="1" fill="#8C8880"/>
+    <line x1="12" y1="19" x2="12" y2="21.5" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round"/>
+    <polyline points="10,20.2 12,22.5 14,20.2" stroke="#C8F04A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Pipeline</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- 5: Compound (x=20, y=140) -->
+  <g transform="translate(20,140)">
+    <rect x="2" y="16" width="5" height="6" rx="0.5" stroke="#8C8880" stroke-width="1.5"/>
+    <rect x="9" y="11" width="5" height="11" rx="0.5" stroke="#8C8880" stroke-width="1.5"/>
+    <rect x="16" y="6" width="5" height="16" rx="0.5" stroke="#C8F04A" stroke-width="1.5"/>
+    <line x1="18.5" y1="6" x2="18.5" y2="3.5" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round"/>
+    <polyline points="17,4.8 18.5,2.5 20,4.8" stroke="#C8F04A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Compounding</text>
+  </g>
+
+  <!-- 6: Speed (x=160, y=140) -->
+  <g transform="translate(160,140)">
+    <line x1="3" y1="9" x2="7.5" y2="9" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="2" y1="12" x2="6.5" y2="12" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="3" y1="15" x2="7.5" y2="15" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="8.5" y1="12" x2="18" y2="12" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round"/>
+    <polyline points="14,8.5 19,12 14,15.5" stroke="#C8F04A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Speed</text>
+  </g>
+
+  <!-- 7: Security (x=300, y=140) -->
+  <g transform="translate(300,140)">
+    <path d="M12,2 L20,6 L20,15 Q20,20 12,22 Q4,20 4,15 L4,6 Z" stroke="#8C8880" stroke-width="1.5" stroke-linejoin="round"/>
+    <polyline points="8.5,12 11,14.5 16,9" stroke="#C8F04A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Security</text>
+  </g>
+
+  <!-- 8: Attribution (x=440, y=140) -->
+  <g transform="translate(440,140)">
+    <circle cx="4" cy="5" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="12" cy="5" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="20" cy="5" r="2" stroke="#8C8880" stroke-width="1.5"/>
+    <circle cx="12" cy="20" r="2.5" stroke="#C8F04A" stroke-width="1.5"/>
+    <line x1="5" y1="7" x2="10.5" y2="17.8" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="12" y1="7" x2="12" y2="17.5" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="19" y1="7" x2="13.5" y2="17.8" stroke="#8C8880" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="12" y="38" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#5C5A56" text-anchor="middle">Attribution</text>
+  </g>
+</svg>

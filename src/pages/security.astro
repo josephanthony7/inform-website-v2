@@ -6,28 +6,23 @@ import Layout from '../layouts/Layout.astro';
   title="Security - Inform Growth"
   description="Your data never leaves your infrastructure. Learn how our AI layer is designed for enterprise-grade security and governance."
 >
-  <!-- Page Header -->
+  <!-- Page Header + Architecture -->
   <section class="page-header section geo-grid">
     <div class="container">
       <div class="header-content fade-up">
         <div class="header-eyebrow">Security & Governance</div>
         <h1>Your Data. Your Infrastructure. Your Control.</h1>
         <p class="header-subtitle">
-          The AI layer we build sits in the middle as middleware - it routes requests and returns answers, but your credentials and your data stay server-side on your own deployment.
+          We build a governed AI layer on your infrastructure. Read-only by default. Your credentials never leave your servers.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Architecture Overview -->
-  <section class="section">
+  <!-- Architecture Diagram -->
+  <section class="section arch-section">
     <div class="container">
       <div class="architecture-intro fade-up">
-        <h2>How the Architecture Works</h2>
-        <p>
-          We're not feeding your pipeline into a third-party AI that learns from your data. We're building you a controlled, governed layer that uses AI to answer questions about your own data - on your terms.
-        </p>
-      </div>
 
       <div class="architecture-diagram fade-up">
         <!-- SVG Flow Visualization -->
@@ -114,8 +109,7 @@ import Layout from '../layouts/Layout.astro';
               <g transform="translate(-14, -5)">
                 <image href="/logos/attio.png" width="28" height="28" preserveAspectRatio="xMidYMid meet"/>
               </g>
-              <text y="38" text-anchor="middle" fill="#F0EBE0" font-family="'DM Sans',system-ui,sans-serif" font-size="12" font-weight="700">Your Systems</text>
-              <text y="50" text-anchor="middle" fill="#8C8880" font-family="'JetBrains Mono',monospace" font-size="8">CRM, Analytics, etc.</text>
+              <text y="42" text-anchor="middle" fill="#F0EBE0" font-family="'DM Sans',system-ui,sans-serif" font-size="12" font-weight="700">Your Systems</text>
             </g>
           </svg>
         </div>
@@ -152,7 +146,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div class="arch-mobile-text">
               <span class="arch-mobile-label">Your Systems</span>
-              <span class="arch-mobile-sub">CRM, Analytics, etc.</span>
             </div>
           </div>
         </div>
@@ -363,8 +356,8 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* Page Header */
   .page-header {
-    background-color: var(--navy);
-    padding: var(--space-section) 0;
+    background-color: var(--color-bg-base);
+    padding: var(--space-2xl) 0 var(--space-lg);
   }
 
   .header-content {
@@ -389,21 +382,27 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     color: var(--white);
     line-height: 1.15;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
   }
 
   .header-subtitle {
     font-family: var(--font-body);
-    font-size: var(--text-lg);
-    color: var(--off-white);
-    line-height: 1.7;
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   /* Architecture */
+  .arch-section {
+    padding-top: var(--space-lg);
+  }
+
   .architecture-intro {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto var(--space-2xl);
+    margin: 0 auto var(--space-lg);
   }
 
   .architecture-intro h2 {
@@ -418,6 +417,12 @@ import Layout from '../layouts/Layout.astro';
     font-size: var(--text-lg);
     color: var(--muted-text);
     line-height: 1.7;
+  }
+
+  .architecture-intro .arch-transparency {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-md);
   }
 
   .architecture-diagram {
@@ -550,8 +555,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .arch-mobile-node.hub {
-      background: var(--navy);
-      border-color: var(--sky-blue);
+      background: var(--color-bg-base);
+      border-color: var(--color-accent);
     }
 
     .arch-mobile-node.hub .arch-mobile-label {
@@ -852,7 +857,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* CTA */
   .cta-section {
-    background-color: var(--navy);
+    background-color: var(--color-bg-surface);
     padding: var(--space-section) 0;
   }
 
@@ -879,7 +884,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* Utilities */
   .bg-light {
-    background-color: var(--section-light-bg);
+    background-color: var(--color-bg-surface);
   }
 
   .text-center {

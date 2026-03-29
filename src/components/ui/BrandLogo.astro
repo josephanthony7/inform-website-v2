@@ -1,0 +1,95 @@
+---
+/**
+ * BrandLogo - Inline SVG logo from the Inform Growth brand system
+ *
+ * Variants:
+ *   - primary: Full logo with stacked bars and wordmark (dark bg)
+ *   - compact: Compact horizontal logo (dark bg)
+ *   - mark: Icon only, no text (dark bg)
+ *   - reversed: Full logo for light backgrounds
+ *
+ * Usage:
+ *   <BrandLogo variant="compact" />
+ *   <BrandLogo variant="mark" height={40} />
+ */
+
+interface Props {
+  variant?: 'primary' | 'compact' | 'mark' | 'reversed';
+  height?: number;
+  class?: string;
+}
+
+const { variant = 'compact', height, class: className } = Astro.props;
+
+// Define logo dimensions and content
+const logos = {
+  primary: {
+    viewBox: '0 0 260 64',
+    width: 260,
+    height: 64,
+    content: `
+      <rect x="20" y="15.5" width="16" height="6" rx="1.5" fill="var(--color-text-primary)" fill-opacity="0.2"/>
+      <rect x="20" y="29" width="28" height="6" rx="1.5" fill="var(--color-text-primary)" fill-opacity="0.5"/>
+      <rect x="20" y="42.5" width="42" height="6" rx="1.5" fill="var(--color-accent)"/>
+      <text x="78" y="30" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="var(--color-text-secondary)" letter-spacing="3">INFORM</text>
+      <text x="77" y="48.5" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="500" fill="var(--color-text-primary)" letter-spacing="0.5">GROWTH</text>
+    `
+  },
+  compact: {
+    viewBox: '0 0 220 40',
+    width: 220,
+    height: 40,
+    content: `
+      <rect x="12" y="9" width="10" height="4" rx="1" fill="var(--color-text-primary)" fill-opacity="0.2"/>
+      <rect x="12" y="15.5" width="17" height="4" rx="1" fill="var(--color-text-primary)" fill-opacity="0.5"/>
+      <rect x="12" y="22" width="26" height="4" rx="1" fill="var(--color-accent)"/>
+      <text x="46" y="27" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="500" fill="var(--color-text-primary)" letter-spacing="0.3">Inform Growth</text>
+    `
+  },
+  mark: {
+    viewBox: '0 0 62 53',
+    width: 62,
+    height: 53,
+    content: `
+      <rect x="10" y="10" width="16" height="6" rx="1.5" fill="var(--color-text-primary)" fill-opacity="0.2"/>
+      <rect x="10" y="23.5" width="28" height="6" rx="1.5" fill="var(--color-text-primary)" fill-opacity="0.5"/>
+      <rect x="10" y="37" width="42" height="6" rx="1.5" fill="var(--color-accent)"/>
+    `
+  },
+  reversed: {
+    viewBox: '0 0 260 64',
+    width: 260,
+    height: 64,
+    content: `
+      <rect x="20" y="15.5" width="16" height="6" rx="1.5" fill="#141412" fill-opacity="0.18"/>
+      <rect x="20" y="29" width="28" height="6" rx="1.5" fill="#141412" fill-opacity="0.45"/>
+      <rect x="20" y="42.5" width="42" height="6" rx="1.5" fill="var(--color-accent-reversed)"/>
+      <text x="78" y="30" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#888880" letter-spacing="3">INFORM</text>
+      <text x="77" y="48.5" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="500" fill="#141412" letter-spacing="0.5">GROWTH</text>
+    `
+  }
+};
+
+const logo = logos[variant];
+const aspectRatio = logo.width / logo.height;
+const computedHeight = height || logo.height;
+const computedWidth = height ? height * aspectRatio : logo.width;
+---
+
+<svg
+  viewBox={logo.viewBox}
+  width={computedWidth}
+  height={computedHeight}
+  fill="none"
+  class:list={['brand-logo', `brand-logo--${variant}`, className]}
+  aria-label="Inform Growth"
+  role="img"
+  set:html={logo.content}
+/>
+
+<style>
+  .brand-logo {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+</style>

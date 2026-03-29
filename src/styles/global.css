@@ -23,6 +23,7 @@
   --color-accent: #C8F04A;         /* CTAs, stat highlights, active states */
   --color-accent-muted: #2A3B0A;   /* Lime at low opacity for hover fills */
   --color-accent-hover: #D4F76A;   /* Lighter lime for hover states */
+  --color-accent-reversed: #4A6E00; /* Dark green for light backgrounds */
 
   /* Borders */
   --color-border: #2A2A26;         /* All borders */
