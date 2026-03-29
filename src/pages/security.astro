@@ -1,0 +1,703 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Security - Inform Growth"
+  description="Your data never leaves your infrastructure. Learn how our AI layer is designed for enterprise-grade security and governance."
+>
+  <!-- Page Header -->
+  <section class="page-header section geo-grid">
+    <div class="container">
+      <div class="header-content fade-up">
+        <div class="header-eyebrow">Security & Governance</div>
+        <h1>Your Data. Your Infrastructure. Your Control.</h1>
+        <p class="header-subtitle">
+          The AI layer we build sits in the middle as middleware — it routes requests and returns answers, but your credentials and your data stay server-side on your own deployment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="architecture-intro fade-up">
+        <h2>How the Architecture Works</h2>
+        <p>
+          We're not feeding your pipeline into a third-party AI that learns from your data. We're building you a controlled, governed layer that uses AI to answer questions about your own data — on your terms.
+        </p>
+      </div>
+
+      <div class="architecture-diagram fade-up">
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <span class="arch-label">Your Team</span>
+            <span class="arch-sub">Asks questions</span>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-hub">
+            <div class="arch-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <span class="arch-label">AI Gateway</span>
+            <span class="arch-sub">Routes & validates</span>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <span class="arch-label">Your Systems</span>
+            <span class="arch-sub">HubSpot, Salesforce, etc.</span>
+          </div>
+        </div>
+        <p class="arch-caption">Data flows through middleware but never leaves your infrastructure</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Principles -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center fade-up">Built-In Security Principles</h2>
+
+      <div class="security-grid fade-up">
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Read-Only by Default</h3>
+          <p>Every integration starts read-only. Mutating operations (POST, DELETE, UPDATE) require explicit admin sign-off before they go live.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Credentials Stay Local</h3>
+          <p>API keys and credentials are stored in your infrastructure — never in our codebase, never in shared repositories, never exposed to AI models.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>Automated QA Review</h3>
+          <p>Every workflow promotion goes through automated checks for hardcoded credentials, unsafe operations, and code quality before human review.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <polyline points="17 11 19 13 23 9"/>
+            </svg>
+          </div>
+          <h3>Human Approval Gate</h3>
+          <p>One mandatory human gate: the merge decision. Admins see clear summaries and explicitly approve before any workflow goes to production.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h3>Field Validation</h3>
+          <p>A centralized field registry documents what your data means. Every promoted tool inherits validation wrappers that enforce data integrity.</p>
+        </div>
+
+        <div class="security-card">
+          <div class="security-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </div>
+          <h3>No Third-Party Training</h3>
+          <p>Your data is never used to train external AI models. The AI layer answers questions about your data — it doesn't learn from it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitOps Governance -->
+  <section class="section">
+    <div class="container">
+      <div class="governance-content">
+        <div class="governance-text fade-up">
+          <h2>GitOps Governance</h2>
+          <p class="governance-lead">
+            Zero ongoing maintenance burden. The governance layer applies uniformly to every tool from every team.
+          </p>
+          <ul class="governance-list">
+            <li>
+              <strong>Version controlled:</strong> Every change is tracked, auditable, and reversible
+            </li>
+            <li>
+              <strong>PR-based workflow:</strong> Changes go through structured review before merge
+            </li>
+            <li>
+              <strong>Automated checks:</strong> QA agents review every PR and post pass/fail results
+            </li>
+            <li>
+              <strong>Clear ownership:</strong> Admins control what gets promoted to shared infrastructure
+            </li>
+            <li>
+              <strong>Migration summaries:</strong> See exactly what changes before approving
+            </li>
+          </ul>
+          <a href="https://github.com/jaronsander/agent-gateway" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            View on GitHub →
+          </a>
+        </div>
+        <div class="governance-visual fade-up">
+          <div class="gov-flow">
+            <div class="gov-step">
+              <span class="gov-num">1</span>
+              <span class="gov-label">Explore</span>
+              <span class="gov-desc">Teams develop in local sandbox</span>
+            </div>
+            <div class="gov-connector"></div>
+            <div class="gov-step">
+              <span class="gov-num">2</span>
+              <span class="gov-label">Codify</span>
+              <span class="gov-desc">Valuable workflows submitted</span>
+            </div>
+            <div class="gov-connector"></div>
+            <div class="gov-step">
+              <span class="gov-num">3</span>
+              <span class="gov-label">Review</span>
+              <span class="gov-desc">Automated QA + human approval</span>
+            </div>
+            <div class="gov-connector"></div>
+            <div class="gov-step">
+              <span class="gov-num">4</span>
+              <span class="gov-label">Promote</span>
+              <span class="gov-desc">Shared infrastructure inherits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center fade-up">Security FAQs</h2>
+
+      <div class="faq-grid fade-up">
+        <details class="faq-item">
+          <summary class="faq-question">Where does my data actually go?</summary>
+          <div class="faq-answer">
+            <p>Nowhere external. The AI layer runs as middleware in your infrastructure. When you ask a question, it routes the request to your systems (HubSpot, Salesforce, etc.), fetches the data server-side, and returns the answer. Your data never leaves your deployment.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can the AI modify our data?</summary>
+          <div class="faq-answer">
+            <p>Not without explicit approval. All integrations are read-only by default. Any workflow that includes mutating operations (creating records, updating fields, deleting data) requires admin sign-off through the PR review process before it can go live.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Who has access to our credentials?</summary>
+          <div class="faq-answer">
+            <p>Only your team. Operator credentials stay in local, untracked .env files. Centralized integrations use server-side credential management that your admins control. No credentials are ever stored in the repository or exposed to AI processing.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is our data used to train AI models?</summary>
+          <div class="faq-answer">
+            <p>No. The AI layer we build is a query engine, not a training pipeline. It uses AI to interpret questions and format answers, but your data is never sent to third-party training systems. Your pipeline data stays yours.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What happens if something goes wrong?</summary>
+          <div class="faq-answer">
+            <p>Everything is version controlled. Any change can be rolled back instantly through Git. The PR-based workflow means you have a complete audit trail of who changed what, when, and why. And read-only defaults mean the worst case is usually just a failed query, not corrupted data.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you have SOC 2 / compliance certifications?</summary>
+          <div class="faq-answer">
+            <p>The architecture is designed so that compliance depends on your infrastructure, not ours. Because your data never leaves your systems and credentials stay on your deployment, your existing compliance posture extends to the AI layer. We're happy to walk through the architecture with your security team.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section geo-grid">
+    <div class="container">
+      <div class="cta-content fade-up">
+        <h2>Questions about security?</h2>
+        <p>We're happy to walk your security team through the architecture, answer specific compliance questions, or do a technical deep-dive on the gateway design.</p>
+        <a href="/contact" class="btn btn-primary btn-large">Schedule a Security Review</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--navy);
+    padding: var(--space-section) 0;
+  }
+
+  .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--sky-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: var(--space-6);
+  }
+
+  .header-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--off-white);
+    line-height: 1.7;
+  }
+
+  /* Architecture */
+  .architecture-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .architecture-intro h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-4);
+  }
+
+  .architecture-intro p {
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.7;
+  }
+
+  .architecture-diagram {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: var(--space-2xl);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .arch-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--page-bg);
+    border: 2px solid var(--border-subtle);
+    border-radius: 12px;
+    min-width: 140px;
+  }
+
+  .arch-node.arch-hub {
+    background: var(--navy);
+    border-color: var(--sky-blue);
+  }
+
+  .arch-node.arch-hub .arch-icon {
+    color: var(--sky-blue);
+  }
+
+  .arch-node.arch-hub .arch-label {
+    color: var(--white);
+  }
+
+  .arch-node.arch-hub .arch-sub {
+    color: var(--sky-blue);
+  }
+
+  .arch-icon {
+    color: var(--sky-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .arch-label {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-1);
+  }
+
+  .arch-sub {
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+  }
+
+  .arch-arrow {
+    font-size: var(--text-2xl);
+    color: var(--sky-blue);
+    font-weight: 700;
+  }
+
+  .arch-caption {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    margin-top: var(--space-lg);
+    font-style: italic;
+  }
+
+  /* Security Grid */
+  .security-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .security-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .security-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .security-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+  }
+
+  .security-card:hover {
+    border-color: var(--sky-blue);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .security-icon {
+    color: var(--sky-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  .security-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-3);
+  }
+
+  .security-card p {
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+    line-height: 1.7;
+  }
+
+  /* Governance */
+  .governance-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .governance-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .governance-text h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: var(--space-4);
+  }
+
+  .governance-lead {
+    font-size: var(--text-lg);
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .governance-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-lg);
+  }
+
+  .governance-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+  }
+
+  .governance-list li:last-child {
+    border-bottom: none;
+  }
+
+  .governance-list strong {
+    color: var(--heading-color);
+  }
+
+  .governance-visual {
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: var(--space-xl);
+  }
+
+  .gov-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .gov-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+  }
+
+  .gov-num {
+    width: 32px;
+    height: 32px;
+    background: var(--sky-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+  }
+
+  .gov-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--heading-color);
+    min-width: 80px;
+  }
+
+  .gov-desc {
+    font-size: var(--text-sm);
+    color: var(--muted-text);
+  }
+
+  .gov-connector {
+    width: 2px;
+    height: 20px;
+    background: var(--border-subtle);
+    margin-left: 15px;
+  }
+
+  /* FAQ */
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .faq-item:hover,
+  .faq-item[open] {
+    border-color: var(--sky-blue);
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    padding: var(--space-lg);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--sky-blue);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+    border-top: 1px solid var(--border-subtle);
+    margin-top: calc(-1 * var(--space-sm));
+    padding-top: var(--space-lg);
+  }
+
+  .faq-answer p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--muted-text);
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .cta-section {
+    background-color: var(--navy);
+    padding: var(--space-section) 0;
+  }
+
+  .cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    font-size: var(--text-lg);
+    color: var(--off-white);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Utilities */
+  .bg-light {
+    background-color: var(--section-light-bg);
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll-triggered fade-up animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
