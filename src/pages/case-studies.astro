@@ -12,8 +12,9 @@ import caseStudies from '../data/case-studies';
   <section class="page-header geo-grid">
     <div class="container">
       <div class="header-content fade-up">
-        <h1 class="text-center">Case Studies</h1>
-        <p class="header-subtitle text-center">Real results from real engagements.</p>
+        <div class="header-eyebrow">Real Results</div>
+        <h1 class="text-center">Customer-First, Always</h1>
+        <p class="header-subtitle text-center">We work in tight feedback loops with your team. Every engagement is scoped to your reality, delivered in sprints, and measured by outcomes you can see.</p>
       </div>
     </div>
   </section>
@@ -89,7 +90,41 @@ import caseStudies from '../data/case-studies';
   /* Page Header Styles */
   .page-header {
     background-color: var(--color-bg-base);
-    padding: var(--space-2xl) 0 var(--space-lg);
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .header-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--color-text-primary);
+    line-height: 1.15;
+    margin-bottom: var(--space-sm);
+  }
+
+  .header-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .header-grid {
