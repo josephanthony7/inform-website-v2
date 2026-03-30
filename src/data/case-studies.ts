@@ -27,7 +27,7 @@ const caseStudies = [
     slug: 'revenue-accelerator-data-consolidation',
     title: 'Revenue Accelerator: Consolidated Contact Intelligence',
     client: 'Revenue Accelerator',
-    metric: '40% Data Cost Reduction',
+    metric: '40% Cost Savings',
     summary: 'Unified disparate data sources into a searchable 3M-contact database.',
     logo: '/clients/revenue_accelerator_logo_new-removebg-preview.png',
   },
