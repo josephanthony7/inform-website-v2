@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Inform Growth Mark - Dark Mode (for dark backgrounds) -->
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background -->
+  <rect width="64" height="64" fill="transparent"/>
+
+  <!-- Brand mark - stacked bars (light on dark) -->
+  <rect x="11" y="14" width="16" height="6" rx="1.5" fill="#FFFFFF" fill-opacity="0.2"/>
+  <rect x="11" y="27.5" width="28" height="6" rx="1.5" fill="#FFFFFF" fill-opacity="0.5"/>
+  <rect x="11" y="41" width="42" height="6" rx="1.5" fill="#C8F04A"/>
+</svg>
