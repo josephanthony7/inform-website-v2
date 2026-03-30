@@ -116,7 +116,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   </section>
 
   <!-- What We Build: The AI Infrastructure -->
-  <section class="infrastructure-section section bg-dark">
+  <section class="infrastructure-section section">
     <div class="container">
       <div class="infra-header fade-up">
         <h2>The Infrastructure We Build For You</h2>
@@ -180,7 +180,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   </section>
 
   <!-- Service Tiers -->
-  <section class="tiers-section section bg-light">
+  <section class="tiers-section section">
     <div class="container">
       <div class="tiers-header fade-up">
         <h2>Three Ways to Start</h2>
@@ -245,7 +245,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   </section>
 
   <!-- Final CTA -->
-  <section class="final-cta section bg-dark">
+  <section class="final-cta section">
     <div class="container">
       <div class="final-cta-content fade-up">
         <h2>Ready to build a revenue engine that compounds?</h2>
@@ -462,11 +462,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   /* Infrastructure Section */
   .infrastructure-section {
-    background: var(--color-bg-surface);
-  }
-
-  .bg-dark {
-    background-color: var(--color-bg-surface);
+    background: var(--color-bg-base);
   }
 
   .infra-header {
@@ -549,11 +545,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   /* Tiers Section */
   .tiers-section {
-    background-color: var(--color-bg-base);
-  }
-
-  .bg-light {
-    background-color: var(--section-light-bg);
+    background-color: var(--color-bg-surface);
   }
 
   .tiers-header {
@@ -759,6 +751,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   /* Final CTA */
   .final-cta {
     padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-base);
   }
 
   .final-cta-content {
