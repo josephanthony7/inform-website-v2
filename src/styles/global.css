@@ -15,9 +15,9 @@
   --color-bg-raised: #1C1C19;      /* Raised cards, FAQ panels, modals */
 
   /* Text - warm off-whites */
-  --color-text-primary: #F5F2EA;   /* All primary text, headings */
-  --color-text-secondary: #B0ACA4; /* Subtitles, captions, body text */
-  --color-text-tertiary: #8A867E;  /* Hints, labels, dividers */
+  --color-text-primary: #FAF8F4;   /* All primary text, headings */
+  --color-text-secondary: #CCC8C0; /* Subtitles, captions, body text */
+  --color-text-tertiary: #A5A19A;  /* Hints, labels, dividers */
 
   /* Accent - lime green (single accent color) */
   --color-accent: #C8F04A;         /* CTAs, stat highlights, active states */
