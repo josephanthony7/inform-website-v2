@@ -86,16 +86,15 @@ const { study, frontmatter, Content } = Astro.props;
 
   /* Override text colors for dark hero background */
   .case-study-hero h1 {
-    color: var(--white);
+    color: #FFFFFF;
   }
 
   .case-study-hero .breadcrumb {
-    color: var(--off-white);
-    opacity: 0.7;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .case-study-hero .breadcrumb:hover {
-    color: var(--sky-blue);
+    color: #C8F04A;
     opacity: 1;
   }
 
@@ -126,7 +125,7 @@ const { study, frontmatter, Content } = Astro.props;
 
   .case-study-hook {
     font-size: var(--text-lg);
-    color: var(--off-white);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
     max-width: 800px;
   }
@@ -137,7 +136,7 @@ const { study, frontmatter, Content } = Astro.props;
     gap: var(--space-lg);
     margin-top: var(--space-xl);
     padding-top: var(--space-lg);
-    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
   }
 
   @media (min-width: 768px) {
@@ -152,14 +151,14 @@ const { study, frontmatter, Content } = Astro.props;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--sky-blue);
+    color: #C8F04A;
     margin-bottom: var(--space-xs);
   }
 
   .meta-value {
     font-family: var(--font-display);
     font-size: var(--text-lg);
-    color: var(--white);
+    color: #FFFFFF;
   }
 
   .case-study-body {

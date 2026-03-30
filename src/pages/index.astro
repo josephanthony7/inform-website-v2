@@ -68,6 +68,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
             alt="Howdy Sales"
             loading="lazy"
             decoding="async"
+            style="max-height: 100px;"
           />
         </div>
         <div class="logo-lockup logo-lockup--dark" role="listitem">
@@ -187,7 +188,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-display);
     font-size: var(--text-h1);
     font-weight: 700;
-    color: var(--white);
+    color: var(--heading-color);
     line-height: 1.15;
     margin-bottom: var(--space-8);
     letter-spacing: -0.02em;
@@ -341,15 +342,15 @@ import CompoundingSection from '../components/CompoundingSection.astro';
   }
 
   .logo-lockup--dark img {
-    opacity: 0.55;
-    filter: brightness(0) invert(1);
-    max-height: 32px;
+    opacity: 0.7;
+    filter: brightness(0);
+    max-height: 72px;
     width: auto;
     transition: opacity var(--transition-fast);
   }
 
   .logo-lockup--dark:hover img {
-    opacity: 0.8;
+    opacity: 1;
   }
 
   /* PROCESS SECTION */
@@ -500,7 +501,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
   }
 
   .deepscan-section h2 {
-    color: var(--white);
+    color: #FFFFFF;
   }
 
   .deepscan-intro {
@@ -508,7 +509,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     margin: 0 auto var(--space-xl);
     font-family: var(--font-body);
     font-size: var(--text-base);
-    color: var(--off-white);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
   }
 
@@ -584,7 +585,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-mono);
     font-size: var(--text-caption);
     font-weight: 500;
-    color: var(--sky-blue);
+    color: #C8F04A;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     background-color: rgba(200, 240, 74, 0.1);
@@ -599,14 +600,14 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: var(--white);
+    color: #FFFFFF;
     margin-bottom: var(--space-3);
   }
 
   .deepscan-card p {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: var(--off-white);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin: 0;
   }
@@ -770,7 +771,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 600;
-    color: var(--white);
+    color: #FFFFFF;
     line-height: 1.55;
     font-style: italic;
     margin-bottom: var(--space-4);
@@ -786,14 +787,13 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--sky-blue);
+    color: #C8F04A;
   }
 
   .testimonial-role {
     font-family: var(--font-body);
     font-size: var(--text-caption);
-    color: var(--off-white);
-    opacity: 0.65;
+    color: rgba(255, 255, 255, 0.65);
   }
 
   /* SECTION 8: ICP CARDS */
@@ -993,7 +993,7 @@ import CompoundingSection from '../components/CompoundingSection.astro';
     font-family: var(--font-display);
     font-size: var(--text-h2);
     font-weight: 700;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: var(--space-6);
   }
 

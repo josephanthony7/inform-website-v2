@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Inform Growth">
   <title>Inform Growth</title>
 
-  <!-- Background -->
-  <rect width="64" height="64" rx="12" fill="#0D0D0B"/>
+  <!-- Background - light mode -->
+  <rect width="64" height="64" rx="12" fill="#FFFFFF"/>
 
-  <!-- Stacked bars - brand mark -->
-  <rect x="14" y="14" width="14" height="6" rx="1.5" fill="#F0EBE0" fill-opacity="0.2"/>
-  <rect x="14" y="26" width="24" height="6" rx="1.5" fill="#F0EBE0" fill-opacity="0.5"/>
-  <rect x="14" y="38" width="36" height="6" rx="1.5" fill="#C8F04A"/>
+  <!-- Stacked bars - brand mark for light background -->
+  <rect x="14" y="14" width="14" height="6" rx="1.5" fill="#1A1A18" fill-opacity="0.15"/>
+  <rect x="14" y="26" width="24" height="6" rx="1.5" fill="#1A1A18" fill-opacity="0.4"/>
+  <rect x="14" y="38" width="36" height="6" rx="1.5" fill="#2D5016"/>
 </svg>

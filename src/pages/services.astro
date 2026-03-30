@@ -264,7 +264,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    color: white;
+    color: var(--heading-color);
     line-height: 1.15;
     margin-bottom: var(--space-sm);
   }
@@ -302,16 +302,16 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   .approach-step:hover {
     border-color: var(--sky-blue);
-    box-shadow: 0 4px 20px rgba(200, 240, 74, 0.1);
+    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.1);
   }
 
   .approach-step.final {
-    border-color: #C8F04A;
+    border-color: var(--color-accent);
     background: var(--color-bg-raised);
   }
 
   .approach-step.final:hover {
-    box-shadow: 0 4px 20px rgba(200, 240, 74, 0.15);
+    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.15);
   }
 
   .step-marker {
@@ -324,13 +324,13 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(200, 240, 74, 0.1);
+    background: var(--color-accent-muted);
     border-radius: 12px;
   }
 
   .approach-step.final .step-marker {
-    color: #C8F04A;
-    background: rgba(200, 240, 74, 0.1);
+    color: var(--color-accent);
+    background: var(--color-accent-muted);
   }
 
   .step-content h3 {
@@ -350,7 +350,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   }
 
   .approach-step.final .step-for-you {
-    color: #C8F04A;
+    color: var(--color-accent);
   }
 
   .step-content > p:not(.step-for-you) {
@@ -387,7 +387,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   }
 
   .approach-step.final .step-details li::before {
-    color: #C8F04A;
+    color: var(--color-accent);
   }
 
   @media (max-width: 768px) {
@@ -408,7 +408,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   /* Infrastructure Section */
   .infrastructure-section {
-    background: #0D0D0B;
+    background: var(--color-bg-surface);
   }
 
   .bg-dark {
@@ -425,14 +425,14 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-family: var(--font-display);
     font-size: var(--text-3xl);
     font-weight: 900;
-    color: white;
+    color: var(--heading-color);
     margin-bottom: var(--space-md);
   }
 
   .infra-header p {
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    color: #8C8880;
+    color: var(--color-text-secondary);
     line-height: 1.7;
   }
 
@@ -456,15 +456,15 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   }
 
   .infra-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-bg-raised);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: var(--space-lg);
     transition: all 0.3s ease;
   }
 
   .infra-card:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-raised);
     border-color: var(--sky-blue);
   }
 
@@ -477,14 +477,14 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: white;
+    color: var(--heading-color);
     margin-bottom: var(--space-sm);
   }
 
   .infra-card p {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: #8C8880;
+    color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
   }
@@ -555,7 +555,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   .tier-card.featured {
     border-color: var(--sky-blue);
-    box-shadow: 0 8px 30px rgba(200, 240, 74, 0.15);
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
     position: relative;
   }
 
@@ -589,8 +589,8 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: #C8F04A;
-    background: rgba(200, 240, 74, 0.1);
+    color: var(--color-accent);
+    background: var(--color-accent-muted);
     padding: var(--space-sm) var(--space-md);
     border-radius: 6px;
     margin-bottom: var(--space-lg);
@@ -619,7 +619,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     content: '✓';
     position: absolute;
     left: 0;
-    color: #C8F04A;
+    color: var(--color-accent);
     font-weight: 700;
   }
 
@@ -717,7 +717,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-family: var(--font-display);
     font-size: var(--text-2xl);
     font-weight: 900;
-    color: white;
+    color: var(--heading-color);
     margin-bottom: var(--space-md);
   }
 

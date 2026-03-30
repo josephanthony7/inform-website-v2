@@ -63,9 +63,9 @@
           <div class="step">
             <div class="step-icon step-icon-good">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="#C8F04A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <span class="step-text">Clean data - AI-connected - Your playbooks</span>
@@ -84,7 +84,7 @@
 
 <style>
   .ba-section {
-    background-color: #141412;
+    background-color: var(--color-bg-surface);
     padding: 80px 0;
   }
 
@@ -104,7 +104,7 @@
     font-family: 'Fraunces', Georgia, serif;
     font-size: 2.25rem;
     font-weight: 900;
-    color: #0D0D0B;
+    color: var(--heading-color);
     margin: 0 0 16px 0;
     line-height: 1.2;
   }
@@ -112,7 +112,7 @@
   .ba-scenario {
     font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 1.125rem;
-    color: #8C8880;
+    color: var(--color-text-secondary);
     margin: 0;
     line-height: 1.6;
   }
@@ -137,7 +137,7 @@
   }
 
   .ba-lane-good {
-    border-left: 4px solid #C8F04A;
+    border-left: 4px solid var(--color-accent);
   }
 
   .lane-label {
@@ -154,7 +154,7 @@
   }
 
   .lane-label-good {
-    color: #C8F04A;
+    color: var(--color-accent);
   }
 
   .lane-steps {
@@ -191,17 +191,17 @@
   }
 
   .step-icon-good {
-    background-color: rgba(200, 240, 74, 0.1);
+    background-color: var(--color-accent-muted);
   }
 
   .step-text {
     font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: #8C8880;
+    color: var(--color-text-secondary);
   }
 
   .step-arrow {
-    color: #5C5A56;
+    color: var(--color-text-tertiary);
     font-size: 1.25rem;
   }
 
@@ -210,7 +210,7 @@
     align-items: center;
     gap: 24px;
     padding-top: 20px;
-    border-top: 1px solid #2A2A26;
+    border-top: 1px solid var(--color-border);
   }
 
   .result-time {
@@ -224,13 +224,13 @@
   }
 
   .result-time-good {
-    color: #C8F04A;
+    color: var(--color-accent);
   }
 
   .result-quality {
     font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: #8C8880;
+    color: var(--color-text-secondary);
   }
 
   .ba-vs {
@@ -238,7 +238,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #8C8880;
+    color: var(--color-text-tertiary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }

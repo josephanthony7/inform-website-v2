@@ -5,35 +5,35 @@
 
 /* ===================================
    CSS CUSTOM PROPERTIES
-   Unified Token System - Dark Theme with Lime Accent
+   Unified Token System - Light Theme with Green Accent
    =================================== */
 :root {
   /* ===== CORE PALETTE ===== */
-  /* Backgrounds - warm near-blacks */
-  --color-bg-base: #0D0D0B;        /* Primary page background */
-  --color-bg-surface: #141412;     /* Slightly lifted surface for cards/sections */
-  --color-bg-raised: #1C1C19;      /* Raised cards, FAQ panels, modals */
+  /* Backgrounds - warm whites and grays */
+  --color-bg-base: #FFFFFF;        /* Primary page background */
+  --color-bg-surface: #F7F7F5;     /* Slightly tinted surface for sections */
+  --color-bg-raised: #FFFFFF;      /* Raised cards, FAQ panels, modals */
 
-  /* Text - warm off-whites */
-  --color-text-primary: #FAF8F4;   /* All primary text, headings */
-  --color-text-secondary: #CCC8C0; /* Subtitles, captions, body text */
-  --color-text-tertiary: #A5A19A;  /* Hints, labels, dividers */
+  /* Text - warm darks */
+  --color-text-primary: #1A1A18;   /* All primary text, headings */
+  --color-text-secondary: #4A4844; /* Subtitles, captions, body text */
+  --color-text-tertiary: #7A7772;  /* Hints, labels, dividers */
 
-  /* Accent - lime green (single accent color) */
-  --color-accent: #C8F04A;         /* CTAs, stat highlights, active states */
-  --color-accent-muted: #2A3B0A;   /* Lime at low opacity for hover fills */
-  --color-accent-hover: #D4F76A;   /* Lighter lime for hover states */
-  --color-accent-reversed: #4A6E00; /* Dark green for light backgrounds */
+  /* Accent - dark green for light backgrounds */
+  --color-accent: #2D5016;         /* CTAs, stat highlights, active states */
+  --color-accent-muted: #E8F5D0;   /* Light lime for hover fills */
+  --color-accent-hover: #3D6B1E;   /* Slightly lighter green for hover */
+  --color-accent-reversed: #C8F04A; /* Bright lime for dark contexts */
 
   /* Borders */
-  --color-border: #2A2A26;         /* All borders */
-  --color-border-light: #1E1E1B;   /* Very subtle section dividers */
+  --color-border: #E5E5E0;         /* All borders */
+  --color-border-light: #F0F0EC;   /* Very subtle section dividers */
 
   /* ===== SEMANTIC TOKENS ===== */
   /* Page structure */
   --page-bg: var(--color-bg-base);
   --section-light-bg: var(--color-bg-surface);
-  --section-dark-bg: var(--color-bg-base);
+  --section-dark-bg: #1A2E0D;  /* Dark forest green for accent sections */
   --card-bg: var(--color-bg-raised);
   --card-bg-alt: var(--color-bg-surface);
   --panel-bg: var(--color-bg-raised);
@@ -52,7 +52,7 @@
   --placeholder-color: var(--color-text-tertiary);
 
   /* ===== LEGACY ALIASES (for gradual migration) ===== */
-  --navy: var(--color-bg-base);
+  --navy: #1A2E0D;  /* Dark forest green for accent sections */
   --navy-light: var(--color-bg-surface);
   --sky-blue: var(--color-accent);
   --sky-blue-light: var(--color-accent-hover);
@@ -60,12 +60,12 @@
   --off-white: var(--color-text-primary);
   --white: var(--color-text-primary);
   --emerald: var(--color-accent);
-  --warning-red: #EF4444;
+  --warning-red: #DC2626;
   --slate: var(--color-text-secondary);
   --body-text: var(--color-text-secondary);
 
   /* Background Pattern Opacity Control */
-  --pattern-opacity: 0.04;
+  --pattern-opacity: 0.06;
 
   /* Typography - DM Sans / Inter / JetBrains Mono */
   --font-display: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -318,7 +318,7 @@ strong {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: #0D0D0B;
+  color: #FFFFFF;
   border: 2px solid var(--color-accent);
   font-weight: 600;
 }
@@ -337,7 +337,7 @@ strong {
 
 .btn-secondary:hover {
   background-color: var(--color-accent);
-  color: #0D0D0B;
+  color: #FFFFFF;
 }
 
 .btn-large {
@@ -657,7 +657,7 @@ strong {
 
 .guarantee-badge {
   background-color: var(--color-accent);
-  color: #0D0D0B;
+  color: #FFFFFF;
   padding: var(--space-2) var(--space-4);
   border-radius: 4px;
   font-weight: 600;

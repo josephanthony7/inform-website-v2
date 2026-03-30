@@ -30,16 +30,16 @@ import Layout from '../layouts/Layout.astro';
           <svg class="arch-svg" viewBox="0 0 900 200" preserveAspectRatio="xMidYMid meet">
             <defs>
               <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#C8F04A" />
-                <stop offset="100%" stop-color="#C8F04A" />
+                <stop offset="0%" stop-color="#2D5016" />
+                <stop offset="100%" stop-color="#2D5016" />
               </linearGradient>
               <radialGradient id="hubGlowSec" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#C8F04A" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#C8F04A" stop-opacity="0"/>
+                <stop offset="0%" stop-color="#2D5016" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#2D5016" stop-opacity="0"/>
               </radialGradient>
               <!-- Subtle grid pattern -->
               <pattern id="archGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="10" cy="10" r="0.5" fill="rgba(200,240,74,0.08)"/>
+                <circle cx="10" cy="10" r="0.5" fill="rgba(45,80,22,0.1)"/>
               </pattern>
             </defs>
 
@@ -47,30 +47,30 @@ import Layout from '../layouts/Layout.astro';
             <rect width="900" height="200" fill="url(#archGrid)"/>
 
             <!-- Flow track background -->
-            <path d="M 170 100 Q 300 100 450 100 Q 600 100 730 100" stroke="#2A2A26" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M 170 100 Q 300 100 450 100 Q 600 100 730 100" stroke="#E5E5E0" stroke-width="3" fill="none" stroke-linecap="round"/>
 
             <!-- Animated flow line -->
             <path d="M 170 100 Q 300 100 450 100 Q 600 100 730 100" stroke="url(#archGradient)" stroke-width="3" fill="none" stroke-linecap="round" class="arch-flow-line"/>
 
             <!-- Animated particle -->
-            <circle r="5" fill="#C8F04A" class="arch-particle">
+            <circle r="5" fill="#2D5016" class="arch-particle">
               <animateMotion dur="4s" repeatCount="indefinite" path="M 170 100 L 730 100" />
             </circle>
 
             <!-- Node 1: Your Team -->
             <g class="arch-node-svg" transform="translate(100, 100)">
-              <rect x="-55" y="-55" width="110" height="110" rx="16" fill="#1C1C19" stroke="#2A2A26" stroke-width="2" class="node-rect"/>
+              <rect x="-55" y="-55" width="110" height="110" rx="16" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="2" class="node-rect"/>
               <!-- User icon - professional style -->
-              <circle cx="0" cy="-12" r="18" fill="#2A3B0A" stroke="#C8F04A" stroke-width="2"/>
-              <circle cx="0" cy="-16" r="8" fill="#C8F04A"/>
-              <path d="M -12 0 Q -12 -8 0 -8 Q 12 -8 12 0" fill="#C8F04A"/>
-              <text y="30" text-anchor="middle" fill="#F0EBE0" font-family="'DM Sans',system-ui,sans-serif" font-size="13" font-weight="700">Your Team</text>
-              <text y="46" text-anchor="middle" fill="#8C8880" font-family="'JetBrains Mono',monospace" font-size="9">Asks questions</text>
+              <circle cx="0" cy="-12" r="18" fill="#E8F5D0" stroke="#2D5016" stroke-width="2"/>
+              <circle cx="0" cy="-16" r="8" fill="#2D5016"/>
+              <path d="M -12 0 Q -12 -8 0 -8 Q 12 -8 12 0" fill="#2D5016"/>
+              <text y="30" text-anchor="middle" fill="#1A1A18" font-family="'DM Sans',system-ui,sans-serif" font-size="13" font-weight="700">Your Team</text>
+              <text y="46" text-anchor="middle" fill="#7A7772" font-family="'JetBrains Mono',monospace" font-size="9">Asks questions</text>
             </g>
 
             <!-- Arrow 1 -->
             <g transform="translate(220, 100)">
-              <polygon points="0,-6 12,0 0,6" fill="#C8F04A" class="arrow-pulse"/>
+              <polygon points="0,-6 12,0 0,6" fill="#2D5016" class="arrow-pulse"/>
             </g>
 
             <!-- Node 2: AI Gateway (center hub) -->
@@ -78,27 +78,27 @@ import Layout from '../layouts/Layout.astro';
               <!-- Outer glow -->
               <circle r="80" fill="url(#hubGlowSec)" class="hub-glow-bg"/>
               <!-- Rotating ring -->
-              <circle r="68" fill="none" stroke="rgba(200,240,74,0.15)" stroke-width="1" stroke-dasharray="8 6">
+              <circle r="68" fill="none" stroke="rgba(45,80,22,0.2)" stroke-width="1" stroke-dasharray="8 6">
                 <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
               </circle>
               <!-- Main hub circle -->
-              <circle r="55" fill="#0D0D0B" stroke="#C8F04A" stroke-width="2.5" class="hub-core"/>
+              <circle r="55" fill="#FFFFFF" stroke="#2D5016" stroke-width="2.5" class="hub-core"/>
               <!-- Anthropic icon -->
               <g transform="translate(-12, -22)">
-                <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" width="24" height="24" style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(175deg) brightness(1.3)"/>
+                <image href="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" width="24" height="24" style="filter:brightness(0) saturate(0)"/>
               </g>
-              <text y="12" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" font-weight="700" fill="#F0EBE0" letter-spacing="0.08em">INFORM GROWTH</text>
-              <text y="26" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="7" fill="rgba(200,240,74,0.9)">Powered by AI</text>
+              <text y="12" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" font-weight="700" fill="#1A1A18" letter-spacing="0.08em">INFORM GROWTH</text>
+              <text y="26" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="7" fill="#2D5016">Powered by AI</text>
             </g>
 
             <!-- Arrow 2 -->
             <g transform="translate(680, 100)">
-              <polygon points="0,-6 12,0 0,6" fill="#C8F04A" class="arrow-pulse arrow-delay"/>
+              <polygon points="0,-6 12,0 0,6" fill="#2D5016" class="arrow-pulse arrow-delay"/>
             </g>
 
             <!-- Node 3: Your Systems - with real logos -->
             <g class="arch-node-svg" transform="translate(800, 100)">
-              <rect x="-55" y="-55" width="110" height="110" rx="16" fill="#1C1C19" stroke="#C8F04A" stroke-width="2" class="node-rect"/>
+              <rect x="-55" y="-55" width="110" height="110" rx="16" fill="#FFFFFF" stroke="#2D5016" stroke-width="2" class="node-rect"/>
               <!-- Tool logos grid -->
               <g transform="translate(-32, -35)">
                 <image href="/logos/hubspot.png" width="28" height="28" preserveAspectRatio="xMidYMid meet"/>
@@ -109,7 +109,7 @@ import Layout from '../layouts/Layout.astro';
               <g transform="translate(-14, -5)">
                 <image href="/logos/attio.png" width="28" height="28" preserveAspectRatio="xMidYMid meet"/>
               </g>
-              <text y="42" text-anchor="middle" fill="#F0EBE0" font-family="'DM Sans',system-ui,sans-serif" font-size="12" font-weight="700">Your Systems</text>
+              <text y="42" text-anchor="middle" fill="#1A1A18" font-family="'DM Sans',system-ui,sans-serif" font-size="12" font-weight="700">Your Systems</text>
             </g>
           </svg>
         </div>
@@ -119,8 +119,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="arch-mobile-node">
             <div class="arch-mobile-icon user-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="4" fill="#C8F04A"/>
-                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#C8F04A"/>
+                <circle cx="12" cy="8" r="4" fill="#2D5016"/>
+                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#2D5016"/>
               </svg>
             </div>
             <div class="arch-mobile-text">
@@ -131,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="arch-mobile-arrow">↓</div>
           <div class="arch-mobile-node hub">
             <div class="arch-mobile-icon">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" width="24" height="24" alt="AI" style="filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(175deg) brightness(1.3)"/>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg" width="24" height="24" alt="AI" style="filter:brightness(0) saturate(0)"/>
             </div>
             <div class="arch-mobile-text">
               <span class="arch-mobile-label">Inform Growth</span>
@@ -380,7 +380,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-display);
     font-size: var(--text-h1);
     font-weight: 700;
-    color: var(--white);
+    color: var(--heading-color);
     line-height: 1.15;
     margin-bottom: var(--space-4);
   }
@@ -560,7 +560,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .arch-mobile-node.hub .arch-mobile-label {
-      color: white;
+      color: var(--heading-color);
     }
 
     .arch-mobile-node.hub .arch-mobile-sub {
@@ -568,7 +568,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .arch-mobile-node.systems {
-      border-color: #C8F04A;
+      border-color: var(--color-accent);
     }
 
     .arch-mobile-icon {
@@ -581,7 +581,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .arch-mobile-icon.user-icon {
-      background: #2A3B0A;
+      background: var(--color-accent-muted);
       border-radius: 50%;
       padding: 4px;
     }
@@ -871,7 +871,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-display);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--white);
+    color: var(--heading-color);
     margin-bottom: var(--space-4);
   }
 
