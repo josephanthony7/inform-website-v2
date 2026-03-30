@@ -18,79 +18,97 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
         </p>
       </div>
 
-      <div class="approach-steps fade-up">
-        <div class="approach-step">
-          <div class="step-marker">01</div>
-          <div class="step-content">
-            <h3>Explore</h3>
-            <p class="step-for-you">We learn your business</p>
-            <p>We audit your CRM, data architecture, and sales processes. We interview your team. We find where revenue is leaking and where opportunities are hiding.</p>
-            <ul class="step-details">
-              <li>Full system and process audit</li>
-              <li>Stakeholder interviews</li>
-              <li>Statistical analysis of your pipeline</li>
-              <li>Gap identification and prioritization</li>
-            </ul>
+      <!-- Horizontal Process Flow -->
+      <div class="process-flow fade-up">
+        <div class="flow-step" data-step="1">
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
           </div>
+          <div class="flow-label">Explore</div>
+          <div class="flow-desc">Audit systems, find leaks</div>
         </div>
 
-        <div class="approach-step">
-          <div class="step-marker">02</div>
-          <div class="step-content">
-            <h3>Codify</h3>
-            <p class="step-for-you">We document your truth</p>
-            <p>We define what your data means in your specific business context. Pipeline stages, ARR rules, field definitions - documented once, applied everywhere.</p>
-            <ul class="step-details">
-              <li>Business glossary and field registry</li>
-              <li>Pipeline stage definitions</li>
-              <li>Data validation rules</li>
-              <li>Process documentation</li>
-            </ul>
+        <div class="flow-connector"><span></span></div>
+
+        <div class="flow-step" data-step="2">
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>
+            </svg>
           </div>
+          <div class="flow-label">Codify</div>
+          <div class="flow-desc">Define your data truth</div>
         </div>
 
-        <div class="approach-step">
-          <div class="step-marker">03</div>
-          <div class="step-content">
-            <h3>Connect</h3>
-            <p class="step-for-you">We integrate your tools</p>
-            <p>One AI middleware layer connects your entire stack. HubSpot, Salesforce, Gong, Apollo, Clay - every tool feeds into one source of truth that your whole team can query.</p>
-            <ul class="step-details">
-              <li>API integrations and webhooks</li>
-              <li>AI middleware deployment</li>
-              <li>Real-time data synchronization</li>
-              <li>Natural language query interface</li>
-            </ul>
+        <div class="flow-connector"><span></span></div>
+
+        <div class="flow-step" data-step="3">
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4"/><path d="m6.34 6.34 2.83 2.83"/><path d="M2 12h4"/><path d="m6.34 17.66 2.83-2.83"/><path d="M12 18v4"/><path d="m17.66 17.66-2.83-2.83"/><path d="M18 12h4"/><path d="m17.66 6.34-2.83 2.83"/>
+            </svg>
           </div>
+          <div class="flow-label">Connect</div>
+          <div class="flow-desc">Unify your entire stack</div>
         </div>
 
-        <div class="approach-step">
-          <div class="step-marker">04</div>
-          <div class="step-content">
-            <h3>Empower</h3>
-            <p class="step-for-you">We train your team</p>
-            <p>We coach your revenue teams to leverage AI with their tools. Not just training - hands-on enablement that changes how they work every day.</p>
-            <ul class="step-details">
-              <li>Team workshops and training</li>
-              <li>Custom playbooks and templates</li>
-              <li>AI prompt libraries for your context</li>
-              <li>Ongoing office hours and support</li>
-            </ul>
+        <div class="flow-connector"><span></span></div>
+
+        <div class="flow-step" data-step="4">
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
           </div>
+          <div class="flow-label">Empower</div>
+          <div class="flow-desc">Train your team on AI</div>
         </div>
 
-        <div class="approach-step final">
-          <div class="step-marker">05</div>
-          <div class="step-content">
-            <h3>Compound</h3>
-            <p class="step-for-you">Your system gets smarter</p>
-            <p>Every question your team asks, every workflow that gets promoted to shared infrastructure, makes the next one faster and cheaper. The system learns what works.</p>
-            <ul class="step-details">
-              <li>New hires inherit full context</li>
-              <li>New tools plug in automatically</li>
-              <li>Best practices scale across teams</li>
-              <li>Value accumulates over time</li>
-            </ul>
+        <div class="flow-connector"><span></span></div>
+
+        <div class="flow-step active" data-step="5">
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/>
+            </svg>
+          </div>
+          <div class="flow-label">Compound</div>
+          <div class="flow-desc">System learns, costs drop</div>
+        </div>
+      </div>
+
+      <!-- Expandable Detail Cards -->
+      <div class="flow-details fade-up">
+        <div class="detail-card" data-for="1">
+          <span class="detail-num">01</span>
+          <div class="detail-content">
+            <strong>Full system audit</strong> · Stakeholder interviews · Pipeline analysis · Gap prioritization
+          </div>
+        </div>
+        <div class="detail-card" data-for="2">
+          <span class="detail-num">02</span>
+          <div class="detail-content">
+            <strong>Business glossary</strong> · Field definitions · Validation rules · Process docs
+          </div>
+        </div>
+        <div class="detail-card" data-for="3">
+          <span class="detail-num">03</span>
+          <div class="detail-content">
+            <strong>API integrations</strong> · AI middleware · Real-time sync · Natural language queries
+          </div>
+        </div>
+        <div class="detail-card" data-for="4">
+          <span class="detail-num">04</span>
+          <div class="detail-content">
+            <strong>Team workshops</strong> · Custom playbooks · Prompt libraries · Ongoing support
+          </div>
+        </div>
+        <div class="detail-card active" data-for="5">
+          <span class="detail-num">05</span>
+          <div class="detail-content">
+            <strong>New hires inherit context</strong> · Tools plug in automatically · Value accumulates
           </div>
         </div>
       </div>
@@ -280,129 +298,165 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     margin-right: auto;
   }
 
-  .approach-steps {
-    max-width: 900px;
-    margin: 0 auto;
+  /* Horizontal Process Flow */
+  .process-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto var(--space-lg);
+    max-width: 1200px;
+    padding: 0 var(--space-md);
+  }
+
+  .flow-step {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .approach-step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-lg);
-    padding: var(--space-xl);
-    background: var(--color-bg-raised);
-    border-radius: 12px;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    align-items: center;
+    text-align: center;
+    padding: var(--space-md);
+    cursor: pointer;
     transition: all 0.3s ease;
+    flex: 1;
+    max-width: 160px;
   }
 
-  .approach-step:hover {
-    border-color: var(--sky-blue);
-    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.1);
+  .flow-step:hover .flow-icon,
+  .flow-step.active .flow-icon {
+    background: var(--color-accent);
+    color: #fff;
+    transform: scale(1.1);
   }
 
-  .approach-step.final {
-    border-color: var(--color-accent);
-    background: var(--color-bg-raised);
-  }
-
-  .approach-step.final:hover {
-    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.15);
-  }
-
-  .step-marker {
-    font-family: var(--font-mono);
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--sky-blue);
-    width: 60px;
-    height: 60px;
+  .flow-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-accent-muted);
+    color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-accent-muted);
-    border-radius: 12px;
+    margin-bottom: var(--space-sm);
+    transition: all 0.3s ease;
   }
 
-  .approach-step.final .step-marker {
-    color: var(--color-accent);
-    background: var(--color-accent-muted);
-  }
-
-  .step-content h3 {
+  .flow-label {
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-size: 15px;
     font-weight: 700;
     color: var(--heading-color);
-    margin-bottom: var(--space-xs);
+    margin-bottom: 4px;
   }
 
-  .step-for-you {
+  .flow-desc {
     font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--sky-blue);
-    margin-bottom: var(--space-sm);
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    line-height: 1.3;
   }
 
-  .approach-step.final .step-for-you {
-    color: var(--color-accent);
+  .flow-connector {
+    display: flex;
+    align-items: center;
+    padding-top: 28px;
   }
 
-  .step-content > p:not(.step-for-you) {
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    color: var(--muted-text);
-    line-height: 1.7;
-    margin-bottom: var(--space-md);
-  }
-
-  .step-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs) var(--space-lg);
-  }
-
-  .step-details li {
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    color: var(--muted-text);
-    padding-left: var(--space-md);
+  .flow-connector span {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent-muted), var(--color-accent), var(--color-accent-muted));
     position: relative;
   }
 
-  .step-details li::before {
-    content: '→';
+  .flow-connector span::after {
+    content: '';
     position: absolute;
-    left: 0;
-    color: var(--sky-blue);
-    font-weight: 600;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 4px solid transparent;
+    border-left-color: var(--color-accent);
   }
 
-  .approach-step.final .step-details li::before {
+  /* Detail Cards Row */
+  .flow-details {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  .detail-card {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--color-bg-raised);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .detail-card:hover,
+  .detail-card.active {
+    opacity: 1;
+    border-color: var(--color-accent);
+  }
+
+  .detail-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
     color: var(--color-accent);
+    background: var(--color-accent-muted);
+    padding: 4px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .approach-step {
-      grid-template-columns: 1fr;
+  .detail-content {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .detail-content strong {
+    color: var(--heading-color);
+  }
+
+  /* Mobile: Stack vertically */
+  @media (max-width: 900px) {
+    .process-flow {
+      flex-wrap: wrap;
+      gap: var(--space-sm);
     }
 
-    .step-marker {
-      width: 48px;
-      height: 48px;
-      font-size: var(--text-lg);
+    .flow-step {
+      flex: 0 0 calc(33.333% - var(--space-sm));
+      max-width: none;
     }
 
-    .step-details {
-      grid-template-columns: 1fr;
+    .flow-connector {
+      display: none;
+    }
+
+    .flow-details {
+      flex-direction: column;
+    }
+
+    .detail-card {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .flow-step {
+      flex: 0 0 calc(50% - var(--space-sm));
     }
   }
 
@@ -763,5 +817,29 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     });
 
     fadeElements.forEach(el => observer.observe(el));
+
+    // Interactive process flow
+    const flowSteps = document.querySelectorAll('.flow-step');
+    const detailCards = document.querySelectorAll('.detail-card');
+
+    flowSteps.forEach(step => {
+      step.addEventListener('mouseenter', () => {
+        const stepNum = step.dataset.step;
+        flowSteps.forEach(s => s.classList.remove('active'));
+        detailCards.forEach(c => c.classList.remove('active'));
+        step.classList.add('active');
+        document.querySelector(`.detail-card[data-for="${stepNum}"]`)?.classList.add('active');
+      });
+    });
+
+    detailCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const forStep = card.dataset.for;
+        flowSteps.forEach(s => s.classList.remove('active'));
+        detailCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        document.querySelector(`.flow-step[data-step="${forStep}"]`)?.classList.add('active');
+      });
+    });
   });
 </script>
