@@ -7,25 +7,15 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   title="Services - Inform Growth"
   description="We build revenue infrastructure that compounds. From diagnosis to AI-powered systems, everything we build is yours to own and scale."
 >
-  <!-- Page Header -->
+  <!-- Page Header + Process -->
   <section class="page-header section geo-grid">
     <div class="container">
       <div class="header-content fade-up">
         <div class="header-eyebrow">Built For You</div>
         <h1>Your Revenue Engine, Compounding</h1>
         <p class="header-subtitle">
-          We don't just consult - we build infrastructure that makes your team faster, smarter, and more autonomous every quarter. Everything we create is yours to own, maintain, and scale.
+          A systematic approach that starts with understanding and ends with independence. Each step builds on the last, creating compounding value.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Approach: The 5-Step Process -->
-  <section class="approach-section section">
-    <div class="container">
-      <div class="approach-header fade-up">
-        <h2>How We Work With You</h2>
-        <p>A systematic approach that starts with understanding and ends with independence. Each step builds on the last, creating compounding value.</p>
       </div>
 
       <div class="approach-steps fade-up">
@@ -258,13 +248,13 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 <style>
   /* Page Header */
   .page-header {
-    background-color: var(--navy);
-    padding: var(--space-section) 0;
+    background-color: var(--color-bg-surface);
+    padding: var(--space-2xl) 0 var(--space-section);
   }
 
   .header-content {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto var(--space-2xl);
     text-align: center;
   }
 
@@ -284,41 +274,18 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-weight: 900;
     color: white;
     line-height: 1.15;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);
   }
 
   .header-subtitle {
     font-family: var(--font-body);
-    font-size: var(--text-lg);
-    color: #8C8880;
-    line-height: 1.7;
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
     margin: 0;
-  }
-
-  /* Approach Section */
-  .approach-section {
-    background-color: var(--color-bg-surface);
-  }
-
-  .approach-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto var(--space-2xl);
-  }
-
-  .approach-header h2 {
-    font-family: var(--font-display);
-    font-size: var(--text-3xl);
-    font-weight: 900;
-    color: var(--heading-color);
-    margin-bottom: var(--space-md);
-  }
-
-  .approach-header p {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    color: var(--muted-text);
-    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .approach-steps {
