@@ -26,8 +26,8 @@
         <span class="card-label">What we build</span>
         <ul class="card-list">
           <li><span class="list-marker">■</span> One governed AI layer across your stack</li>
-          <li><span class="list-marker">■</span> Field definitions written once, inherited everywhere</li>
-          <li><span class="list-marker">■</span> Workflows codify into tools - cost falls over time</li>
+          <li><span class="list-marker">■</span> Field definitions written once, used everywhere</li>
+          <li><span class="list-marker">■</span> Workflows codify into tools - costs fall over time</li>
           <li><span class="list-marker">■</span> Every new tool makes the next one faster</li>
         </ul>
       </div>
@@ -38,8 +38,8 @@
         <ul class="card-list">
           <li><span class="list-marker">■</span> Revenue questions answered in minutes</li>
           <li><span class="list-marker">■</span> One source of truth every team trusts</li>
-          <li><span class="list-marker">■</span> New tools and new hires inherit full context</li>
-          <li><span class="list-marker">■</span> Value accumulates - the system learns what works</li>
+          <li><span class="list-marker">■</span> New tools and hires inherit full context</li>
+          <li><span class="list-marker">■</span> Value accumulates - the system learns</li>
         </ul>
       </div>
     </div>
@@ -80,11 +80,11 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     .compounding-grid {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -94,7 +94,7 @@
     background: var(--color-bg-raised);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    padding: var(--space-xl);
+    padding: var(--space-xl) var(--space-lg);
   }
 
   .compounding-card.accent {
@@ -124,24 +124,25 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-lg);
   }
 
   .card-list li {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1.5;
     display: flex;
     align-items: flex-start;
     gap: var(--space-sm);
+    min-height: 40px;
   }
 
   .list-marker {
     color: var(--color-accent);
-    font-size: 8px;
+    font-size: 6px;
     flex-shrink: 0;
-    margin-top: 6px;
+    margin-top: 7px;
   }
 
   .compounding-tagline {
