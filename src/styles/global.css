@@ -57,8 +57,8 @@
   --sky-blue: var(--color-accent);
   --sky-blue-light: var(--color-accent-hover);
   --pale-blue: var(--color-accent-muted);
-  --off-white: var(--color-text-primary);
-  --white: var(--color-text-primary);
+  --off-white: #FAFAF8;
+  --white: #FFFFFF;
   --emerald: var(--color-accent);
   --warning-red: #DC2626;
   --slate: var(--color-text-secondary);
