@@ -7,17 +7,22 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   title="Services - Inform Growth"
   description="We build revenue infrastructure that compounds. From diagnosis to AI-powered systems, everything we build is yours to own and scale."
 >
-  <!-- Page Header + Process -->
-  <section class="page-header section geo-grid">
+  <!-- Page Header -->
+  <section class="page-header geo-grid">
     <div class="container">
       <div class="header-content fade-up">
         <div class="header-eyebrow">Built For You</div>
         <h1>Your Revenue Engine, Compounding</h1>
         <p class="header-subtitle">
-          A systematic approach that starts with understanding and ends with independence. Each step builds on the last, creating compounding value.
+          From diagnosis to AI-powered systems, everything we build is yours to own and scale.
         </p>
       </div>
+    </div>
+  </section>
 
+  <!-- Process Flow Section -->
+  <section class="process-section">
+    <div class="container">
       <!-- Horizontal Process Flow -->
       <div class="process-flow fade-up">
         <div class="flow-step" data-step="1">
@@ -258,14 +263,20 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 <style>
   /* Page Header */
   .page-header {
-    background-color: var(--color-bg-surface);
-    padding: var(--space-2xl) 0 var(--space-section);
+    background-color: var(--color-bg-base);
+    padding: var(--space-2xl) 0 var(--space-xl);
   }
 
   .header-content {
     max-width: 800px;
-    margin: 0 auto var(--space-2xl);
+    margin: 0 auto;
     text-align: center;
+  }
+
+  /* Process Section */
+  .process-section {
+    background-color: var(--color-bg-surface);
+    padding: var(--space-xl) 0;
   }
 
   .header-eyebrow {
@@ -280,8 +291,8 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   .page-header h1 {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 900;
+    font-size: var(--text-h1);
+    font-weight: 700;
     color: var(--heading-color);
     line-height: 1.15;
     margin-bottom: var(--space-sm);
