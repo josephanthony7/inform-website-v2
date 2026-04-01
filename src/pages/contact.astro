@@ -63,11 +63,11 @@ import Layout from '../layouts/Layout.astro';
           <!-- Step 2: Calendar (hidden until form submitted) -->
           <div id="calendar-wrapper" class="calendar-hidden">
             <div class="prequal-summary" id="prequal-summary"></div>
-            <div
-              id="calendly-widget"
-              class="calendly-inline-widget"
-              style="width:100%;min-width:0;height:700px;"
-            ></div>
+            <iframe
+              id="calendly-iframe"
+              style="width:100%;height:700px;border:none;"
+              title="Schedule a meeting"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -91,9 +91,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <!-- Calendly widget script -->
-  <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <script is:inline>
     // --- Supabase config (from env at build time, or empty) ---
@@ -124,18 +121,6 @@ import Layout from '../layouts/Layout.astro';
     window.dataLayer = window.dataLayer || [];
     function pushGTMEvent(eventName, data) {
       window.dataLayer.push(Object.assign({ event: eventName }, data || {}));
-    }
-
-    // --- Wait for Calendly script to load ---
-    function waitForCalendly(callback, attempts) {
-      attempts = attempts || 0;
-      if (window.Calendly) {
-        callback();
-      } else if (attempts < 50) {
-        setTimeout(function() { waitForCalendly(callback, attempts + 1); }, 200);
-      } else {
-        console.error('Calendly failed to load');
-      }
     }
 
     // --- Prequalification form → Supabase + show calendar ---
@@ -181,23 +166,13 @@ import Layout from '../layouts/Layout.astro';
         document.getElementById('calendar-wrapper').classList.add('calendar-hidden');
       });
 
-      // Swap views
+      // Swap views and load Calendly iframe
       document.getElementById('prequal-form-wrapper').style.display = 'none';
       document.getElementById('calendar-wrapper').classList.remove('calendar-hidden');
 
-      // Clear any existing widget content and initialize Calendly after container is visible
-      var widget = document.getElementById('calendly-widget');
-      widget.innerHTML = '';
-
-      // Small delay to ensure container is rendered before Calendly initializes
-      setTimeout(function() {
-        waitForCalendly(function() {
-          window.Calendly.initInlineWidget({
-            url: calendlyUrl,
-            parentElement: widget,
-          });
-        });
-      }, 100);
+      // Set iframe src directly
+      var iframe = document.getElementById('calendly-iframe');
+      iframe.src = calendlyUrl;
     });
 
   </script>
