@@ -80,31 +80,56 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
         <div class="process-card">
           <span class="card-num">01</span>
           <h3>Diagnose</h3>
-          <p>Map your entire revenue stack. Run a data diagnostic across your CRM to identify tool fragmentation, orphaned data, and where context is leaking.</p>
+          <ul>
+            <li>Map your revenue stack</li>
+            <li>Run CRM data diagnostic</li>
+            <li>Identify tool fragmentation</li>
+            <li>Find context leaks</li>
+          </ul>
         </div>
 
         <div class="process-card">
           <span class="card-num">02</span>
           <h3>Govern</h3>
-          <p>Build your data dictionary. Define what each field means, who owns it, and create validation rules that prevent garbage data at the source.</p>
+          <ul>
+            <li>Build data dictionary</li>
+            <li>Define field ownership</li>
+            <li>Create validation rules</li>
+            <li>Prevent garbage data</li>
+          </ul>
         </div>
 
         <div class="process-card">
           <span class="card-num">03</span>
           <h3>Deploy</h3>
-          <p>Install the AI layer across your stack. Connect your tools into a unified system with shared context between all revenue teams.</p>
+          <ul>
+            <li>Install AI layer</li>
+            <li>Connect all tools</li>
+            <li>Enable shared context</li>
+            <li>Unify revenue teams</li>
+          </ul>
         </div>
 
         <div class="process-card">
           <span class="card-num">04</span>
           <h3>Enable</h3>
-          <p>Train your team on new workflows. Build custom playbooks from top performers. Document everything so new hires ramp in weeks.</p>
+          <ul>
+            <li>Train on new workflows</li>
+            <li>Build custom playbooks</li>
+            <li>Document everything</li>
+            <li>Accelerate ramp time</li>
+          </ul>
         </div>
 
         <div class="process-card highlight">
           <span class="card-num">05</span>
           <h3>Compound</h3>
-          <p>The system learns from every deal. Tribal knowledge becomes institutional knowledge. Context never resets.</p>
+          <ul>
+            <li>System learns from deals</li>
+            <li>Capture best practices</li>
+            <li>Build institutional knowledge</li>
+            <li>Context never resets</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -432,12 +457,33 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     margin-bottom: var(--space-md);
   }
 
-  .process-card p {
+  .process-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .process-card li {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin: 0;
+    padding-left: var(--space-md);
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .process-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
   }
 
   @media (max-width: 1100px) {
@@ -462,27 +508,7 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     }
 
     .process-card {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto auto;
-      gap: var(--space-xs) var(--space-md);
       padding: var(--space-lg);
-    }
-
-    .card-num {
-      grid-row: 1;
-      margin-bottom: 0;
-    }
-
-    .process-card h3 {
-      grid-row: 1;
-      margin-bottom: 0;
-      align-self: center;
-    }
-
-    .process-card p {
-      grid-column: 1 / -1;
-      grid-row: 2;
     }
   }
 
