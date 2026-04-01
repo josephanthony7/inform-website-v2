@@ -20,116 +20,50 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     </div>
   </section>
 
-  <!-- Process Flow Section -->
-  <section class="process-section">
+  <!-- Process Section -->
+  <section class="process-section section">
     <div class="container">
-      <div class="process-header fade-up">
-        <h2>How We Work</h2>
-        <p class="process-subtitle">From diagnosis to compounding value in weeks, not months.</p>
-      </div>
+      <h2 class="text-center fade-up">How We Work</h2>
 
-      <!-- Visual Timeline -->
-      <div class="timeline fade-up">
-        <div class="timeline-track"></div>
-        <div class="timeline-steps">
-          <div class="timeline-step">
-            <div class="timeline-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-              </svg>
-            </div>
-            <span class="timeline-label">Diagnose</span>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>
-              </svg>
-            </div>
-            <span class="timeline-label">Govern</span>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v4"/><path d="m6.34 6.34 2.83 2.83"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="M18 12h4"/><path d="m17.66 6.34-2.83 2.83"/>
-              </svg>
-            </div>
-            <span class="timeline-label">Deploy</span>
-          </div>
-          <div class="timeline-step">
-            <div class="timeline-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-              </svg>
-            </div>
-            <span class="timeline-label">Enable</span>
-          </div>
-          <div class="timeline-step active">
-            <div class="timeline-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/>
-              </svg>
-            </div>
-            <span class="timeline-label">Compound</span>
+      <div class="process-list fade-up">
+        <div class="process-item">
+          <span class="process-num">01</span>
+          <div class="process-content">
+            <h3>Diagnose</h3>
+            <p>Map your stack. Find the leaks.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Detail Cards Grid -->
-      <div class="process-grid fade-up">
-        <div class="process-card">
-          <span class="card-num">01</span>
-          <h3>Diagnose</h3>
-          <ul>
-            <li>Map your revenue stack</li>
-            <li>Run CRM data diagnostic</li>
-            <li>Identify tool fragmentation</li>
-            <li>Find context leaks</li>
-          </ul>
+        <div class="process-item">
+          <span class="process-num">02</span>
+          <div class="process-content">
+            <h3>Govern</h3>
+            <p>Define what data means. One source of truth.</p>
+          </div>
         </div>
 
-        <div class="process-card">
-          <span class="card-num">02</span>
-          <h3>Govern</h3>
-          <ul>
-            <li>Build data dictionary</li>
-            <li>Define field ownership</li>
-            <li>Create validation rules</li>
-            <li>Prevent garbage data</li>
-          </ul>
+        <div class="process-item">
+          <span class="process-num">03</span>
+          <div class="process-content">
+            <h3>Deploy</h3>
+            <p>Install the AI layer. Connect your tools.</p>
+          </div>
         </div>
 
-        <div class="process-card">
-          <span class="card-num">03</span>
-          <h3>Deploy</h3>
-          <ul>
-            <li>Install AI layer</li>
-            <li>Connect all tools</li>
-            <li>Enable shared context</li>
-            <li>Unify revenue teams</li>
-          </ul>
+        <div class="process-item">
+          <span class="process-num">04</span>
+          <div class="process-content">
+            <h3>Enable</h3>
+            <p>Train your team. Build playbooks.</p>
+          </div>
         </div>
 
-        <div class="process-card">
-          <span class="card-num">04</span>
-          <h3>Enable</h3>
-          <ul>
-            <li>Train on new workflows</li>
-            <li>Build custom playbooks</li>
-            <li>Document everything</li>
-            <li>Accelerate ramp time</li>
-          </ul>
-        </div>
-
-        <div class="process-card highlight">
-          <span class="card-num">05</span>
-          <h3>Compound</h3>
-          <ul>
-            <li>System learns from deals</li>
-            <li>Capture best practices</li>
-            <li>Build institutional knowledge</li>
-            <li>Context never resets</li>
-          </ul>
+        <div class="process-item">
+          <span class="process-num">05</span>
+          <div class="process-content">
+            <h3>Compound</h3>
+            <p>System learns from every deal. Context never resets.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -327,189 +261,54 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
   }
 
   /* Process Section */
-  .process-header {
-    text-align: center;
-    margin-bottom: var(--space-2xl);
+  .process-section {
+    background: var(--color-bg-base);
   }
 
-  .process-header h2 {
-    font-family: var(--font-display);
-    font-size: var(--text-3xl);
-    font-weight: 900;
-    color: var(--heading-color);
-    margin-bottom: var(--space-sm);
-  }
-
-  .process-subtitle {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-  }
-
-  /* Visual Timeline */
-  .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto var(--space-2xl);
-    padding: 0 var(--space-lg);
-  }
-
-  .timeline-track {
-    position: absolute;
-    top: 24px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-border) 0%, var(--color-accent) 100%);
-  }
-
-  .timeline-steps {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-  }
-
-  .timeline-step {
+  .process-list {
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
   }
 
-  .timeline-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--color-bg-raised);
-    border: 2px solid var(--color-border);
-    color: var(--color-text-secondary);
+  .process-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1;
-  }
-
-  .timeline-step:hover .timeline-icon {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
-
-  .timeline-step.active .timeline-icon {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff;
-  }
-
-  .timeline-label {
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--heading-color);
-  }
-
-  .timeline-step.active .timeline-label {
-    color: var(--color-accent);
-  }
-
-  /* Process Cards Grid */
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    align-items: flex-start;
     gap: var(--space-lg);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .process-card {
+    padding: var(--space-lg);
     background: var(--color-bg-raised);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: var(--space-xl);
-    transition: all 0.3s ease;
+    border-radius: var(--card-radius);
+    transition: border-color 0.2s ease;
   }
 
-  .process-card:hover {
+  .process-item:hover {
     border-color: var(--sky-blue);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   }
 
-  .process-card.highlight {
-    background: linear-gradient(135deg, rgba(200, 240, 74, 0.15) 0%, rgba(200, 240, 74, 0.05) 100%);
-    border-color: var(--color-accent);
-  }
-
-  .card-num {
-    display: inline-block;
+  .process-num {
     font-family: var(--font-mono);
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     font-weight: 700;
     color: var(--color-accent);
-    margin-bottom: var(--space-md);
+    flex-shrink: 0;
   }
 
-  .process-card h3 {
+  .process-content h3 {
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 700;
     color: var(--heading-color);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-xs);
   }
 
-  .process-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
-  .process-card li {
+  .process-content p {
     font-family: var(--font-body);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-secondary);
-    padding-left: var(--space-md);
-    position: relative;
-    line-height: 1.4;
-  }
-
-  .process-card li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 4px;
-    height: 4px;
-    background: var(--color-accent);
-    border-radius: 50%;
-  }
-
-  @media (max-width: 1100px) {
-    .process-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .process-card:nth-child(4),
-    .process-card:nth-child(5) {
-      grid-column: span 1;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .timeline {
-      display: none;
-    }
-
-    .process-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-    }
-
-    .process-card {
-      padding: var(--space-lg);
-    }
+    margin: 0;
   }
 
   /* Infrastructure Section */
