@@ -181,18 +181,23 @@ import Layout from '../layouts/Layout.astro';
         document.getElementById('calendar-wrapper').classList.add('calendar-hidden');
       });
 
-      // Swap views immediately
+      // Swap views
       document.getElementById('prequal-form-wrapper').style.display = 'none';
       document.getElementById('calendar-wrapper').classList.remove('calendar-hidden');
 
-      // Initialize Calendly widget once script is ready
+      // Clear any existing widget content and initialize Calendly after container is visible
       var widget = document.getElementById('calendly-widget');
-      waitForCalendly(function() {
-        window.Calendly.initInlineWidget({
-          url: calendlyUrl,
-          parentElement: widget,
+      widget.innerHTML = '';
+
+      // Small delay to ensure container is rendered before Calendly initializes
+      setTimeout(function() {
+        waitForCalendly(function() {
+          window.Calendly.initInlineWidget({
+            url: calendlyUrl,
+            parentElement: widget,
+          });
         });
-      });
+      }, 100);
     });
 
   </script>
