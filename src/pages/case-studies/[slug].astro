@@ -196,6 +196,12 @@ const { study, frontmatter, Content } = Astro.props;
     padding-left: var(--space-lg);
   }
 
+  /* Remove top margin from lists following paragraphs to prevent double spacing */
+  .case-study-content p + ul,
+  .case-study-content p + ol {
+    margin-top: var(--space-xs);
+  }
+
   .case-study-content ul {
     list-style: disc;
   }

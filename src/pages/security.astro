@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Security - Inform Growth"
-  description="Your data never leaves your infrastructure. Learn how our AI layer is designed for enterprise-grade security and governance."
+  title="Security - Inform Growth | AI Layer Security & Governance"
+  description="Our AI layer is read-only by default. Your credentials stay local. Every integration is QA reviewed. Enterprise-grade security because your data is not our product."
 >
   <!-- Page Header + Architecture -->
   <section class="page-header section geo-grid">
@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="header-eyebrow">Security & Governance</div>
         <h1>Your Data. Your Infrastructure. Your Control.</h1>
         <p class="header-subtitle">
-          We build a governed AI layer on your infrastructure. Read-only by default. Your credentials never leave your servers.
+          Most AI tools train on your data. Ours doesn't. We build a governed AI layer on YOUR infrastructure. Read-only by default. Your credentials never leave your servers. Every integration human-reviewed before production.
         </p>
       </div>
     </div>
@@ -342,12 +342,11 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA -->
-  <section class="section cta-section geo-grid">
+  <section class="section bottom-cta geo-grid">
     <div class="container">
-      <div class="cta-content fade-up">
-        <h2>Questions about security?</h2>
-        <p>We're happy to walk your security team through the architecture, answer specific compliance questions, or do a technical deep-dive on the gateway design.</p>
-        <a href="/contact" class="btn btn-primary btn-large">Schedule a Security Review</a>
+      <div class="cta-box">
+        <h2>Ready to explore?</h2>
+        <a href="/contact" class="btn btn-primary btn-large">Book a Meeting</a>
       </div>
     </div>
   </section>
@@ -901,6 +900,25 @@ import Layout from '../layouts/Layout.astro';
   .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Bottom CTA */
+  .bottom-cta {
+    background-color: var(--color-bg-base);
+  }
+
+  .cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-box h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    color: var(--heading-color);
+    margin-bottom: var(--space-lg);
   }
 </style>
 
