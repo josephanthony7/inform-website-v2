@@ -25,80 +25,86 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     <div class="container">
       <div class="process-header fade-up">
         <h2>How We Work</h2>
+        <p class="process-subtitle">From diagnosis to compounding value in weeks, not months.</p>
       </div>
 
-      <div class="process-steps fade-up">
-        <div class="process-step">
-          <div class="step-header">
-            <span class="step-num">01</span>
-            <div class="step-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- Visual Timeline -->
+      <div class="timeline fade-up">
+        <div class="timeline-track"></div>
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
               </svg>
             </div>
+            <span class="timeline-label">Diagnose</span>
           </div>
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>
+              </svg>
+            </div>
+            <span class="timeline-label">Govern</span>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4"/><path d="m6.34 6.34 2.83 2.83"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="M18 12h4"/><path d="m17.66 6.34-2.83 2.83"/>
+              </svg>
+            </div>
+            <span class="timeline-label">Deploy</span>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              </svg>
+            </div>
+            <span class="timeline-label">Enable</span>
+          </div>
+          <div class="timeline-step active">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/>
+              </svg>
+            </div>
+            <span class="timeline-label">Compound</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Cards Grid -->
+      <div class="process-grid fade-up">
+        <div class="process-card">
+          <span class="card-num">01</span>
           <h3>Diagnose</h3>
-          <p>Map your entire revenue stack. Run a data diagnostic across your CRM. Identify tool fragmentation, orphaned data, and where context is leaking between teams.</p>
+          <p>Map your entire revenue stack. Run a data diagnostic across your CRM to identify tool fragmentation, orphaned data, and where context is leaking.</p>
         </div>
 
-        <div class="step-connector"></div>
-
-        <div class="process-step">
-          <div class="step-header">
-            <span class="step-num">02</span>
-            <div class="step-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
-              </svg>
-            </div>
-          </div>
+        <div class="process-card">
+          <span class="card-num">02</span>
           <h3>Govern</h3>
-          <p>Build your data dictionary. Define what each field means, who owns it, and how it flows between systems. Create validation rules that prevent garbage data at the source.</p>
+          <p>Build your data dictionary. Define what each field means, who owns it, and create validation rules that prevent garbage data at the source.</p>
         </div>
 
-        <div class="step-connector"></div>
-
-        <div class="process-step">
-          <div class="step-header">
-            <span class="step-num">03</span>
-            <div class="step-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v4"/><path d="m6.34 6.34 2.83 2.83"/><path d="M2 12h4"/><path d="m6.34 17.66 2.83-2.83"/><path d="M12 18v4"/><path d="m17.66 17.66-2.83-2.83"/><path d="M18 12h4"/><path d="m17.66 6.34-2.83 2.83"/>
-              </svg>
-            </div>
-          </div>
+        <div class="process-card">
+          <span class="card-num">03</span>
           <h3>Deploy</h3>
-          <p>Install the AI layer across your stack. Connect HubSpot, Salesforce, Outreach, and your other tools into a unified system. Enable shared context between Sales, Marketing, and CS.</p>
+          <p>Install the AI layer across your stack. Connect your tools into a unified system with shared context between all revenue teams.</p>
         </div>
 
-        <div class="step-connector"></div>
-
-        <div class="process-step">
-          <div class="step-header">
-            <span class="step-num">04</span>
-            <div class="step-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-          </div>
+        <div class="process-card">
+          <span class="card-num">04</span>
           <h3>Enable</h3>
-          <p>Train your team on the new workflows. Build custom playbooks based on your top performers. Document everything so new hires ramp in weeks, not months.</p>
+          <p>Train your team on new workflows. Build custom playbooks from top performers. Document everything so new hires ramp in weeks.</p>
         </div>
 
-        <div class="step-connector"></div>
-
-        <div class="process-step highlighted">
-          <div class="step-header">
-            <span class="step-num">05</span>
-            <div class="step-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/>
-              </svg>
-            </div>
-          </div>
+        <div class="process-card highlight">
+          <span class="card-num">05</span>
           <h3>Compound</h3>
-          <p>The system learns from every deal. Best practices get captured automatically. Tribal knowledge becomes institutional knowledge. Context never resets.</p>
+          <p>The system learns from every deal. Tribal knowledge becomes institutional knowledge. Context never resets.</p>
         </div>
       </div>
     </div>
@@ -295,10 +301,10 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     margin-right: auto;
   }
 
-  /* Process Steps */
+  /* Process Section */
   .process-header {
     text-align: center;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-2xl);
   }
 
   .process-header h2 {
@@ -306,121 +312,177 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     font-size: var(--text-3xl);
     font-weight: 900;
     color: var(--heading-color);
+    margin-bottom: var(--space-sm);
   }
 
-  .process-steps {
+  .process-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+  }
+
+  /* Visual Timeline */
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto var(--space-2xl);
+    padding: 0 var(--space-lg);
+  }
+
+  .timeline-track {
+    position: absolute;
+    top: 24px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-border) 0%, var(--color-accent) 100%);
+  }
+
+  .timeline-steps {
     display: flex;
-    align-items: stretch;
-    gap: 0;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .timeline-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-bg-raised);
+    border: 2px solid var(--color-border);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .timeline-step:hover .timeline-icon {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .timeline-step.active .timeline-icon {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .timeline-label {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  .timeline-step.active .timeline-label {
+    color: var(--color-accent);
+  }
+
+  /* Process Cards Grid */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-lg);
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .process-step {
-    flex: 1;
+  .process-card {
     background: var(--color-bg-raised);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: var(--space-lg);
+    border-radius: 16px;
+    padding: var(--space-xl);
     transition: all 0.3s ease;
   }
 
-  .process-step:hover {
+  .process-card:hover {
     border-color: var(--sky-blue);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   }
 
-  .process-step.highlighted {
-    background: var(--color-accent-muted);
+  .process-card.highlight {
+    background: linear-gradient(135deg, rgba(200, 240, 74, 0.15) 0%, rgba(200, 240, 74, 0.05) 100%);
     border-color: var(--color-accent);
   }
 
-  .step-header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-md);
-  }
-
-  .step-num {
+  .card-num {
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     font-weight: 700;
     color: var(--color-accent);
-    background: var(--color-accent-muted);
-    padding: 4px 8px;
-    border-radius: 4px;
+    margin-bottom: var(--space-md);
   }
 
-  .process-step.highlighted .step-num {
-    background: var(--color-accent);
-    color: #fff;
-  }
-
-  .step-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-accent-muted);
-    color: var(--color-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .process-step.highlighted .step-icon {
-    background: var(--color-accent);
-    color: #fff;
-  }
-
-  .process-step h3 {
+  .process-card h3 {
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 700;
     color: var(--heading-color);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
 
-  .process-step p {
+  .process-card p {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
   }
 
-  .step-connector {
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .step-connector::before {
-    content: '→';
-    font-size: var(--text-xl);
-    color: var(--color-border);
-  }
-
   @media (max-width: 1100px) {
-    .process-steps {
-      flex-wrap: wrap;
+    .process-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .process-card:nth-child(4),
+    .process-card:nth-child(5) {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      display: none;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
       gap: var(--space-md);
     }
 
-    .process-step {
-      flex: 0 0 calc(50% - var(--space-md));
+    .process-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      gap: var(--space-xs) var(--space-md);
+      padding: var(--space-lg);
     }
 
-    .step-connector {
-      display: none;
+    .card-num {
+      grid-row: 1;
+      margin-bottom: 0;
     }
-  }
 
-  @media (max-width: 600px) {
-    .process-step {
-      flex: 0 0 100%;
+    .process-card h3 {
+      grid-row: 1;
+      margin-bottom: 0;
+      align-self: center;
+    }
+
+    .process-card p {
+      grid-column: 1 / -1;
+      grid-row: 2;
     }
   }
 
