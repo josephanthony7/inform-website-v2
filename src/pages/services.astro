@@ -25,45 +25,35 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
     <div class="container">
       <h2 class="text-center fade-up">How We Work</h2>
 
-      <div class="process-list fade-up">
-        <div class="process-item">
-          <span class="process-num">01</span>
-          <div class="process-content">
-            <h3>Diagnose</h3>
-            <p>Map your stack. Find the leaks.</p>
-          </div>
+      <div class="process-grid fade-up">
+        <div class="process-card">
+          <span class="card-num">01</span>
+          <h3>Diagnose</h3>
+          <p>Map your revenue stack and run a data diagnostic to find leaks.</p>
         </div>
 
-        <div class="process-item">
-          <span class="process-num">02</span>
-          <div class="process-content">
-            <h3>Govern</h3>
-            <p>Define what data means. One source of truth.</p>
-          </div>
+        <div class="process-card">
+          <span class="card-num">02</span>
+          <h3>Govern</h3>
+          <p>Build your data dictionary. Define ownership and validation rules.</p>
         </div>
 
-        <div class="process-item">
-          <span class="process-num">03</span>
-          <div class="process-content">
-            <h3>Deploy</h3>
-            <p>Install the AI layer. Connect your tools.</p>
-          </div>
+        <div class="process-card">
+          <span class="card-num">03</span>
+          <h3>Deploy</h3>
+          <p>Install the AI layer and connect your tools into one system.</p>
         </div>
 
-        <div class="process-item">
-          <span class="process-num">04</span>
-          <div class="process-content">
-            <h3>Enable</h3>
-            <p>Train your team. Build playbooks.</p>
-          </div>
+        <div class="process-card">
+          <span class="card-num">04</span>
+          <h3>Enable</h3>
+          <p>Train your team on new workflows and build custom playbooks.</p>
         </div>
 
-        <div class="process-item">
-          <span class="process-num">05</span>
-          <div class="process-content">
-            <h3>Compound</h3>
-            <p>System learns from every deal. Context never resets.</p>
-          </div>
+        <div class="process-card highlight">
+          <span class="card-num">05</span>
+          <h3>Compound</h3>
+          <p>The system learns from every deal. Context never resets.</p>
         </div>
       </div>
     </div>
@@ -262,53 +252,75 @@ import BrandIcon from '../components/ui/BrandIcon.astro';
 
   /* Process Section */
   .process-section {
-    background: var(--color-bg-base);
+    background: var(--color-bg-surface);
   }
 
-  .process-list {
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .process-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-lg);
-    padding: var(--space-lg);
+  .process-card {
     background: var(--color-bg-raised);
     border: 1px solid var(--color-border);
     border-radius: var(--card-radius);
+    padding: var(--space-xl) var(--space-lg);
     transition: border-color 0.2s ease;
   }
 
-  .process-item:hover {
+  .process-card:hover {
     border-color: var(--sky-blue);
   }
 
-  .process-num {
+  .process-card.highlight {
+    background: rgba(200, 240, 74, 0.1);
+    border-color: var(--color-accent);
+  }
+
+  .card-num {
+    display: block;
     font-family: var(--font-mono);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: 700;
     color: var(--color-accent);
-    flex-shrink: 0;
+    margin-bottom: var(--space-lg);
   }
 
-  .process-content h3 {
+  .process-card h3 {
     font-family: var(--font-display);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: 700;
     color: var(--heading-color);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
   }
 
-  .process-content p {
+  .process-card p {
     font-family: var(--font-body);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     color: var(--color-text-secondary);
+    line-height: 1.6;
     margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .process-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Infrastructure Section */
