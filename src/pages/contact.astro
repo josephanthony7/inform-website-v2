@@ -65,9 +65,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="prequal-summary" id="prequal-summary"></div>
             <iframe
               id="calendly-iframe"
+              src="https://calendly.com/josephdeeanthony/30min?embed_type=Inline&hide_gdpr_banner=1"
               style="width:100%;height:700px;border:none;background:#fff;"
               title="Schedule a meeting"
-              loading="lazy"
             ></iframe>
           </div>
         </div>
@@ -171,7 +171,7 @@ import Layout from '../layouts/Layout.astro';
       document.getElementById('prequal-form-wrapper').style.display = 'none';
       document.getElementById('calendar-wrapper').classList.remove('calendar-hidden');
 
-      // Set iframe src directly
+      // Update iframe src with prefilled params (iframe is already preloaded)
       var iframe = document.getElementById('calendly-iframe');
       iframe.src = calendlyUrl;
     });
