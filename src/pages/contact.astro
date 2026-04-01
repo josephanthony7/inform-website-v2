@@ -65,8 +65,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="prequal-summary" id="prequal-summary"></div>
             <iframe
               id="calendly-iframe"
-              style="width:100%;height:700px;border:none;"
+              style="width:100%;height:700px;border:none;background:#fff;"
               title="Schedule a meeting"
+              loading="lazy"
             ></iframe>
           </div>
         </div>
@@ -154,7 +155,7 @@ import Layout from '../layouts/Layout.astro';
       if (email) params.set('email', email);
       if (company) params.set('a1', company);
 
-      var calendlyUrl = 'https://calendly.com/josephdeeanthony/30min?' + params.toString();
+      var calendlyUrl = 'https://calendly.com/josephdeeanthony/30min?embed_type=Inline&embed_domain=' + window.location.hostname + '&' + params.toString();
 
       // Show summary bar
       var summary = document.getElementById('prequal-summary');
